@@ -45,50 +45,28 @@ def mktout_if(list mean_mu_alpha, double[:, ::1] errors, double par_gamma):
         threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
         
         if j_is_larger != 0:
-            """
             case1 = mu10 < 1 / c
             case2 = mu21 >= threshold2
             case3 = not (case1 | case2)
-            
             t0 = case1*c + case2 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case3 / threshold2
             t1 = case2 * (t0 * alpha1 * mu11 - alpha1) + case3 * (t0 * alpha1 * mu10 - alpha1)
             t2 = c - t0 - t1
-            
             t1_sum += t1
             t2_sum += t2
             p1_sum += case2 + case3
             p2_sum += case2
-            """
-            t1_sum += mu10
-            t2_sum += mu11
-            p1_sum += alpha1
-            p2_sum += alpha2
-
         else:
-            """
             case4 = mu20 < 1 / c
             case5 = mu11 >= threshold3
             case6 = not (case4 | case5)
-            
             t0 = case4 * c + case5 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case6 / threshold3
             t1 = case5 * (t0 * alpha1 * mu11 - alpha1)
             t2 = c - t0 - t1
-            
             t1_sum += t1
             t2_sum += t2
             p1_sum += case5
             p2_sum += case5 + case6
             
-            t1_sum += 4.0
-            t2_sum += 3.0
-            p1_sum += 2.0
-            p2_sum += 1.0
-            """
-            t1_sum += mu11
-            t2_sum += mu10
-            p1_sum += alpha2
-            p2_sum += alpha1
-    
     return t1_sum/n, t2_sum/n, p1_sum/n, p2_sum/n
 
 def mktout(list mean_mu_alpha, double[:, ::1] errors, double par_gamma):
@@ -133,7 +111,6 @@ def mktout(list mean_mu_alpha, double[:, ::1] errors, double par_gamma):
         threshold2 = (1 + mu10 * alpha1) / (c + alpha1)
         threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
         
-        """
         case1 = j_is_larger * (mu10 < 1 / c)
         case2 = j_is_larger * (mu21 >= threshold2)
         case3 = j_is_larger and not (case1 or case2)
@@ -153,11 +130,6 @@ def mktout(list mean_mu_alpha, double[:, ::1] errors, double par_gamma):
         t2_sum += t2
         p1_sum += p1
         p2_sum += p2
-        """
-        t1_sum += mu10
-        t2_sum += mu11
-        p1_sum += alpha1
-        p2_sum += alpha2
     
     return t1_sum/n, t2_sum/n, p1_sum/n, p2_sum/n
 

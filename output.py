@@ -1,6 +1,5 @@
-import time
-
 import integrate
+import integrate_alt
 import numpy as np
 import numexpr as ne
 import math
@@ -39,23 +38,18 @@ def mktout(mean_mu_alpha, errors, par_gamma):
     p12 = case2 + case5
     p1 = case3 + p12
     p2 = case6 + p12
-    return t1.sum()/10000, t2.sum()/10000, p1.sum()/10000, p2.sum()/10000
     
-n = 1000
+    return t1.sum()/10000, t2.sum()/10000, p1.sum()/10000, p2.sum()/10000
 
-start = time.time()
-out = integrate.outer_loop([-6,-6,-1,-1], errors, -0.7, n)
-end = time.time()
-print(end - start)
-
-start = time.time()
-for i in range(n):
-    out = integrate.mktout([-6,-6,-1,-1], errors, -0.7)
-end = time.time()
-print(end - start)
-
-start = time.time()
-for i in range(n):
-    out = mktout([-6,-6,-1,-1], errors, -0.7)
-end = time.time()
-print(end - start)
+out = mktout([-6,-6,-1,-1], errors, -0.7)
+print(out)
+out = integrate.mktout([-6,-6,-1,-1], errors, -0.7)
+print(out)
+out = integrate.mktout_if([-6,-6,-1,-1], errors, -0.7)
+print(out)
+out = integrate.outer_loop([-6,-6,-1,-1], errors, -0.7, 1)
+print(out)
+out = integrate.outer_loop_if([-6,-6,-1,-1], errors, -0.7, 1)
+print(out)
+out = integrate_alt.mktout_alt([-6,-6,-1,-1], errors, -0.7)
+print(out)

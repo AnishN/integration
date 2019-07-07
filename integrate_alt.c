@@ -20,12 +20,12 @@
             "/home/anish/.local/lib/python3.6/site-packages/numpy/core/include"
         ],
         "language": "c",
-        "name": "integrate",
+        "name": "integrate_alt",
         "sources": [
-            "./integrate.pyx"
+            "./integrate_alt.pyx"
         ]
     },
-    "module_name": "integrate"
+    "module_name": "integrate_alt"
 }
 END: Cython Metadata */
 
@@ -619,8 +619,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__integrate
-#define __PYX_HAVE_API__integrate
+#define __PYX_HAVE__integrate_alt
+#define __PYX_HAVE_API__integrate_alt
 /* Early includes */
 #include <math.h>
 #include <stdint.h>
@@ -837,7 +837,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "integrate.pyx",
+  "integrate_alt.pyx",
   "stringsource",
 };
 /* MemviewSliceStruct.proto */
@@ -954,17 +954,32 @@ struct __pyx_array_obj;
 struct __pyx_MemviewEnum_obj;
 struct __pyx_memoryview_obj;
 struct __pyx_memoryviewslice_obj;
-struct __pyx_t_9integrate_Vec4;
-typedef struct __pyx_t_9integrate_Vec4 __pyx_t_9integrate_Vec4;
+struct __pyx_t_13integrate_alt_Vec3;
+typedef struct __pyx_t_13integrate_alt_Vec3 __pyx_t_13integrate_alt_Vec3;
+struct __pyx_t_13integrate_alt_Vec4;
+typedef struct __pyx_t_13integrate_alt_Vec4 __pyx_t_13integrate_alt_Vec4;
 
-/* "integrate.pyx":136
- *     return t1_sum/n, t2_sum/n, p1_sum/n, p2_sum/n
+/* "integrate_alt.pyx":82
+ *     return t0_sum/n, t1_sum/n, t2_sum/n
+ * 
+ * ctypedef struct Vec3:             # <<<<<<<<<<<<<<
+ *     double a
+ *     double b
+ */
+struct __pyx_t_13integrate_alt_Vec3 {
+  double a;
+  double b;
+  double c;
+};
+
+/* "integrate_alt.pyx":87
+ *     double c
  * 
  * ctypedef struct Vec4:             # <<<<<<<<<<<<<<
  *     double a
  *     double b
  */
-struct __pyx_t_9integrate_Vec4 {
+struct __pyx_t_13integrate_alt_Vec4 {
   double a;
   double b;
   double c;
@@ -1729,7 +1744,7 @@ static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_d_dc_d
 /* CIntToPy.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value);
 
-static PyObject* __pyx_convert__to_py___pyx_t_9integrate_Vec4(__pyx_t_9integrate_Vec4 s);
+static PyObject* __pyx_convert__to_py___pyx_t_13integrate_alt_Vec3(__pyx_t_13integrate_alt_Vec3 s);
 /* MemviewSliceCopyTemplate.proto */
 static __Pyx_memviewslice
 __pyx_memoryview_copy_new_contig(const __Pyx_memviewslice *from_mvs,
@@ -1779,11 +1794,13 @@ static PyObject *__pyx_memoryviewslice_assign_item_from_object(struct __pyx_memo
 
 /* Module declarations from 'libc.stdlib' */
 
-/* Module declarations from 'integrate' */
+/* Module declarations from 'integrate_alt' */
 static PyTypeObject *__pyx_array_type = 0;
 static PyTypeObject *__pyx_MemviewEnum_type = 0;
 static PyTypeObject *__pyx_memoryview_type = 0;
 static PyTypeObject *__pyx_memoryviewslice_type = 0;
+static double __pyx_v_13integrate_alt_c;
+static double __pyx_v_13integrate_alt_threshold1;
 static PyObject *generic = 0;
 static PyObject *strided = 0;
 static PyObject *indirect = 0;
@@ -1791,8 +1808,7 @@ static PyObject *contiguous = 0;
 static PyObject *indirect_contiguous = 0;
 static int __pyx_memoryview_thread_locks_used;
 static PyThread_type_lock __pyx_memoryview_thread_locks[8];
-static void __pyx_f_9integrate_cy_mktout(__pyx_t_9integrate_Vec4 *, __pyx_t_9integrate_Vec4 *, __Pyx_memviewslice, double); /*proto*/
-static void __pyx_f_9integrate_cy_mktout_if(__pyx_t_9integrate_Vec4 *, __pyx_t_9integrate_Vec4 *, __Pyx_memviewslice, double); /*proto*/
+static void __pyx_f_13integrate_alt_cy_mktout_alt(__pyx_t_13integrate_alt_Vec3 *, __pyx_t_13integrate_alt_Vec4 *, __Pyx_memviewslice, double); /*proto*/
 static struct __pyx_array_obj *__pyx_array_new(PyObject *, Py_ssize_t, char *, char *, char *); /*proto*/
 static void *__pyx_align_pointer(void *, size_t); /*proto*/
 static PyObject *__pyx_memoryview_new(PyObject *, int, int, __Pyx_TypeInfo *); /*proto*/
@@ -1827,11 +1843,11 @@ static void __pyx_memoryview_slice_assign_scalar(__Pyx_memviewslice *, int, size
 static void __pyx_memoryview__slice_assign_scalar(char *, Py_ssize_t *, Py_ssize_t *, int, size_t, void *); /*proto*/
 static PyObject *__pyx_unpickle_Enum__set_state(struct __pyx_MemviewEnum_obj *, PyObject *); /*proto*/
 static __Pyx_TypeInfo __Pyx_TypeInfo_double = { "double", NULL, sizeof(double), { 0 }, 0, 'R', 0, 0 };
-#define __Pyx_MODULE_NAME "integrate"
-extern int __pyx_module_is_main_integrate;
-int __pyx_module_is_main_integrate = 0;
+#define __Pyx_MODULE_NAME "integrate_alt"
+extern int __pyx_module_is_main_integrate_alt;
+int __pyx_module_is_main_integrate_alt = 0;
 
-/* Implementation of 'integrate' */
+/* Implementation of 'integrate_alt' */
 static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_ValueError;
 static PyObject *__pyx_builtin_MemoryError;
@@ -1844,20 +1860,15 @@ static const char __pyx_k_O[] = "O";
 static const char __pyx_k_a[] = "a";
 static const char __pyx_k_b[] = "b";
 static const char __pyx_k_c[] = "c";
-static const char __pyx_k_d[] = "d";
 static const char __pyx_k_i[] = "i";
 static const char __pyx_k_n[] = "n";
 static const char __pyx_k_id[] = "id";
-static const char __pyx_k_p1[] = "p1";
-static const char __pyx_k_p2[] = "p2";
 static const char __pyx_k_t0[] = "t0";
-static const char __pyx_k_t1[] = "t1";
-static const char __pyx_k_t2[] = "t2";
-static const char __pyx_k_exp[] = "exp";
+static const char __pyx_k_err[] = "err";
+static const char __pyx_k_mma[] = "mma";
 static const char __pyx_k_new[] = "__new__";
 static const char __pyx_k_obj[] = "obj";
 static const char __pyx_k_out[] = "out";
-static const char __pyx_k_p12[] = "p12";
 static const char __pyx_k_base[] = "base";
 static const char __pyx_k_dict[] = "__dict__";
 static const char __pyx_k_main[] = "__main__";
@@ -1874,12 +1885,6 @@ static const char __pyx_k_step[] = "step";
 static const char __pyx_k_stop[] = "stop";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_ASCII[] = "ASCII";
-static const char __pyx_k_case1[] = "case1";
-static const char __pyx_k_case2[] = "case2";
-static const char __pyx_k_case3[] = "case3";
-static const char __pyx_k_case4[] = "case4";
-static const char __pyx_k_case5[] = "case5";
-static const char __pyx_k_case6[] = "case6";
 static const char __pyx_k_class[] = "__class__";
 static const char __pyx_k_error[] = "error";
 static const char __pyx_k_flags[] = "flags";
@@ -1892,13 +1897,11 @@ static const char __pyx_k_encode[] = "encode";
 static const char __pyx_k_errors[] = "errors";
 static const char __pyx_k_format[] = "format";
 static const char __pyx_k_import[] = "__import__";
-static const char __pyx_k_mktout[] = "mktout";
 static const char __pyx_k_name_2[] = "__name__";
-static const char __pyx_k_p1_sum[] = "p1_sum";
-static const char __pyx_k_p2_sum[] = "p2_sum";
 static const char __pyx_k_pickle[] = "pickle";
 static const char __pyx_k_reduce[] = "__reduce__";
 static const char __pyx_k_struct[] = "struct";
+static const char __pyx_k_t0_sum[] = "t0_sum";
 static const char __pyx_k_t1_sum[] = "t1_sum";
 static const char __pyx_k_t2_sum[] = "t2_sum";
 static const char __pyx_k_unpack[] = "unpack";
@@ -1908,40 +1911,35 @@ static const char __pyx_k_memview[] = "memview";
 static const char __pyx_k_Ellipsis[] = "Ellipsis";
 static const char __pyx_k_getstate[] = "__getstate__";
 static const char __pyx_k_itemsize[] = "itemsize";
-static const char __pyx_k_mean_vec[] = "mean_vec";
 static const char __pyx_k_pyx_type[] = "__pyx_type";
 static const char __pyx_k_setstate[] = "__setstate__";
 static const char __pyx_k_TypeError[] = "TypeError";
 static const char __pyx_k_enumerate[] = "enumerate";
-static const char __pyx_k_integrate[] = "integrate";
-static const char __pyx_k_mktout_if[] = "mktout_if";
 static const char __pyx_k_par_gamma[] = "par_gamma";
 static const char __pyx_k_pyx_state[] = "__pyx_state";
 static const char __pyx_k_reduce_ex[] = "__reduce_ex__";
 static const char __pyx_k_IndexError[] = "IndexError";
 static const char __pyx_k_ValueError[] = "ValueError";
-static const char __pyx_k_outer_loop[] = "outer_loop";
+static const char __pyx_k_mktout_alt[] = "mktout_alt";
 static const char __pyx_k_pyx_result[] = "__pyx_result";
 static const char __pyx_k_pyx_vtable[] = "__pyx_vtable__";
 static const char __pyx_k_threshold2[] = "threshold2";
 static const char __pyx_k_threshold3[] = "threshold3";
 static const char __pyx_k_MemoryError[] = "MemoryError";
 static const char __pyx_k_PickleError[] = "PickleError";
-static const char __pyx_k_j_is_larger[] = "j_is_larger";
-static const char __pyx_k_j_is_smaller[] = "j_is_smaller";
 static const char __pyx_k_pyx_checksum[] = "__pyx_checksum";
 static const char __pyx_k_stringsource[] = "stringsource";
-static const char __pyx_k_exp_par_gamma[] = "exp_par_gamma";
-static const char __pyx_k_integrate_pyx[] = "integrate.pyx";
+static const char __pyx_k_integrate_alt[] = "integrate_alt";
 static const char __pyx_k_mean_mu_alpha[] = "mean_mu_alpha";
-static const char __pyx_k_outer_loop_if[] = "outer_loop_if";
 static const char __pyx_k_pyx_getbuffer[] = "__pyx_getbuffer";
 static const char __pyx_k_reduce_cython[] = "__reduce_cython__";
+static const char __pyx_k_outer_loop_alt[] = "outer_loop_alt";
 static const char __pyx_k_View_MemoryView[] = "View.MemoryView";
 static const char __pyx_k_allocate_buffer[] = "allocate_buffer";
 static const char __pyx_k_dtype_is_object[] = "dtype_is_object";
 static const char __pyx_k_pyx_PickleError[] = "__pyx_PickleError";
 static const char __pyx_k_setstate_cython[] = "__setstate_cython__";
+static const char __pyx_k_integrate_alt_pyx[] = "integrate_alt.pyx";
 static const char __pyx_k_pyx_unpickle_Enum[] = "__pyx_unpickle_Enum";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_strided_and_direct[] = "<strided and direct>";
@@ -1999,25 +1997,17 @@ static PyObject *__pyx_n_s_b;
 static PyObject *__pyx_n_s_base;
 static PyObject *__pyx_n_s_c;
 static PyObject *__pyx_n_u_c;
-static PyObject *__pyx_n_s_case1;
-static PyObject *__pyx_n_s_case2;
-static PyObject *__pyx_n_s_case3;
-static PyObject *__pyx_n_s_case4;
-static PyObject *__pyx_n_s_case5;
-static PyObject *__pyx_n_s_case6;
 static PyObject *__pyx_n_s_class;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_kp_s_contiguous_and_direct;
 static PyObject *__pyx_kp_s_contiguous_and_indirect;
-static PyObject *__pyx_n_s_d;
 static PyObject *__pyx_n_s_dict;
 static PyObject *__pyx_n_s_dtype_is_object;
 static PyObject *__pyx_n_s_encode;
 static PyObject *__pyx_n_s_enumerate;
+static PyObject *__pyx_n_s_err;
 static PyObject *__pyx_n_s_error;
 static PyObject *__pyx_n_s_errors;
-static PyObject *__pyx_n_s_exp;
-static PyObject *__pyx_n_s_exp_par_gamma;
 static PyObject *__pyx_n_s_flags;
 static PyObject *__pyx_n_s_format;
 static PyObject *__pyx_n_s_fortran;
@@ -2027,18 +2017,15 @@ static PyObject *__pyx_kp_s_got_differing_extents_in_dimensi;
 static PyObject *__pyx_n_s_i;
 static PyObject *__pyx_n_s_id;
 static PyObject *__pyx_n_s_import;
-static PyObject *__pyx_n_s_integrate;
-static PyObject *__pyx_kp_s_integrate_pyx;
+static PyObject *__pyx_n_s_integrate_alt;
+static PyObject *__pyx_kp_s_integrate_alt_pyx;
 static PyObject *__pyx_n_s_itemsize;
 static PyObject *__pyx_kp_s_itemsize_0_for_cython_array;
-static PyObject *__pyx_n_s_j_is_larger;
-static PyObject *__pyx_n_s_j_is_smaller;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_mean_mu_alpha;
-static PyObject *__pyx_n_s_mean_vec;
 static PyObject *__pyx_n_s_memview;
-static PyObject *__pyx_n_s_mktout;
-static PyObject *__pyx_n_s_mktout_if;
+static PyObject *__pyx_n_s_mktout_alt;
+static PyObject *__pyx_n_s_mma;
 static PyObject *__pyx_n_s_mode;
 static PyObject *__pyx_n_s_mu10;
 static PyObject *__pyx_n_s_mu11;
@@ -2052,13 +2039,7 @@ static PyObject *__pyx_n_s_new;
 static PyObject *__pyx_kp_s_no_default___reduce___due_to_non;
 static PyObject *__pyx_n_s_obj;
 static PyObject *__pyx_n_s_out;
-static PyObject *__pyx_n_s_outer_loop;
-static PyObject *__pyx_n_s_outer_loop_if;
-static PyObject *__pyx_n_s_p1;
-static PyObject *__pyx_n_s_p12;
-static PyObject *__pyx_n_s_p1_sum;
-static PyObject *__pyx_n_s_p2;
-static PyObject *__pyx_n_s_p2_sum;
+static PyObject *__pyx_n_s_outer_loop_alt;
 static PyObject *__pyx_n_s_pack;
 static PyObject *__pyx_n_s_par_gamma;
 static PyObject *__pyx_n_s_pickle;
@@ -2087,9 +2068,8 @@ static PyObject *__pyx_kp_s_strided_and_indirect;
 static PyObject *__pyx_kp_s_stringsource;
 static PyObject *__pyx_n_s_struct;
 static PyObject *__pyx_n_s_t0;
-static PyObject *__pyx_n_s_t1;
+static PyObject *__pyx_n_s_t0_sum;
 static PyObject *__pyx_n_s_t1_sum;
-static PyObject *__pyx_n_s_t2;
 static PyObject *__pyx_n_s_t2_sum;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_threshold2;
@@ -2098,10 +2078,8 @@ static PyObject *__pyx_kp_s_unable_to_allocate_array_data;
 static PyObject *__pyx_kp_s_unable_to_allocate_shape_and_str;
 static PyObject *__pyx_n_s_unpack;
 static PyObject *__pyx_n_s_update;
-static PyObject *__pyx_pf_9integrate_mktout_if(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mean_mu_alpha, __Pyx_memviewslice __pyx_v_errors, double __pyx_v_par_gamma); /* proto */
-static PyObject *__pyx_pf_9integrate_2mktout(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mean_mu_alpha, __Pyx_memviewslice __pyx_v_errors, double __pyx_v_par_gamma); /* proto */
-static PyObject *__pyx_pf_9integrate_4outer_loop(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mean_mu_alpha, __Pyx_memviewslice __pyx_v_errors, double __pyx_v_par_gamma, CYTHON_UNUSED size_t __pyx_v_n); /* proto */
-static PyObject *__pyx_pf_9integrate_6outer_loop_if(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mean_mu_alpha, __Pyx_memviewslice __pyx_v_errors, double __pyx_v_par_gamma, CYTHON_UNUSED size_t __pyx_v_n); /* proto */
+static PyObject *__pyx_pf_13integrate_alt_mktout_alt(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mean_mu_alpha, __Pyx_memviewslice __pyx_v_errors, double __pyx_v_par_gamma); /* proto */
+static PyObject *__pyx_pf_13integrate_alt_2outer_loop_alt(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mean_mu_alpha, __Pyx_memviewslice __pyx_v_errors, double __pyx_v_par_gamma, CYTHON_UNUSED size_t __pyx_v_n); /* proto */
 static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __pyx_array_obj *__pyx_v_self, PyObject *__pyx_v_shape, Py_ssize_t __pyx_v_itemsize, PyObject *__pyx_v_format, PyObject *__pyx_v_mode, int __pyx_v_allocate_buffer); /* proto */
 static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array_2__getbuffer__(struct __pyx_array_obj *__pyx_v_self, Py_buffer *__pyx_v_info, int __pyx_v_flags); /* proto */
 static void __pyx_array___pyx_pf_15View_dot_MemoryView_5array_4__dealloc__(struct __pyx_array_obj *__pyx_v_self); /* proto */
@@ -2173,38 +2151,34 @@ static PyObject *__pyx_tuple__18;
 static PyObject *__pyx_tuple__19;
 static PyObject *__pyx_tuple__21;
 static PyObject *__pyx_tuple__23;
+static PyObject *__pyx_tuple__24;
 static PyObject *__pyx_tuple__25;
+static PyObject *__pyx_tuple__26;
 static PyObject *__pyx_tuple__27;
 static PyObject *__pyx_tuple__28;
-static PyObject *__pyx_tuple__29;
-static PyObject *__pyx_tuple__30;
-static PyObject *__pyx_tuple__31;
-static PyObject *__pyx_tuple__32;
 static PyObject *__pyx_codeobj__20;
 static PyObject *__pyx_codeobj__22;
-static PyObject *__pyx_codeobj__24;
-static PyObject *__pyx_codeobj__26;
-static PyObject *__pyx_codeobj__33;
+static PyObject *__pyx_codeobj__29;
 /* Late includes */
 
-/* "integrate.pyx":6
- * from cython.parallel cimport prange
+/* "integrate_alt.pyx":9
+ * cdef double threshold1 = -cmath.log(c)
  * 
- * def mktout_if(list mean_mu_alpha, double[:, ::1] errors, double par_gamma):             # <<<<<<<<<<<<<<
+ * def mktout_alt(list mean_mu_alpha, double[:, ::1] errors, double par_gamma):             # <<<<<<<<<<<<<<
  *     cdef:
  *         size_t i, n
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9integrate_1mktout_if(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_9integrate_1mktout_if = {"mktout_if", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_9integrate_1mktout_if, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_9integrate_1mktout_if(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_13integrate_alt_1mktout_alt(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_13integrate_alt_1mktout_alt = {"mktout_alt", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_13integrate_alt_1mktout_alt, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_13integrate_alt_1mktout_alt(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_mean_mu_alpha = 0;
   __Pyx_memviewslice __pyx_v_errors = { 0, 0, { 0 }, { 0 }, { 0 } };
   double __pyx_v_par_gamma;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("mktout_if (wrapper)", 0);
+  __Pyx_RefNannySetupContext("mktout_alt (wrapper)", 0);
   {
     static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_mean_mu_alpha,&__pyx_n_s_errors,&__pyx_n_s_par_gamma,0};
     PyObject* values[3] = {0,0,0};
@@ -2230,17 +2204,17 @@ static PyObject *__pyx_pw_9integrate_1mktout_if(PyObject *__pyx_self, PyObject *
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_errors)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("mktout_if", 1, 3, 3, 1); __PYX_ERR(0, 6, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("mktout_alt", 1, 3, 3, 1); __PYX_ERR(0, 9, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_par_gamma)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("mktout_if", 1, 3, 3, 2); __PYX_ERR(0, 6, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("mktout_alt", 1, 3, 3, 2); __PYX_ERR(0, 9, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "mktout_if") < 0)) __PYX_ERR(0, 6, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "mktout_alt") < 0)) __PYX_ERR(0, 9, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -2250,19 +2224,19 @@ static PyObject *__pyx_pw_9integrate_1mktout_if(PyObject *__pyx_self, PyObject *
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
     __pyx_v_mean_mu_alpha = ((PyObject*)values[0]);
-    __pyx_v_errors = __Pyx_PyObject_to_MemoryviewSlice_d_dc_double(values[1], PyBUF_WRITABLE); if (unlikely(!__pyx_v_errors.memview)) __PYX_ERR(0, 6, __pyx_L3_error)
-    __pyx_v_par_gamma = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_par_gamma == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 6, __pyx_L3_error)
+    __pyx_v_errors = __Pyx_PyObject_to_MemoryviewSlice_d_dc_double(values[1], PyBUF_WRITABLE); if (unlikely(!__pyx_v_errors.memview)) __PYX_ERR(0, 9, __pyx_L3_error)
+    __pyx_v_par_gamma = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_par_gamma == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 9, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("mktout_if", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 6, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("mktout_alt", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 9, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("integrate.mktout_if", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("integrate_alt.mktout_alt", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_mean_mu_alpha), (&PyList_Type), 1, "mean_mu_alpha", 1))) __PYX_ERR(0, 6, __pyx_L1_error)
-  __pyx_r = __pyx_pf_9integrate_mktout_if(__pyx_self, __pyx_v_mean_mu_alpha, __pyx_v_errors, __pyx_v_par_gamma);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_mean_mu_alpha), (&PyList_Type), 1, "mean_mu_alpha", 1))) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_r = __pyx_pf_13integrate_alt_mktout_alt(__pyx_self, __pyx_v_mean_mu_alpha, __pyx_v_errors, __pyx_v_par_gamma);
 
   /* function exit code */
   goto __pyx_L0;
@@ -2273,35 +2247,23 @@ static PyObject *__pyx_pw_9integrate_1mktout_if(PyObject *__pyx_self, PyObject *
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_9integrate_mktout_if(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mean_mu_alpha, __Pyx_memviewslice __pyx_v_errors, double __pyx_v_par_gamma) {
+static PyObject *__pyx_pf_13integrate_alt_mktout_alt(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mean_mu_alpha, __Pyx_memviewslice __pyx_v_errors, double __pyx_v_par_gamma) {
   size_t __pyx_v_i;
   size_t __pyx_v_n;
-  double __pyx_v_exp[4];
-  double __pyx_v_exp_par_gamma;
+  double __pyx_v_err[4];
+  double __pyx_v_mma[4];
+  double __pyx_v_t0_sum;
+  double __pyx_v_t1_sum;
+  double __pyx_v_t2_sum;
   double __pyx_v_mu10;
   double __pyx_v_mu11;
   double __pyx_v_mu20;
   double __pyx_v_mu21;
-  double __pyx_v_alpha1;
-  double __pyx_v_alpha2;
-  int __pyx_v_j_is_larger;
-  CYTHON_UNUSED int __pyx_v_j_is_smaller;
   double __pyx_v_threshold2;
   double __pyx_v_threshold3;
-  int __pyx_v_case1;
-  int __pyx_v_case2;
-  int __pyx_v_case3;
-  int __pyx_v_case4;
-  int __pyx_v_case5;
-  int __pyx_v_case6;
+  double __pyx_v_alpha1;
+  double __pyx_v_alpha2;
   double __pyx_v_t0;
-  double __pyx_v_t1;
-  double __pyx_v_t2;
-  double __pyx_v_t1_sum;
-  double __pyx_v_t2_sum;
-  double __pyx_v_p1_sum;
-  double __pyx_v_p2_sum;
-  double __pyx_v_c;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   double __pyx_t_1;
@@ -2321,480 +2283,557 @@ static PyObject *__pyx_pf_9integrate_mktout_if(CYTHON_UNUSED PyObject *__pyx_sel
   PyObject *__pyx_t_15 = NULL;
   PyObject *__pyx_t_16 = NULL;
   PyObject *__pyx_t_17 = NULL;
-  PyObject *__pyx_t_18 = NULL;
-  __Pyx_RefNannySetupContext("mktout_if", 0);
+  __Pyx_RefNannySetupContext("mktout_alt", 0);
 
-  /* "integrate.pyx":21
+  /* "integrate_alt.pyx":18
+ *         double threshold2, threshold3
  * 
- *     #compute the exp outside of the loop
- *     n = errors.shape[0]             # <<<<<<<<<<<<<<
- *     exp[0] = cmath.exp(<double>mean_mu_alpha[0])
- *     exp[1] = cmath.exp(<double>mean_mu_alpha[1])
- */
-  __pyx_v_n = (__pyx_v_errors.shape[0]);
-
-  /* "integrate.pyx":22
- *     #compute the exp outside of the loop
- *     n = errors.shape[0]
- *     exp[0] = cmath.exp(<double>mean_mu_alpha[0])             # <<<<<<<<<<<<<<
- *     exp[1] = cmath.exp(<double>mean_mu_alpha[1])
- *     exp[2] = cmath.exp(<double>mean_mu_alpha[2])
+ *     mma[0] = <double>mean_mu_alpha[0]             # <<<<<<<<<<<<<<
+ *     mma[1] = <double>mean_mu_alpha[1]
+ *     mma[2] = <double>mean_mu_alpha[2]
  */
   if (unlikely(__pyx_v_mean_mu_alpha == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 22, __pyx_L1_error)
+    __PYX_ERR(0, 18, __pyx_L1_error)
   }
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 0)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 22, __pyx_L1_error)
-  (__pyx_v_exp[0]) = exp(((double)__pyx_t_1));
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 0)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 18, __pyx_L1_error)
+  (__pyx_v_mma[0]) = ((double)__pyx_t_1);
 
-  /* "integrate.pyx":23
- *     n = errors.shape[0]
- *     exp[0] = cmath.exp(<double>mean_mu_alpha[0])
- *     exp[1] = cmath.exp(<double>mean_mu_alpha[1])             # <<<<<<<<<<<<<<
- *     exp[2] = cmath.exp(<double>mean_mu_alpha[2])
- *     exp[3] = cmath.exp(<double>mean_mu_alpha[3])
+  /* "integrate_alt.pyx":19
+ * 
+ *     mma[0] = <double>mean_mu_alpha[0]
+ *     mma[1] = <double>mean_mu_alpha[1]             # <<<<<<<<<<<<<<
+ *     mma[2] = <double>mean_mu_alpha[2]
+ *     mma[3] = <double>mean_mu_alpha[3]
  */
   if (unlikely(__pyx_v_mean_mu_alpha == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 23, __pyx_L1_error)
+    __PYX_ERR(0, 19, __pyx_L1_error)
   }
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 1)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 23, __pyx_L1_error)
-  (__pyx_v_exp[1]) = exp(((double)__pyx_t_1));
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 1)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 19, __pyx_L1_error)
+  (__pyx_v_mma[1]) = ((double)__pyx_t_1);
 
-  /* "integrate.pyx":24
- *     exp[0] = cmath.exp(<double>mean_mu_alpha[0])
- *     exp[1] = cmath.exp(<double>mean_mu_alpha[1])
- *     exp[2] = cmath.exp(<double>mean_mu_alpha[2])             # <<<<<<<<<<<<<<
- *     exp[3] = cmath.exp(<double>mean_mu_alpha[3])
- *     exp_par_gamma = cmath.exp(par_gamma)
- */
-  if (unlikely(__pyx_v_mean_mu_alpha == Py_None)) {
-    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 24, __pyx_L1_error)
-  }
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 2)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 24, __pyx_L1_error)
-  (__pyx_v_exp[2]) = exp(((double)__pyx_t_1));
-
-  /* "integrate.pyx":25
- *     exp[1] = cmath.exp(<double>mean_mu_alpha[1])
- *     exp[2] = cmath.exp(<double>mean_mu_alpha[2])
- *     exp[3] = cmath.exp(<double>mean_mu_alpha[3])             # <<<<<<<<<<<<<<
- *     exp_par_gamma = cmath.exp(par_gamma)
- *     c = 168.0
- */
-  if (unlikely(__pyx_v_mean_mu_alpha == Py_None)) {
-    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 25, __pyx_L1_error)
-  }
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 3)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 25, __pyx_L1_error)
-  (__pyx_v_exp[3]) = exp(((double)__pyx_t_1));
-
-  /* "integrate.pyx":26
- *     exp[2] = cmath.exp(<double>mean_mu_alpha[2])
- *     exp[3] = cmath.exp(<double>mean_mu_alpha[3])
- *     exp_par_gamma = cmath.exp(par_gamma)             # <<<<<<<<<<<<<<
- *     c = 168.0
+  /* "integrate_alt.pyx":20
+ *     mma[0] = <double>mean_mu_alpha[0]
+ *     mma[1] = <double>mean_mu_alpha[1]
+ *     mma[2] = <double>mean_mu_alpha[2]             # <<<<<<<<<<<<<<
+ *     mma[3] = <double>mean_mu_alpha[3]
  * 
  */
-  __pyx_v_exp_par_gamma = exp(__pyx_v_par_gamma);
+  if (unlikely(__pyx_v_mean_mu_alpha == Py_None)) {
+    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+    __PYX_ERR(0, 20, __pyx_L1_error)
+  }
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 2)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 20, __pyx_L1_error)
+  (__pyx_v_mma[2]) = ((double)__pyx_t_1);
 
-  /* "integrate.pyx":27
- *     exp[3] = cmath.exp(<double>mean_mu_alpha[3])
- *     exp_par_gamma = cmath.exp(par_gamma)
- *     c = 168.0             # <<<<<<<<<<<<<<
+  /* "integrate_alt.pyx":21
+ *     mma[1] = <double>mean_mu_alpha[1]
+ *     mma[2] = <double>mean_mu_alpha[2]
+ *     mma[3] = <double>mean_mu_alpha[3]             # <<<<<<<<<<<<<<
  * 
+ *     t0_sum = 0.0
+ */
+  if (unlikely(__pyx_v_mean_mu_alpha == Py_None)) {
+    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+    __PYX_ERR(0, 21, __pyx_L1_error)
+  }
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 3)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 21, __pyx_L1_error)
+  (__pyx_v_mma[3]) = ((double)__pyx_t_1);
+
+  /* "integrate_alt.pyx":23
+ *     mma[3] = <double>mean_mu_alpha[3]
+ * 
+ *     t0_sum = 0.0             # <<<<<<<<<<<<<<
  *     t1_sum = 0.0
+ *     t2_sum = 0.0
  */
-  __pyx_v_c = 168.0;
+  __pyx_v_t0_sum = 0.0;
 
-  /* "integrate.pyx":29
- *     c = 168.0
+  /* "integrate_alt.pyx":24
  * 
+ *     t0_sum = 0.0
  *     t1_sum = 0.0             # <<<<<<<<<<<<<<
  *     t2_sum = 0.0
- *     p1_sum = 0.0
+ * 
  */
   __pyx_v_t1_sum = 0.0;
 
-  /* "integrate.pyx":30
- * 
+  /* "integrate_alt.pyx":25
+ *     t0_sum = 0.0
  *     t1_sum = 0.0
  *     t2_sum = 0.0             # <<<<<<<<<<<<<<
- *     p1_sum = 0.0
- *     p2_sum = 0.0
+ * 
+ *     n = errors.shape[0]
  */
   __pyx_v_t2_sum = 0.0;
 
-  /* "integrate.pyx":31
- *     t1_sum = 0.0
+  /* "integrate_alt.pyx":27
  *     t2_sum = 0.0
- *     p1_sum = 0.0             # <<<<<<<<<<<<<<
- *     p2_sum = 0.0
  * 
- */
-  __pyx_v_p1_sum = 0.0;
-
-  /* "integrate.pyx":32
- *     t2_sum = 0.0
- *     p1_sum = 0.0
- *     p2_sum = 0.0             # <<<<<<<<<<<<<<
- * 
+ *     n = errors.shape[0]             # <<<<<<<<<<<<<<
  *     for i in range(n):
+ *         err[0] = errors[i, 0]
  */
-  __pyx_v_p2_sum = 0.0;
+  __pyx_v_n = (__pyx_v_errors.shape[0]);
 
-  /* "integrate.pyx":34
- *     p2_sum = 0.0
+  /* "integrate_alt.pyx":28
  * 
+ *     n = errors.shape[0]
  *     for i in range(n):             # <<<<<<<<<<<<<<
- *         mu10 = errors[i, 0] * exp[0]
- *         mu11 = exp_par_gamma * mu10
+ *         err[0] = errors[i, 0]
+ *         err[1] = errors[i, 1]
  */
   __pyx_t_2 = __pyx_v_n;
   __pyx_t_3 = __pyx_t_2;
   for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
     __pyx_v_i = __pyx_t_4;
 
-    /* "integrate.pyx":35
- * 
+    /* "integrate_alt.pyx":29
+ *     n = errors.shape[0]
  *     for i in range(n):
- *         mu10 = errors[i, 0] * exp[0]             # <<<<<<<<<<<<<<
- *         mu11 = exp_par_gamma * mu10
- *         mu20 = errors[i, 1] * exp[1]
+ *         err[0] = errors[i, 0]             # <<<<<<<<<<<<<<
+ *         err[1] = errors[i, 1]
+ *         err[2] = errors[i, 2]
  */
     __pyx_t_5 = __pyx_v_i;
     __pyx_t_6 = 0;
-    __pyx_v_mu10 = ((*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_5 * __pyx_v_errors.strides[0]) )) + __pyx_t_6)) ))) * (__pyx_v_exp[0]));
+    (__pyx_v_err[0]) = (*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_5 * __pyx_v_errors.strides[0]) )) + __pyx_t_6)) )));
 
-    /* "integrate.pyx":36
+    /* "integrate_alt.pyx":30
  *     for i in range(n):
- *         mu10 = errors[i, 0] * exp[0]
- *         mu11 = exp_par_gamma * mu10             # <<<<<<<<<<<<<<
- *         mu20 = errors[i, 1] * exp[1]
- *         mu21 = exp_par_gamma * mu20
- */
-    __pyx_v_mu11 = (__pyx_v_exp_par_gamma * __pyx_v_mu10);
-
-    /* "integrate.pyx":37
- *         mu10 = errors[i, 0] * exp[0]
- *         mu11 = exp_par_gamma * mu10
- *         mu20 = errors[i, 1] * exp[1]             # <<<<<<<<<<<<<<
- *         mu21 = exp_par_gamma * mu20
- *         alpha1 = errors[i, 2] * exp[2]
+ *         err[0] = errors[i, 0]
+ *         err[1] = errors[i, 1]             # <<<<<<<<<<<<<<
+ *         err[2] = errors[i, 2]
+ *         err[3] = errors[i, 3]
  */
     __pyx_t_7 = __pyx_v_i;
     __pyx_t_8 = 1;
-    __pyx_v_mu20 = ((*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_7 * __pyx_v_errors.strides[0]) )) + __pyx_t_8)) ))) * (__pyx_v_exp[1]));
+    (__pyx_v_err[1]) = (*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_7 * __pyx_v_errors.strides[0]) )) + __pyx_t_8)) )));
 
-    /* "integrate.pyx":38
- *         mu11 = exp_par_gamma * mu10
- *         mu20 = errors[i, 1] * exp[1]
- *         mu21 = exp_par_gamma * mu20             # <<<<<<<<<<<<<<
- *         alpha1 = errors[i, 2] * exp[2]
- *         alpha2 = errors[i, 3] * exp[3]
- */
-    __pyx_v_mu21 = (__pyx_v_exp_par_gamma * __pyx_v_mu20);
-
-    /* "integrate.pyx":39
- *         mu20 = errors[i, 1] * exp[1]
- *         mu21 = exp_par_gamma * mu20
- *         alpha1 = errors[i, 2] * exp[2]             # <<<<<<<<<<<<<<
- *         alpha2 = errors[i, 3] * exp[3]
+    /* "integrate_alt.pyx":31
+ *         err[0] = errors[i, 0]
+ *         err[1] = errors[i, 1]
+ *         err[2] = errors[i, 2]             # <<<<<<<<<<<<<<
+ *         err[3] = errors[i, 3]
  * 
  */
     __pyx_t_9 = __pyx_v_i;
     __pyx_t_10 = 2;
-    __pyx_v_alpha1 = ((*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_9 * __pyx_v_errors.strides[0]) )) + __pyx_t_10)) ))) * (__pyx_v_exp[2]));
+    (__pyx_v_err[2]) = (*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_9 * __pyx_v_errors.strides[0]) )) + __pyx_t_10)) )));
 
-    /* "integrate.pyx":40
- *         mu21 = exp_par_gamma * mu20
- *         alpha1 = errors[i, 2] * exp[2]
- *         alpha2 = errors[i, 3] * exp[3]             # <<<<<<<<<<<<<<
+    /* "integrate_alt.pyx":32
+ *         err[1] = errors[i, 1]
+ *         err[2] = errors[i, 2]
+ *         err[3] = errors[i, 3]             # <<<<<<<<<<<<<<
  * 
- *         j_is_larger = mu10 > mu20
+ *         if err[0] + mma[0] >= err[1] + mma[1]:
  */
     __pyx_t_11 = __pyx_v_i;
     __pyx_t_12 = 3;
-    __pyx_v_alpha2 = ((*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_11 * __pyx_v_errors.strides[0]) )) + __pyx_t_12)) ))) * (__pyx_v_exp[3]));
+    (__pyx_v_err[3]) = (*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_11 * __pyx_v_errors.strides[0]) )) + __pyx_t_12)) )));
 
-    /* "integrate.pyx":42
- *         alpha2 = errors[i, 3] * exp[3]
+    /* "integrate_alt.pyx":34
+ *         err[3] = errors[i, 3]
  * 
- *         j_is_larger = mu10 > mu20             # <<<<<<<<<<<<<<
- *         j_is_smaller = not j_is_larger
- *         threshold2 = (1 + mu10 * alpha1) / (c + alpha1)
+ *         if err[0] + mma[0] >= err[1] + mma[1]:             # <<<<<<<<<<<<<<
+ *             if err[0] + mma[0] < threshold1:
+ *                 t0_sum += c
  */
-    __pyx_v_j_is_larger = (__pyx_v_mu10 > __pyx_v_mu20);
-
-    /* "integrate.pyx":43
- * 
- *         j_is_larger = mu10 > mu20
- *         j_is_smaller = not j_is_larger             # <<<<<<<<<<<<<<
- *         threshold2 = (1 + mu10 * alpha1) / (c + alpha1)
- *         threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
- */
-    __pyx_v_j_is_smaller = (!(__pyx_v_j_is_larger != 0));
-
-    /* "integrate.pyx":44
- *         j_is_larger = mu10 > mu20
- *         j_is_smaller = not j_is_larger
- *         threshold2 = (1 + mu10 * alpha1) / (c + alpha1)             # <<<<<<<<<<<<<<
- *         threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
- * 
- */
-    __pyx_v_threshold2 = ((1.0 + (__pyx_v_mu10 * __pyx_v_alpha1)) / (__pyx_v_c + __pyx_v_alpha1));
-
-    /* "integrate.pyx":45
- *         j_is_smaller = not j_is_larger
- *         threshold2 = (1 + mu10 * alpha1) / (c + alpha1)
- *         threshold3 = (1 + mu20 * alpha2) / (c + alpha2)             # <<<<<<<<<<<<<<
- * 
- *         if j_is_larger != 0:
- */
-    __pyx_v_threshold3 = ((1.0 + (__pyx_v_mu20 * __pyx_v_alpha2)) / (__pyx_v_c + __pyx_v_alpha2));
-
-    /* "integrate.pyx":47
- *         threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
- * 
- *         if j_is_larger != 0:             # <<<<<<<<<<<<<<
- *             case1 = mu10 < 1 / c
- *             case2 = mu21 >= threshold2
- */
-    __pyx_t_13 = ((__pyx_v_j_is_larger != 0) != 0);
+    __pyx_t_13 = ((((__pyx_v_err[0]) + (__pyx_v_mma[0])) >= ((__pyx_v_err[1]) + (__pyx_v_mma[1]))) != 0);
     if (__pyx_t_13) {
 
-      /* "integrate.pyx":48
+      /* "integrate_alt.pyx":35
  * 
- *         if j_is_larger != 0:
- *             case1 = mu10 < 1 / c             # <<<<<<<<<<<<<<
- *             case2 = mu21 >= threshold2
- *             case3 = not (case1 | case2)
+ *         if err[0] + mma[0] >= err[1] + mma[1]:
+ *             if err[0] + mma[0] < threshold1:             # <<<<<<<<<<<<<<
+ *                 t0_sum += c
+ *                 #t1_sum += 0
  */
-      __pyx_v_case1 = (__pyx_v_mu10 < (1.0 / __pyx_v_c));
+      __pyx_t_13 = ((((__pyx_v_err[0]) + (__pyx_v_mma[0])) < __pyx_v_13integrate_alt_threshold1) != 0);
+      if (__pyx_t_13) {
 
-      /* "integrate.pyx":49
- *         if j_is_larger != 0:
- *             case1 = mu10 < 1 / c
- *             case2 = mu21 >= threshold2             # <<<<<<<<<<<<<<
- *             case3 = not (case1 | case2)
- *             t0 = case1*c + case2 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case3 / threshold2
+        /* "integrate_alt.pyx":36
+ *         if err[0] + mma[0] >= err[1] + mma[1]:
+ *             if err[0] + mma[0] < threshold1:
+ *                 t0_sum += c             # <<<<<<<<<<<<<<
+ *                 #t1_sum += 0
+ *                 #t2_sum += 0
  */
-      __pyx_v_case2 = (__pyx_v_mu21 >= __pyx_v_threshold2);
+        __pyx_v_t0_sum = (__pyx_v_t0_sum + __pyx_v_13integrate_alt_c);
 
-      /* "integrate.pyx":50
- *             case1 = mu10 < 1 / c
- *             case2 = mu21 >= threshold2
- *             case3 = not (case1 | case2)             # <<<<<<<<<<<<<<
- *             t0 = case1*c + case2 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case3 / threshold2
- *             t1 = case2 * (t0 * alpha1 * mu11 - alpha1) + case3 * (t0 * alpha1 * mu10 - alpha1)
+        /* "integrate_alt.pyx":35
+ * 
+ *         if err[0] + mma[0] >= err[1] + mma[1]:
+ *             if err[0] + mma[0] < threshold1:             # <<<<<<<<<<<<<<
+ *                 t0_sum += c
+ *                 #t1_sum += 0
  */
-      __pyx_v_case3 = (!((__pyx_v_case1 | __pyx_v_case2) != 0));
+        goto __pyx_L6;
+      }
 
-      /* "integrate.pyx":51
- *             case2 = mu21 >= threshold2
- *             case3 = not (case1 | case2)
- *             t0 = case1*c + case2 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case3 / threshold2             # <<<<<<<<<<<<<<
- *             t1 = case2 * (t0 * alpha1 * mu11 - alpha1) + case3 * (t0 * alpha1 * mu10 - alpha1)
- *             t2 = c - t0 - t1
+      /* "integrate_alt.pyx":40
+ *                 #t2_sum += 0
+ *             else:
+ *                 mu21 = cmath.exp(err[1] + par_gamma + mma[1])             # <<<<<<<<<<<<<<
+ *                 mu10 = cmath.exp(err[0] + mma[0])
+ *                 alpha1 = cmath.exp(err[2] + mma[2])
  */
-      __pyx_v_t0 = (((__pyx_v_case1 * __pyx_v_c) + ((__pyx_v_case2 * ((__pyx_v_c + __pyx_v_alpha1) + __pyx_v_alpha2)) / ((1.0 + (__pyx_v_mu11 * __pyx_v_alpha1)) + (__pyx_v_mu21 * __pyx_v_alpha2)))) + (((double)__pyx_v_case3) / __pyx_v_threshold2));
+      /*else*/ {
+        __pyx_v_mu21 = exp((((__pyx_v_err[1]) + __pyx_v_par_gamma) + (__pyx_v_mma[1])));
 
-      /* "integrate.pyx":52
- *             case3 = not (case1 | case2)
- *             t0 = case1*c + case2 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case3 / threshold2
- *             t1 = case2 * (t0 * alpha1 * mu11 - alpha1) + case3 * (t0 * alpha1 * mu10 - alpha1)             # <<<<<<<<<<<<<<
- *             t2 = c - t0 - t1
- *             t1_sum += t1
+        /* "integrate_alt.pyx":41
+ *             else:
+ *                 mu21 = cmath.exp(err[1] + par_gamma + mma[1])
+ *                 mu10 = cmath.exp(err[0] + mma[0])             # <<<<<<<<<<<<<<
+ *                 alpha1 = cmath.exp(err[2] + mma[2])
+ *                 alpha2 = cmath.exp(err[3] + mma[3])
  */
-      __pyx_v_t1 = ((__pyx_v_case2 * (((__pyx_v_t0 * __pyx_v_alpha1) * __pyx_v_mu11) - __pyx_v_alpha1)) + (__pyx_v_case3 * (((__pyx_v_t0 * __pyx_v_alpha1) * __pyx_v_mu10) - __pyx_v_alpha1)));
+        __pyx_v_mu10 = exp(((__pyx_v_err[0]) + (__pyx_v_mma[0])));
 
-      /* "integrate.pyx":53
- *             t0 = case1*c + case2 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case3 / threshold2
- *             t1 = case2 * (t0 * alpha1 * mu11 - alpha1) + case3 * (t0 * alpha1 * mu10 - alpha1)
- *             t2 = c - t0 - t1             # <<<<<<<<<<<<<<
- *             t1_sum += t1
- *             t2_sum += t2
+        /* "integrate_alt.pyx":42
+ *                 mu21 = cmath.exp(err[1] + par_gamma + mma[1])
+ *                 mu10 = cmath.exp(err[0] + mma[0])
+ *                 alpha1 = cmath.exp(err[2] + mma[2])             # <<<<<<<<<<<<<<
+ *                 alpha2 = cmath.exp(err[3] + mma[3])
+ *                 threshold2 = (1 + mu10 * alpha1) / (c + alpha1)
  */
-      __pyx_v_t2 = ((__pyx_v_c - __pyx_v_t0) - __pyx_v_t1);
+        __pyx_v_alpha1 = exp(((__pyx_v_err[2]) + (__pyx_v_mma[2])));
 
-      /* "integrate.pyx":54
- *             t1 = case2 * (t0 * alpha1 * mu11 - alpha1) + case3 * (t0 * alpha1 * mu10 - alpha1)
- *             t2 = c - t0 - t1
- *             t1_sum += t1             # <<<<<<<<<<<<<<
- *             t2_sum += t2
- *             p1_sum += case2 + case3
+        /* "integrate_alt.pyx":43
+ *                 mu10 = cmath.exp(err[0] + mma[0])
+ *                 alpha1 = cmath.exp(err[2] + mma[2])
+ *                 alpha2 = cmath.exp(err[3] + mma[3])             # <<<<<<<<<<<<<<
+ *                 threshold2 = (1 + mu10 * alpha1) / (c + alpha1)
+ *                 if mu21 >= threshold2:
  */
-      __pyx_v_t1_sum = (__pyx_v_t1_sum + __pyx_v_t1);
+        __pyx_v_alpha2 = exp(((__pyx_v_err[3]) + (__pyx_v_mma[3])));
 
-      /* "integrate.pyx":55
- *             t2 = c - t0 - t1
- *             t1_sum += t1
- *             t2_sum += t2             # <<<<<<<<<<<<<<
- *             p1_sum += case2 + case3
- *             p2_sum += case2
+        /* "integrate_alt.pyx":44
+ *                 alpha1 = cmath.exp(err[2] + mma[2])
+ *                 alpha2 = cmath.exp(err[3] + mma[3])
+ *                 threshold2 = (1 + mu10 * alpha1) / (c + alpha1)             # <<<<<<<<<<<<<<
+ *                 if mu21 >= threshold2:
+ *                     mu11 = cmath.exp(err[0] + par_gamma + mma[0])
  */
-      __pyx_v_t2_sum = (__pyx_v_t2_sum + __pyx_v_t2);
+        __pyx_v_threshold2 = ((1.0 + (__pyx_v_mu10 * __pyx_v_alpha1)) / (__pyx_v_13integrate_alt_c + __pyx_v_alpha1));
 
-      /* "integrate.pyx":56
- *             t1_sum += t1
- *             t2_sum += t2
- *             p1_sum += case2 + case3             # <<<<<<<<<<<<<<
- *             p2_sum += case2
+        /* "integrate_alt.pyx":45
+ *                 alpha2 = cmath.exp(err[3] + mma[3])
+ *                 threshold2 = (1 + mu10 * alpha1) / (c + alpha1)
+ *                 if mu21 >= threshold2:             # <<<<<<<<<<<<<<
+ *                     mu11 = cmath.exp(err[0] + par_gamma + mma[0])
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)
+ */
+        __pyx_t_13 = ((__pyx_v_mu21 >= __pyx_v_threshold2) != 0);
+        if (__pyx_t_13) {
+
+          /* "integrate_alt.pyx":46
+ *                 threshold2 = (1 + mu10 * alpha1) / (c + alpha1)
+ *                 if mu21 >= threshold2:
+ *                     mu11 = cmath.exp(err[0] + par_gamma + mma[0])             # <<<<<<<<<<<<<<
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)
+ *                     t0_sum += t0
+ */
+          __pyx_v_mu11 = exp((((__pyx_v_err[0]) + __pyx_v_par_gamma) + (__pyx_v_mma[0])));
+
+          /* "integrate_alt.pyx":47
+ *                 if mu21 >= threshold2:
+ *                     mu11 = cmath.exp(err[0] + par_gamma + mma[0])
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)             # <<<<<<<<<<<<<<
+ *                     t0_sum += t0
+ *                     t1_sum += (t0 * mu11 - 1) * alpha1
+ */
+          __pyx_v_t0 = (((__pyx_v_13integrate_alt_c + __pyx_v_alpha1) + __pyx_v_alpha2) / ((1.0 + (__pyx_v_mu11 * __pyx_v_alpha1)) + (__pyx_v_mu21 * __pyx_v_alpha2)));
+
+          /* "integrate_alt.pyx":48
+ *                     mu11 = cmath.exp(err[0] + par_gamma + mma[0])
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)
+ *                     t0_sum += t0             # <<<<<<<<<<<<<<
+ *                     t1_sum += (t0 * mu11 - 1) * alpha1
+ *                     t2_sum += (t0 * mu21 - 1) * alpha2
+ */
+          __pyx_v_t0_sum = (__pyx_v_t0_sum + __pyx_v_t0);
+
+          /* "integrate_alt.pyx":49
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)
+ *                     t0_sum += t0
+ *                     t1_sum += (t0 * mu11 - 1) * alpha1             # <<<<<<<<<<<<<<
+ *                     t2_sum += (t0 * mu21 - 1) * alpha2
+ *                 else:
+ */
+          __pyx_v_t1_sum = (__pyx_v_t1_sum + (((__pyx_v_t0 * __pyx_v_mu11) - 1.0) * __pyx_v_alpha1));
+
+          /* "integrate_alt.pyx":50
+ *                     t0_sum += t0
+ *                     t1_sum += (t0 * mu11 - 1) * alpha1
+ *                     t2_sum += (t0 * mu21 - 1) * alpha2             # <<<<<<<<<<<<<<
+ *                 else:
+ *                     t0 = (c + alpha1) / (1 + mu10 * alpha1)
+ */
+          __pyx_v_t2_sum = (__pyx_v_t2_sum + (((__pyx_v_t0 * __pyx_v_mu21) - 1.0) * __pyx_v_alpha2));
+
+          /* "integrate_alt.pyx":45
+ *                 alpha2 = cmath.exp(err[3] + mma[3])
+ *                 threshold2 = (1 + mu10 * alpha1) / (c + alpha1)
+ *                 if mu21 >= threshold2:             # <<<<<<<<<<<<<<
+ *                     mu11 = cmath.exp(err[0] + par_gamma + mma[0])
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)
+ */
+          goto __pyx_L7;
+        }
+
+        /* "integrate_alt.pyx":52
+ *                     t2_sum += (t0 * mu21 - 1) * alpha2
+ *                 else:
+ *                     t0 = (c + alpha1) / (1 + mu10 * alpha1)             # <<<<<<<<<<<<<<
+ *                     t0_sum += t0
+ *                     t1_sum += (t0 * mu10 - 1) * alpha1
+ */
+        /*else*/ {
+          __pyx_v_t0 = ((__pyx_v_13integrate_alt_c + __pyx_v_alpha1) / (1.0 + (__pyx_v_mu10 * __pyx_v_alpha1)));
+
+          /* "integrate_alt.pyx":53
+ *                 else:
+ *                     t0 = (c + alpha1) / (1 + mu10 * alpha1)
+ *                     t0_sum += t0             # <<<<<<<<<<<<<<
+ *                     t1_sum += (t0 * mu10 - 1) * alpha1
+ *                     #t2_sum += 0
+ */
+          __pyx_v_t0_sum = (__pyx_v_t0_sum + __pyx_v_t0);
+
+          /* "integrate_alt.pyx":54
+ *                     t0 = (c + alpha1) / (1 + mu10 * alpha1)
+ *                     t0_sum += t0
+ *                     t1_sum += (t0 * mu10 - 1) * alpha1             # <<<<<<<<<<<<<<
+ *                     #t2_sum += 0
  *         else:
  */
-      __pyx_v_p1_sum = (__pyx_v_p1_sum + (__pyx_v_case2 + __pyx_v_case3));
+          __pyx_v_t1_sum = (__pyx_v_t1_sum + (((__pyx_v_t0 * __pyx_v_mu10) - 1.0) * __pyx_v_alpha1));
+        }
+        __pyx_L7:;
+      }
+      __pyx_L6:;
 
-      /* "integrate.pyx":57
- *             t2_sum += t2
- *             p1_sum += case2 + case3
- *             p2_sum += case2             # <<<<<<<<<<<<<<
- *         else:
- *             case4 = mu20 < 1 / c
- */
-      __pyx_v_p2_sum = (__pyx_v_p2_sum + __pyx_v_case2);
-
-      /* "integrate.pyx":47
- *         threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
+      /* "integrate_alt.pyx":34
+ *         err[3] = errors[i, 3]
  * 
- *         if j_is_larger != 0:             # <<<<<<<<<<<<<<
- *             case1 = mu10 < 1 / c
- *             case2 = mu21 >= threshold2
+ *         if err[0] + mma[0] >= err[1] + mma[1]:             # <<<<<<<<<<<<<<
+ *             if err[0] + mma[0] < threshold1:
+ *                 t0_sum += c
  */
       goto __pyx_L5;
     }
 
-    /* "integrate.pyx":59
- *             p2_sum += case2
+    /* "integrate_alt.pyx":57
+ *                     #t2_sum += 0
  *         else:
- *             case4 = mu20 < 1 / c             # <<<<<<<<<<<<<<
- *             case5 = mu11 >= threshold3
- *             case6 = not (case4 | case5)
+ *             if err[1] + mma[1] < threshold1:             # <<<<<<<<<<<<<<
+ *                 t0_sum += c
+ *                 #t1_sum += 0
  */
     /*else*/ {
-      __pyx_v_case4 = (__pyx_v_mu20 < (1.0 / __pyx_v_c));
+      __pyx_t_13 = ((((__pyx_v_err[1]) + (__pyx_v_mma[1])) < __pyx_v_13integrate_alt_threshold1) != 0);
+      if (__pyx_t_13) {
 
-      /* "integrate.pyx":60
+        /* "integrate_alt.pyx":58
  *         else:
- *             case4 = mu20 < 1 / c
- *             case5 = mu11 >= threshold3             # <<<<<<<<<<<<<<
- *             case6 = not (case4 | case5)
- *             t0 = case4 * c + case5 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case6 / threshold3
+ *             if err[1] + mma[1] < threshold1:
+ *                 t0_sum += c             # <<<<<<<<<<<<<<
+ *                 #t1_sum += 0
+ *                 #t2_sum += 0
  */
-      __pyx_v_case5 = (__pyx_v_mu11 >= __pyx_v_threshold3);
+        __pyx_v_t0_sum = (__pyx_v_t0_sum + __pyx_v_13integrate_alt_c);
 
-      /* "integrate.pyx":61
- *             case4 = mu20 < 1 / c
- *             case5 = mu11 >= threshold3
- *             case6 = not (case4 | case5)             # <<<<<<<<<<<<<<
- *             t0 = case4 * c + case5 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case6 / threshold3
- *             t1 = case5 * (t0 * alpha1 * mu11 - alpha1)
+        /* "integrate_alt.pyx":57
+ *                     #t2_sum += 0
+ *         else:
+ *             if err[1] + mma[1] < threshold1:             # <<<<<<<<<<<<<<
+ *                 t0_sum += c
+ *                 #t1_sum += 0
  */
-      __pyx_v_case6 = (!((__pyx_v_case4 | __pyx_v_case5) != 0));
+        goto __pyx_L8;
+      }
 
-      /* "integrate.pyx":62
- *             case5 = mu11 >= threshold3
- *             case6 = not (case4 | case5)
- *             t0 = case4 * c + case5 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case6 / threshold3             # <<<<<<<<<<<<<<
- *             t1 = case5 * (t0 * alpha1 * mu11 - alpha1)
- *             t2 = c - t0 - t1
+      /* "integrate_alt.pyx":62
+ *                 #t2_sum += 0
+ *             else:
+ *                 mu11 = cmath.exp(err[0] + par_gamma + mma[0])             # <<<<<<<<<<<<<<
+ *                 mu20 = cmath.exp(err[1] + mma[1])
+ *                 alpha1 = cmath.exp(err[2] + mma[2])
  */
-      __pyx_v_t0 = (((__pyx_v_case4 * __pyx_v_c) + ((__pyx_v_case5 * ((__pyx_v_c + __pyx_v_alpha1) + __pyx_v_alpha2)) / ((1.0 + (__pyx_v_mu11 * __pyx_v_alpha1)) + (__pyx_v_mu21 * __pyx_v_alpha2)))) + (((double)__pyx_v_case6) / __pyx_v_threshold3));
+      /*else*/ {
+        __pyx_v_mu11 = exp((((__pyx_v_err[0]) + __pyx_v_par_gamma) + (__pyx_v_mma[0])));
 
-      /* "integrate.pyx":63
- *             case6 = not (case4 | case5)
- *             t0 = case4 * c + case5 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case6 / threshold3
- *             t1 = case5 * (t0 * alpha1 * mu11 - alpha1)             # <<<<<<<<<<<<<<
- *             t2 = c - t0 - t1
- *             t1_sum += t1
+        /* "integrate_alt.pyx":63
+ *             else:
+ *                 mu11 = cmath.exp(err[0] + par_gamma + mma[0])
+ *                 mu20 = cmath.exp(err[1] + mma[1])             # <<<<<<<<<<<<<<
+ *                 alpha1 = cmath.exp(err[2] + mma[2])
+ *                 alpha2 = cmath.exp(err[3] + mma[3])
  */
-      __pyx_v_t1 = (__pyx_v_case5 * (((__pyx_v_t0 * __pyx_v_alpha1) * __pyx_v_mu11) - __pyx_v_alpha1));
+        __pyx_v_mu20 = exp(((__pyx_v_err[1]) + (__pyx_v_mma[1])));
 
-      /* "integrate.pyx":64
- *             t0 = case4 * c + case5 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case6 / threshold3
- *             t1 = case5 * (t0 * alpha1 * mu11 - alpha1)
- *             t2 = c - t0 - t1             # <<<<<<<<<<<<<<
- *             t1_sum += t1
- *             t2_sum += t2
+        /* "integrate_alt.pyx":64
+ *                 mu11 = cmath.exp(err[0] + par_gamma + mma[0])
+ *                 mu20 = cmath.exp(err[1] + mma[1])
+ *                 alpha1 = cmath.exp(err[2] + mma[2])             # <<<<<<<<<<<<<<
+ *                 alpha2 = cmath.exp(err[3] + mma[3])
+ *                 threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
  */
-      __pyx_v_t2 = ((__pyx_v_c - __pyx_v_t0) - __pyx_v_t1);
+        __pyx_v_alpha1 = exp(((__pyx_v_err[2]) + (__pyx_v_mma[2])));
 
-      /* "integrate.pyx":65
- *             t1 = case5 * (t0 * alpha1 * mu11 - alpha1)
- *             t2 = c - t0 - t1
- *             t1_sum += t1             # <<<<<<<<<<<<<<
- *             t2_sum += t2
- *             p1_sum += case5
- */
-      __pyx_v_t1_sum = (__pyx_v_t1_sum + __pyx_v_t1);
-
-      /* "integrate.pyx":66
- *             t2 = c - t0 - t1
- *             t1_sum += t1
- *             t2_sum += t2             # <<<<<<<<<<<<<<
- *             p1_sum += case5
- *             p2_sum += case5 + case6
- */
-      __pyx_v_t2_sum = (__pyx_v_t2_sum + __pyx_v_t2);
-
-      /* "integrate.pyx":67
- *             t1_sum += t1
- *             t2_sum += t2
- *             p1_sum += case5             # <<<<<<<<<<<<<<
- *             p2_sum += case5 + case6
+        /* "integrate_alt.pyx":65
+ *                 mu20 = cmath.exp(err[1] + mma[1])
+ *                 alpha1 = cmath.exp(err[2] + mma[2])
+ *                 alpha2 = cmath.exp(err[3] + mma[3])             # <<<<<<<<<<<<<<
+ *                 threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
  * 
  */
-      __pyx_v_p1_sum = (__pyx_v_p1_sum + __pyx_v_case5);
+        __pyx_v_alpha2 = exp(((__pyx_v_err[3]) + (__pyx_v_mma[3])));
 
-      /* "integrate.pyx":68
- *             t2_sum += t2
- *             p1_sum += case5
- *             p2_sum += case5 + case6             # <<<<<<<<<<<<<<
+        /* "integrate_alt.pyx":66
+ *                 alpha1 = cmath.exp(err[2] + mma[2])
+ *                 alpha2 = cmath.exp(err[3] + mma[3])
+ *                 threshold3 = (1 + mu20 * alpha2) / (c + alpha2)             # <<<<<<<<<<<<<<
  * 
- *     return t1_sum/n, t2_sum/n, p1_sum/n, p2_sum/n
+ *                 if mu11 >= threshold3:
  */
-      __pyx_v_p2_sum = (__pyx_v_p2_sum + (__pyx_v_case5 + __pyx_v_case6));
+        __pyx_v_threshold3 = ((1.0 + (__pyx_v_mu20 * __pyx_v_alpha2)) / (__pyx_v_13integrate_alt_c + __pyx_v_alpha2));
+
+        /* "integrate_alt.pyx":68
+ *                 threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
+ * 
+ *                 if mu11 >= threshold3:             # <<<<<<<<<<<<<<
+ *                     mu21 = cmath.exp(err[0] + par_gamma + mma[0])
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)
+ */
+        __pyx_t_13 = ((__pyx_v_mu11 >= __pyx_v_threshold3) != 0);
+        if (__pyx_t_13) {
+
+          /* "integrate_alt.pyx":69
+ * 
+ *                 if mu11 >= threshold3:
+ *                     mu21 = cmath.exp(err[0] + par_gamma + mma[0])             # <<<<<<<<<<<<<<
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)
+ *                     t0_sum += t0
+ */
+          __pyx_v_mu21 = exp((((__pyx_v_err[0]) + __pyx_v_par_gamma) + (__pyx_v_mma[0])));
+
+          /* "integrate_alt.pyx":70
+ *                 if mu11 >= threshold3:
+ *                     mu21 = cmath.exp(err[0] + par_gamma + mma[0])
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)             # <<<<<<<<<<<<<<
+ *                     t0_sum += t0
+ *                     t1_sum += (t0 * mu11 - 1) * alpha1
+ */
+          __pyx_v_t0 = (((__pyx_v_13integrate_alt_c + __pyx_v_alpha1) + __pyx_v_alpha2) / ((1.0 + (__pyx_v_mu11 * __pyx_v_alpha1)) + (__pyx_v_mu21 * __pyx_v_alpha2)));
+
+          /* "integrate_alt.pyx":71
+ *                     mu21 = cmath.exp(err[0] + par_gamma + mma[0])
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)
+ *                     t0_sum += t0             # <<<<<<<<<<<<<<
+ *                     t1_sum += (t0 * mu11 - 1) * alpha1
+ *                     t2_sum += (t0 * mu21 - 1) * alpha2
+ */
+          __pyx_v_t0_sum = (__pyx_v_t0_sum + __pyx_v_t0);
+
+          /* "integrate_alt.pyx":72
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)
+ *                     t0_sum += t0
+ *                     t1_sum += (t0 * mu11 - 1) * alpha1             # <<<<<<<<<<<<<<
+ *                     t2_sum += (t0 * mu21 - 1) * alpha2
+ *                 else:
+ */
+          __pyx_v_t1_sum = (__pyx_v_t1_sum + (((__pyx_v_t0 * __pyx_v_mu11) - 1.0) * __pyx_v_alpha1));
+
+          /* "integrate_alt.pyx":73
+ *                     t0_sum += t0
+ *                     t1_sum += (t0 * mu11 - 1) * alpha1
+ *                     t2_sum += (t0 * mu21 - 1) * alpha2             # <<<<<<<<<<<<<<
+ *                 else:
+ *                     t0 = (c + alpha2) / (1 + mu20 * alpha2)
+ */
+          __pyx_v_t2_sum = (__pyx_v_t2_sum + (((__pyx_v_t0 * __pyx_v_mu21) - 1.0) * __pyx_v_alpha2));
+
+          /* "integrate_alt.pyx":68
+ *                 threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
+ * 
+ *                 if mu11 >= threshold3:             # <<<<<<<<<<<<<<
+ *                     mu21 = cmath.exp(err[0] + par_gamma + mma[0])
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)
+ */
+          goto __pyx_L9;
+        }
+
+        /* "integrate_alt.pyx":75
+ *                     t2_sum += (t0 * mu21 - 1) * alpha2
+ *                 else:
+ *                     t0 = (c + alpha2) / (1 + mu20 * alpha2)             # <<<<<<<<<<<<<<
+ *                     t0_sum += t0
+ *                     #t1_sum += 0
+ */
+        /*else*/ {
+          __pyx_v_t0 = ((__pyx_v_13integrate_alt_c + __pyx_v_alpha2) / (1.0 + (__pyx_v_mu20 * __pyx_v_alpha2)));
+
+          /* "integrate_alt.pyx":76
+ *                 else:
+ *                     t0 = (c + alpha2) / (1 + mu20 * alpha2)
+ *                     t0_sum += t0             # <<<<<<<<<<<<<<
+ *                     #t1_sum += 0
+ *                     t2_sum += (t0 * mu20 - 1) * alpha2
+ */
+          __pyx_v_t0_sum = (__pyx_v_t0_sum + __pyx_v_t0);
+
+          /* "integrate_alt.pyx":78
+ *                     t0_sum += t0
+ *                     #t1_sum += 0
+ *                     t2_sum += (t0 * mu20 - 1) * alpha2             # <<<<<<<<<<<<<<
+ * 
+ *     return t0_sum/n, t1_sum/n, t2_sum/n
+ */
+          __pyx_v_t2_sum = (__pyx_v_t2_sum + (((__pyx_v_t0 * __pyx_v_mu20) - 1.0) * __pyx_v_alpha2));
+        }
+        __pyx_L9:;
+      }
+      __pyx_L8:;
     }
     __pyx_L5:;
   }
 
-  /* "integrate.pyx":70
- *             p2_sum += case5 + case6
+  /* "integrate_alt.pyx":80
+ *                     t2_sum += (t0 * mu20 - 1) * alpha2
  * 
- *     return t1_sum/n, t2_sum/n, p1_sum/n, p2_sum/n             # <<<<<<<<<<<<<<
+ *     return t0_sum/n, t1_sum/n, t2_sum/n             # <<<<<<<<<<<<<<
  * 
- * def mktout(list mean_mu_alpha, double[:, ::1] errors, double par_gamma):
+ * ctypedef struct Vec3:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_14 = PyFloat_FromDouble((__pyx_v_t1_sum / ((double)__pyx_v_n))); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 70, __pyx_L1_error)
+  __pyx_t_14 = PyFloat_FromDouble((__pyx_v_t0_sum / ((double)__pyx_v_n))); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 80, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_14);
-  __pyx_t_15 = PyFloat_FromDouble((__pyx_v_t2_sum / ((double)__pyx_v_n))); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 70, __pyx_L1_error)
+  __pyx_t_15 = PyFloat_FromDouble((__pyx_v_t1_sum / ((double)__pyx_v_n))); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 80, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_15);
-  __pyx_t_16 = PyFloat_FromDouble((__pyx_v_p1_sum / ((double)__pyx_v_n))); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 70, __pyx_L1_error)
+  __pyx_t_16 = PyFloat_FromDouble((__pyx_v_t2_sum / ((double)__pyx_v_n))); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 80, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_16);
-  __pyx_t_17 = PyFloat_FromDouble((__pyx_v_p2_sum / ((double)__pyx_v_n))); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 70, __pyx_L1_error)
+  __pyx_t_17 = PyTuple_New(3); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 80, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_17);
-  __pyx_t_18 = PyTuple_New(4); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 70, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_18);
   __Pyx_GIVEREF(__pyx_t_14);
-  PyTuple_SET_ITEM(__pyx_t_18, 0, __pyx_t_14);
+  PyTuple_SET_ITEM(__pyx_t_17, 0, __pyx_t_14);
   __Pyx_GIVEREF(__pyx_t_15);
-  PyTuple_SET_ITEM(__pyx_t_18, 1, __pyx_t_15);
+  PyTuple_SET_ITEM(__pyx_t_17, 1, __pyx_t_15);
   __Pyx_GIVEREF(__pyx_t_16);
-  PyTuple_SET_ITEM(__pyx_t_18, 2, __pyx_t_16);
-  __Pyx_GIVEREF(__pyx_t_17);
-  PyTuple_SET_ITEM(__pyx_t_18, 3, __pyx_t_17);
+  PyTuple_SET_ITEM(__pyx_t_17, 2, __pyx_t_16);
   __pyx_t_14 = 0;
   __pyx_t_15 = 0;
   __pyx_t_16 = 0;
+  __pyx_r = __pyx_t_17;
   __pyx_t_17 = 0;
-  __pyx_r = __pyx_t_18;
-  __pyx_t_18 = 0;
   goto __pyx_L0;
 
-  /* "integrate.pyx":6
- * from cython.parallel cimport prange
+  /* "integrate_alt.pyx":9
+ * cdef double threshold1 = -cmath.log(c)
  * 
- * def mktout_if(list mean_mu_alpha, double[:, ::1] errors, double par_gamma):             # <<<<<<<<<<<<<<
+ * def mktout_alt(list mean_mu_alpha, double[:, ::1] errors, double par_gamma):             # <<<<<<<<<<<<<<
  *     cdef:
  *         size_t i, n
  */
@@ -2805,8 +2844,7 @@ static PyObject *__pyx_pf_9integrate_mktout_if(CYTHON_UNUSED PyObject *__pyx_sel
   __Pyx_XDECREF(__pyx_t_15);
   __Pyx_XDECREF(__pyx_t_16);
   __Pyx_XDECREF(__pyx_t_17);
-  __Pyx_XDECREF(__pyx_t_18);
-  __Pyx_AddTraceback("integrate.mktout_if", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("integrate_alt.mktout_alt", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __PYX_XDEC_MEMVIEW(&__pyx_v_errors, 1);
@@ -2815,635 +2853,25 @@ static PyObject *__pyx_pf_9integrate_mktout_if(CYTHON_UNUSED PyObject *__pyx_sel
   return __pyx_r;
 }
 
-/* "integrate.pyx":72
- *     return t1_sum/n, t2_sum/n, p1_sum/n, p2_sum/n
- * 
- * def mktout(list mean_mu_alpha, double[:, ::1] errors, double par_gamma):             # <<<<<<<<<<<<<<
- *     cdef:
- *         size_t i, n
- */
-
-/* Python wrapper */
-static PyObject *__pyx_pw_9integrate_3mktout(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_9integrate_3mktout = {"mktout", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_9integrate_3mktout, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_9integrate_3mktout(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  PyObject *__pyx_v_mean_mu_alpha = 0;
-  __Pyx_memviewslice __pyx_v_errors = { 0, 0, { 0 }, { 0 }, { 0 } };
-  double __pyx_v_par_gamma;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("mktout (wrapper)", 0);
-  {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_mean_mu_alpha,&__pyx_n_s_errors,&__pyx_n_s_par_gamma,0};
-    PyObject* values[3] = {0,0,0};
-    if (unlikely(__pyx_kwds)) {
-      Py_ssize_t kw_args;
-      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
-      switch (pos_args) {
-        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
-        CYTHON_FALLTHROUGH;
-        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
-        CYTHON_FALLTHROUGH;
-        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
-        CYTHON_FALLTHROUGH;
-        case  0: break;
-        default: goto __pyx_L5_argtuple_error;
-      }
-      kw_args = PyDict_Size(__pyx_kwds);
-      switch (pos_args) {
-        case  0:
-        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_mean_mu_alpha)) != 0)) kw_args--;
-        else goto __pyx_L5_argtuple_error;
-        CYTHON_FALLTHROUGH;
-        case  1:
-        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_errors)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("mktout", 1, 3, 3, 1); __PYX_ERR(0, 72, __pyx_L3_error)
-        }
-        CYTHON_FALLTHROUGH;
-        case  2:
-        if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_par_gamma)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("mktout", 1, 3, 3, 2); __PYX_ERR(0, 72, __pyx_L3_error)
-        }
-      }
-      if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "mktout") < 0)) __PYX_ERR(0, 72, __pyx_L3_error)
-      }
-    } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
-      goto __pyx_L5_argtuple_error;
-    } else {
-      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
-      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
-      values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
-    }
-    __pyx_v_mean_mu_alpha = ((PyObject*)values[0]);
-    __pyx_v_errors = __Pyx_PyObject_to_MemoryviewSlice_d_dc_double(values[1], PyBUF_WRITABLE); if (unlikely(!__pyx_v_errors.memview)) __PYX_ERR(0, 72, __pyx_L3_error)
-    __pyx_v_par_gamma = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_par_gamma == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 72, __pyx_L3_error)
-  }
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("mktout", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 72, __pyx_L3_error)
-  __pyx_L3_error:;
-  __Pyx_AddTraceback("integrate.mktout", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_mean_mu_alpha), (&PyList_Type), 1, "mean_mu_alpha", 1))) __PYX_ERR(0, 72, __pyx_L1_error)
-  __pyx_r = __pyx_pf_9integrate_2mktout(__pyx_self, __pyx_v_mean_mu_alpha, __pyx_v_errors, __pyx_v_par_gamma);
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_9integrate_2mktout(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mean_mu_alpha, __Pyx_memviewslice __pyx_v_errors, double __pyx_v_par_gamma) {
-  size_t __pyx_v_i;
-  size_t __pyx_v_n;
-  double __pyx_v_exp[4];
-  double __pyx_v_exp_par_gamma;
-  double __pyx_v_mu10;
-  double __pyx_v_mu11;
-  double __pyx_v_mu20;
-  double __pyx_v_mu21;
-  double __pyx_v_alpha1;
-  double __pyx_v_alpha2;
-  int __pyx_v_j_is_larger;
-  int __pyx_v_j_is_smaller;
-  double __pyx_v_threshold2;
-  double __pyx_v_threshold3;
-  int __pyx_v_case1;
-  int __pyx_v_case2;
-  int __pyx_v_case3;
-  int __pyx_v_case4;
-  int __pyx_v_case5;
-  int __pyx_v_case6;
-  double __pyx_v_t0;
-  double __pyx_v_t1;
-  double __pyx_v_t2;
-  double __pyx_v_p12;
-  double __pyx_v_p1;
-  double __pyx_v_p2;
-  double __pyx_v_t1_sum;
-  double __pyx_v_t2_sum;
-  double __pyx_v_p1_sum;
-  double __pyx_v_p2_sum;
-  double __pyx_v_c;
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  double __pyx_t_1;
-  size_t __pyx_t_2;
-  size_t __pyx_t_3;
-  size_t __pyx_t_4;
-  size_t __pyx_t_5;
-  Py_ssize_t __pyx_t_6;
-  size_t __pyx_t_7;
-  Py_ssize_t __pyx_t_8;
-  size_t __pyx_t_9;
-  Py_ssize_t __pyx_t_10;
-  size_t __pyx_t_11;
-  Py_ssize_t __pyx_t_12;
-  int __pyx_t_13;
-  int __pyx_t_14;
-  int __pyx_t_15;
-  PyObject *__pyx_t_16 = NULL;
-  PyObject *__pyx_t_17 = NULL;
-  PyObject *__pyx_t_18 = NULL;
-  PyObject *__pyx_t_19 = NULL;
-  PyObject *__pyx_t_20 = NULL;
-  __Pyx_RefNannySetupContext("mktout", 0);
-
-  /* "integrate.pyx":88
- * 
- *     #compute the exp outside of the loop
- *     n = errors.shape[0]             # <<<<<<<<<<<<<<
- *     exp[0] = cmath.exp(<double>mean_mu_alpha[0])
- *     exp[1] = cmath.exp(<double>mean_mu_alpha[1])
- */
-  __pyx_v_n = (__pyx_v_errors.shape[0]);
-
-  /* "integrate.pyx":89
- *     #compute the exp outside of the loop
- *     n = errors.shape[0]
- *     exp[0] = cmath.exp(<double>mean_mu_alpha[0])             # <<<<<<<<<<<<<<
- *     exp[1] = cmath.exp(<double>mean_mu_alpha[1])
- *     exp[2] = cmath.exp(<double>mean_mu_alpha[2])
- */
-  if (unlikely(__pyx_v_mean_mu_alpha == Py_None)) {
-    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 89, __pyx_L1_error)
-  }
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 0)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 89, __pyx_L1_error)
-  (__pyx_v_exp[0]) = exp(((double)__pyx_t_1));
-
-  /* "integrate.pyx":90
- *     n = errors.shape[0]
- *     exp[0] = cmath.exp(<double>mean_mu_alpha[0])
- *     exp[1] = cmath.exp(<double>mean_mu_alpha[1])             # <<<<<<<<<<<<<<
- *     exp[2] = cmath.exp(<double>mean_mu_alpha[2])
- *     exp[3] = cmath.exp(<double>mean_mu_alpha[3])
- */
-  if (unlikely(__pyx_v_mean_mu_alpha == Py_None)) {
-    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 90, __pyx_L1_error)
-  }
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 1)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 90, __pyx_L1_error)
-  (__pyx_v_exp[1]) = exp(((double)__pyx_t_1));
-
-  /* "integrate.pyx":91
- *     exp[0] = cmath.exp(<double>mean_mu_alpha[0])
- *     exp[1] = cmath.exp(<double>mean_mu_alpha[1])
- *     exp[2] = cmath.exp(<double>mean_mu_alpha[2])             # <<<<<<<<<<<<<<
- *     exp[3] = cmath.exp(<double>mean_mu_alpha[3])
- *     exp_par_gamma = cmath.exp(par_gamma)
- */
-  if (unlikely(__pyx_v_mean_mu_alpha == Py_None)) {
-    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 91, __pyx_L1_error)
-  }
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 2)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 91, __pyx_L1_error)
-  (__pyx_v_exp[2]) = exp(((double)__pyx_t_1));
-
-  /* "integrate.pyx":92
- *     exp[1] = cmath.exp(<double>mean_mu_alpha[1])
- *     exp[2] = cmath.exp(<double>mean_mu_alpha[2])
- *     exp[3] = cmath.exp(<double>mean_mu_alpha[3])             # <<<<<<<<<<<<<<
- *     exp_par_gamma = cmath.exp(par_gamma)
- *     c = 168.0
- */
-  if (unlikely(__pyx_v_mean_mu_alpha == Py_None)) {
-    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 92, __pyx_L1_error)
-  }
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 3)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 92, __pyx_L1_error)
-  (__pyx_v_exp[3]) = exp(((double)__pyx_t_1));
-
-  /* "integrate.pyx":93
- *     exp[2] = cmath.exp(<double>mean_mu_alpha[2])
- *     exp[3] = cmath.exp(<double>mean_mu_alpha[3])
- *     exp_par_gamma = cmath.exp(par_gamma)             # <<<<<<<<<<<<<<
- *     c = 168.0
- * 
- */
-  __pyx_v_exp_par_gamma = exp(__pyx_v_par_gamma);
-
-  /* "integrate.pyx":94
- *     exp[3] = cmath.exp(<double>mean_mu_alpha[3])
- *     exp_par_gamma = cmath.exp(par_gamma)
- *     c = 168.0             # <<<<<<<<<<<<<<
- * 
- *     t1_sum = 0.0
- */
-  __pyx_v_c = 168.0;
-
-  /* "integrate.pyx":96
- *     c = 168.0
- * 
- *     t1_sum = 0.0             # <<<<<<<<<<<<<<
- *     t2_sum = 0.0
- *     p1_sum = 0.0
- */
-  __pyx_v_t1_sum = 0.0;
-
-  /* "integrate.pyx":97
- * 
- *     t1_sum = 0.0
- *     t2_sum = 0.0             # <<<<<<<<<<<<<<
- *     p1_sum = 0.0
- *     p2_sum = 0.0
- */
-  __pyx_v_t2_sum = 0.0;
-
-  /* "integrate.pyx":98
- *     t1_sum = 0.0
- *     t2_sum = 0.0
- *     p1_sum = 0.0             # <<<<<<<<<<<<<<
- *     p2_sum = 0.0
- * 
- */
-  __pyx_v_p1_sum = 0.0;
-
-  /* "integrate.pyx":99
- *     t2_sum = 0.0
- *     p1_sum = 0.0
- *     p2_sum = 0.0             # <<<<<<<<<<<<<<
- * 
- *     for i in range(n):
- */
-  __pyx_v_p2_sum = 0.0;
-
-  /* "integrate.pyx":101
- *     p2_sum = 0.0
- * 
- *     for i in range(n):             # <<<<<<<<<<<<<<
- *         mu10 = errors[i, 0] * exp[0]
- *         mu11 = exp_par_gamma * mu10
- */
-  __pyx_t_2 = __pyx_v_n;
-  __pyx_t_3 = __pyx_t_2;
-  for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
-    __pyx_v_i = __pyx_t_4;
-
-    /* "integrate.pyx":102
- * 
- *     for i in range(n):
- *         mu10 = errors[i, 0] * exp[0]             # <<<<<<<<<<<<<<
- *         mu11 = exp_par_gamma * mu10
- *         mu20 = errors[i, 1] * exp[1]
- */
-    __pyx_t_5 = __pyx_v_i;
-    __pyx_t_6 = 0;
-    __pyx_v_mu10 = ((*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_5 * __pyx_v_errors.strides[0]) )) + __pyx_t_6)) ))) * (__pyx_v_exp[0]));
-
-    /* "integrate.pyx":103
- *     for i in range(n):
- *         mu10 = errors[i, 0] * exp[0]
- *         mu11 = exp_par_gamma * mu10             # <<<<<<<<<<<<<<
- *         mu20 = errors[i, 1] * exp[1]
- *         mu21 = exp_par_gamma * mu20
- */
-    __pyx_v_mu11 = (__pyx_v_exp_par_gamma * __pyx_v_mu10);
-
-    /* "integrate.pyx":104
- *         mu10 = errors[i, 0] * exp[0]
- *         mu11 = exp_par_gamma * mu10
- *         mu20 = errors[i, 1] * exp[1]             # <<<<<<<<<<<<<<
- *         mu21 = exp_par_gamma * mu20
- *         alpha1 = errors[i, 2] * exp[2]
- */
-    __pyx_t_7 = __pyx_v_i;
-    __pyx_t_8 = 1;
-    __pyx_v_mu20 = ((*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_7 * __pyx_v_errors.strides[0]) )) + __pyx_t_8)) ))) * (__pyx_v_exp[1]));
-
-    /* "integrate.pyx":105
- *         mu11 = exp_par_gamma * mu10
- *         mu20 = errors[i, 1] * exp[1]
- *         mu21 = exp_par_gamma * mu20             # <<<<<<<<<<<<<<
- *         alpha1 = errors[i, 2] * exp[2]
- *         alpha2 = errors[i, 3] * exp[3]
- */
-    __pyx_v_mu21 = (__pyx_v_exp_par_gamma * __pyx_v_mu20);
-
-    /* "integrate.pyx":106
- *         mu20 = errors[i, 1] * exp[1]
- *         mu21 = exp_par_gamma * mu20
- *         alpha1 = errors[i, 2] * exp[2]             # <<<<<<<<<<<<<<
- *         alpha2 = errors[i, 3] * exp[3]
- * 
- */
-    __pyx_t_9 = __pyx_v_i;
-    __pyx_t_10 = 2;
-    __pyx_v_alpha1 = ((*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_9 * __pyx_v_errors.strides[0]) )) + __pyx_t_10)) ))) * (__pyx_v_exp[2]));
-
-    /* "integrate.pyx":107
- *         mu21 = exp_par_gamma * mu20
- *         alpha1 = errors[i, 2] * exp[2]
- *         alpha2 = errors[i, 3] * exp[3]             # <<<<<<<<<<<<<<
- * 
- *         j_is_larger = mu10 > mu20
- */
-    __pyx_t_11 = __pyx_v_i;
-    __pyx_t_12 = 3;
-    __pyx_v_alpha2 = ((*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_11 * __pyx_v_errors.strides[0]) )) + __pyx_t_12)) ))) * (__pyx_v_exp[3]));
-
-    /* "integrate.pyx":109
- *         alpha2 = errors[i, 3] * exp[3]
- * 
- *         j_is_larger = mu10 > mu20             # <<<<<<<<<<<<<<
- *         j_is_smaller = not j_is_larger
- *         threshold2 = (1 + mu10 * alpha1) / (c + alpha1)
- */
-    __pyx_v_j_is_larger = (__pyx_v_mu10 > __pyx_v_mu20);
-
-    /* "integrate.pyx":110
- * 
- *         j_is_larger = mu10 > mu20
- *         j_is_smaller = not j_is_larger             # <<<<<<<<<<<<<<
- *         threshold2 = (1 + mu10 * alpha1) / (c + alpha1)
- *         threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
- */
-    __pyx_v_j_is_smaller = (!(__pyx_v_j_is_larger != 0));
-
-    /* "integrate.pyx":111
- *         j_is_larger = mu10 > mu20
- *         j_is_smaller = not j_is_larger
- *         threshold2 = (1 + mu10 * alpha1) / (c + alpha1)             # <<<<<<<<<<<<<<
- *         threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
- * 
- */
-    __pyx_v_threshold2 = ((1.0 + (__pyx_v_mu10 * __pyx_v_alpha1)) / (__pyx_v_c + __pyx_v_alpha1));
-
-    /* "integrate.pyx":112
- *         j_is_smaller = not j_is_larger
- *         threshold2 = (1 + mu10 * alpha1) / (c + alpha1)
- *         threshold3 = (1 + mu20 * alpha2) / (c + alpha2)             # <<<<<<<<<<<<<<
- * 
- *         case1 = j_is_larger * (mu10 < 1 / c)
- */
-    __pyx_v_threshold3 = ((1.0 + (__pyx_v_mu20 * __pyx_v_alpha2)) / (__pyx_v_c + __pyx_v_alpha2));
-
-    /* "integrate.pyx":114
- *         threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
- * 
- *         case1 = j_is_larger * (mu10 < 1 / c)             # <<<<<<<<<<<<<<
- *         case2 = j_is_larger * (mu21 >= threshold2)
- *         case3 = j_is_larger and not (case1 or case2)
- */
-    __pyx_v_case1 = (__pyx_v_j_is_larger * (__pyx_v_mu10 < (1.0 / __pyx_v_c)));
-
-    /* "integrate.pyx":115
- * 
- *         case1 = j_is_larger * (mu10 < 1 / c)
- *         case2 = j_is_larger * (mu21 >= threshold2)             # <<<<<<<<<<<<<<
- *         case3 = j_is_larger and not (case1 or case2)
- *         case4 = j_is_smaller * (mu20 < 1 / c)
- */
-    __pyx_v_case2 = (__pyx_v_j_is_larger * (__pyx_v_mu21 >= __pyx_v_threshold2));
-
-    /* "integrate.pyx":116
- *         case1 = j_is_larger * (mu10 < 1 / c)
- *         case2 = j_is_larger * (mu21 >= threshold2)
- *         case3 = j_is_larger and not (case1 or case2)             # <<<<<<<<<<<<<<
- *         case4 = j_is_smaller * (mu20 < 1 / c)
- *         case5 = j_is_smaller * (mu11 >= threshold3)
- */
-    __pyx_t_14 = (__pyx_v_j_is_larger != 0);
-    if (__pyx_t_14) {
-    } else {
-      __pyx_t_13 = __pyx_t_14;
-      goto __pyx_L5_bool_binop_done;
-    }
-    __pyx_t_15 = (__pyx_v_case1 != 0);
-    if (!__pyx_t_15) {
-    } else {
-      __pyx_t_14 = __pyx_t_15;
-      goto __pyx_L7_bool_binop_done;
-    }
-    __pyx_t_15 = (__pyx_v_case2 != 0);
-    __pyx_t_14 = __pyx_t_15;
-    __pyx_L7_bool_binop_done:;
-    __pyx_t_15 = ((!__pyx_t_14) != 0);
-    __pyx_t_13 = __pyx_t_15;
-    __pyx_L5_bool_binop_done:;
-    __pyx_v_case3 = __pyx_t_13;
-
-    /* "integrate.pyx":117
- *         case2 = j_is_larger * (mu21 >= threshold2)
- *         case3 = j_is_larger and not (case1 or case2)
- *         case4 = j_is_smaller * (mu20 < 1 / c)             # <<<<<<<<<<<<<<
- *         case5 = j_is_smaller * (mu11 >= threshold3)
- *         case6 = j_is_smaller and not (case4 or case5)
- */
-    __pyx_v_case4 = (__pyx_v_j_is_smaller * (__pyx_v_mu20 < (1.0 / __pyx_v_c)));
-
-    /* "integrate.pyx":118
- *         case3 = j_is_larger and not (case1 or case2)
- *         case4 = j_is_smaller * (mu20 < 1 / c)
- *         case5 = j_is_smaller * (mu11 >= threshold3)             # <<<<<<<<<<<<<<
- *         case6 = j_is_smaller and not (case4 or case5)
- * 
- */
-    __pyx_v_case5 = (__pyx_v_j_is_smaller * (__pyx_v_mu11 >= __pyx_v_threshold3));
-
-    /* "integrate.pyx":119
- *         case4 = j_is_smaller * (mu20 < 1 / c)
- *         case5 = j_is_smaller * (mu11 >= threshold3)
- *         case6 = j_is_smaller and not (case4 or case5)             # <<<<<<<<<<<<<<
- * 
- *         t0 = case1*c+case2 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) +case3 / threshold2 +case4 * c +case5 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case6 / threshold3
- */
-    __pyx_t_15 = (__pyx_v_j_is_smaller != 0);
-    if (__pyx_t_15) {
-    } else {
-      __pyx_t_13 = __pyx_t_15;
-      goto __pyx_L9_bool_binop_done;
-    }
-    __pyx_t_14 = (__pyx_v_case4 != 0);
-    if (!__pyx_t_14) {
-    } else {
-      __pyx_t_15 = __pyx_t_14;
-      goto __pyx_L11_bool_binop_done;
-    }
-    __pyx_t_14 = (__pyx_v_case5 != 0);
-    __pyx_t_15 = __pyx_t_14;
-    __pyx_L11_bool_binop_done:;
-    __pyx_t_14 = ((!__pyx_t_15) != 0);
-    __pyx_t_13 = __pyx_t_14;
-    __pyx_L9_bool_binop_done:;
-    __pyx_v_case6 = __pyx_t_13;
-
-    /* "integrate.pyx":121
- *         case6 = j_is_smaller and not (case4 or case5)
- * 
- *         t0 = case1*c+case2 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) +case3 / threshold2 +case4 * c +case5 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case6 / threshold3             # <<<<<<<<<<<<<<
- *         t1 = case2 * (t0 * alpha1 * mu11 - alpha1) +case3 * (t0 * alpha1 * mu10 - alpha1) +case5 * (t0 * alpha1 * mu11 - alpha1)
- *         t2 = c - t0 - t1
- */
-    __pyx_v_t0 = ((((((__pyx_v_case1 * __pyx_v_c) + ((__pyx_v_case2 * ((__pyx_v_c + __pyx_v_alpha1) + __pyx_v_alpha2)) / ((1.0 + (__pyx_v_mu11 * __pyx_v_alpha1)) + (__pyx_v_mu21 * __pyx_v_alpha2)))) + (((double)__pyx_v_case3) / __pyx_v_threshold2)) + (__pyx_v_case4 * __pyx_v_c)) + ((__pyx_v_case5 * ((__pyx_v_c + __pyx_v_alpha1) + __pyx_v_alpha2)) / ((1.0 + (__pyx_v_mu11 * __pyx_v_alpha1)) + (__pyx_v_mu21 * __pyx_v_alpha2)))) + (((double)__pyx_v_case6) / __pyx_v_threshold3));
-
-    /* "integrate.pyx":122
- * 
- *         t0 = case1*c+case2 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) +case3 / threshold2 +case4 * c +case5 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case6 / threshold3
- *         t1 = case2 * (t0 * alpha1 * mu11 - alpha1) +case3 * (t0 * alpha1 * mu10 - alpha1) +case5 * (t0 * alpha1 * mu11 - alpha1)             # <<<<<<<<<<<<<<
- *         t2 = c - t0 - t1
- * 
- */
-    __pyx_v_t1 = (((__pyx_v_case2 * (((__pyx_v_t0 * __pyx_v_alpha1) * __pyx_v_mu11) - __pyx_v_alpha1)) + (__pyx_v_case3 * (((__pyx_v_t0 * __pyx_v_alpha1) * __pyx_v_mu10) - __pyx_v_alpha1))) + (__pyx_v_case5 * (((__pyx_v_t0 * __pyx_v_alpha1) * __pyx_v_mu11) - __pyx_v_alpha1)));
-
-    /* "integrate.pyx":123
- *         t0 = case1*c+case2 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) +case3 / threshold2 +case4 * c +case5 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case6 / threshold3
- *         t1 = case2 * (t0 * alpha1 * mu11 - alpha1) +case3 * (t0 * alpha1 * mu10 - alpha1) +case5 * (t0 * alpha1 * mu11 - alpha1)
- *         t2 = c - t0 - t1             # <<<<<<<<<<<<<<
- * 
- *         p12 = case2 + case5
- */
-    __pyx_v_t2 = ((__pyx_v_c - __pyx_v_t0) - __pyx_v_t1);
-
-    /* "integrate.pyx":125
- *         t2 = c - t0 - t1
- * 
- *         p12 = case2 + case5             # <<<<<<<<<<<<<<
- *         p1 = case3 + p12
- *         p2 = case6 + p12
- */
-    __pyx_v_p12 = (__pyx_v_case2 + __pyx_v_case5);
-
-    /* "integrate.pyx":126
- * 
- *         p12 = case2 + case5
- *         p1 = case3 + p12             # <<<<<<<<<<<<<<
- *         p2 = case6 + p12
- * 
- */
-    __pyx_v_p1 = (__pyx_v_case3 + __pyx_v_p12);
-
-    /* "integrate.pyx":127
- *         p12 = case2 + case5
- *         p1 = case3 + p12
- *         p2 = case6 + p12             # <<<<<<<<<<<<<<
- * 
- *         t1_sum += t1
- */
-    __pyx_v_p2 = (__pyx_v_case6 + __pyx_v_p12);
-
-    /* "integrate.pyx":129
- *         p2 = case6 + p12
- * 
- *         t1_sum += t1             # <<<<<<<<<<<<<<
- *         t2_sum += t2
- *         p1_sum += p1
- */
-    __pyx_v_t1_sum = (__pyx_v_t1_sum + __pyx_v_t1);
-
-    /* "integrate.pyx":130
- * 
- *         t1_sum += t1
- *         t2_sum += t2             # <<<<<<<<<<<<<<
- *         p1_sum += p1
- *         p2_sum += p2
- */
-    __pyx_v_t2_sum = (__pyx_v_t2_sum + __pyx_v_t2);
-
-    /* "integrate.pyx":131
- *         t1_sum += t1
- *         t2_sum += t2
- *         p1_sum += p1             # <<<<<<<<<<<<<<
- *         p2_sum += p2
- * 
- */
-    __pyx_v_p1_sum = (__pyx_v_p1_sum + __pyx_v_p1);
-
-    /* "integrate.pyx":132
- *         t2_sum += t2
- *         p1_sum += p1
- *         p2_sum += p2             # <<<<<<<<<<<<<<
- * 
- *     return t1_sum/n, t2_sum/n, p1_sum/n, p2_sum/n
- */
-    __pyx_v_p2_sum = (__pyx_v_p2_sum + __pyx_v_p2);
-  }
-
-  /* "integrate.pyx":134
- *         p2_sum += p2
- * 
- *     return t1_sum/n, t2_sum/n, p1_sum/n, p2_sum/n             # <<<<<<<<<<<<<<
- * 
- * ctypedef struct Vec4:
- */
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_16 = PyFloat_FromDouble((__pyx_v_t1_sum / ((double)__pyx_v_n))); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 134, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_16);
-  __pyx_t_17 = PyFloat_FromDouble((__pyx_v_t2_sum / ((double)__pyx_v_n))); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 134, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_17);
-  __pyx_t_18 = PyFloat_FromDouble((__pyx_v_p1_sum / ((double)__pyx_v_n))); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 134, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_18);
-  __pyx_t_19 = PyFloat_FromDouble((__pyx_v_p2_sum / ((double)__pyx_v_n))); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 134, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_19);
-  __pyx_t_20 = PyTuple_New(4); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 134, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_20);
-  __Pyx_GIVEREF(__pyx_t_16);
-  PyTuple_SET_ITEM(__pyx_t_20, 0, __pyx_t_16);
-  __Pyx_GIVEREF(__pyx_t_17);
-  PyTuple_SET_ITEM(__pyx_t_20, 1, __pyx_t_17);
-  __Pyx_GIVEREF(__pyx_t_18);
-  PyTuple_SET_ITEM(__pyx_t_20, 2, __pyx_t_18);
-  __Pyx_GIVEREF(__pyx_t_19);
-  PyTuple_SET_ITEM(__pyx_t_20, 3, __pyx_t_19);
-  __pyx_t_16 = 0;
-  __pyx_t_17 = 0;
-  __pyx_t_18 = 0;
-  __pyx_t_19 = 0;
-  __pyx_r = __pyx_t_20;
-  __pyx_t_20 = 0;
-  goto __pyx_L0;
-
-  /* "integrate.pyx":72
- *     return t1_sum/n, t2_sum/n, p1_sum/n, p2_sum/n
- * 
- * def mktout(list mean_mu_alpha, double[:, ::1] errors, double par_gamma):             # <<<<<<<<<<<<<<
- *     cdef:
- *         size_t i, n
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_16);
-  __Pyx_XDECREF(__pyx_t_17);
-  __Pyx_XDECREF(__pyx_t_18);
-  __Pyx_XDECREF(__pyx_t_19);
-  __Pyx_XDECREF(__pyx_t_20);
-  __Pyx_AddTraceback("integrate.mktout", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __PYX_XDEC_MEMVIEW(&__pyx_v_errors, 1);
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "integrate.pyx":142
+/* "integrate_alt.pyx":93
  *     double d
  * 
- * def outer_loop(list mean_mu_alpha, double[:, ::1] errors, double par_gamma, size_t n):             # <<<<<<<<<<<<<<
+ * def outer_loop_alt(list mean_mu_alpha, double[:, ::1] errors, double par_gamma, size_t n):             # <<<<<<<<<<<<<<
  *     cdef:
  *         size_t i
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9integrate_5outer_loop(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_9integrate_5outer_loop = {"outer_loop", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_9integrate_5outer_loop, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_9integrate_5outer_loop(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_13integrate_alt_3outer_loop_alt(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_13integrate_alt_3outer_loop_alt = {"outer_loop_alt", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_13integrate_alt_3outer_loop_alt, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_13integrate_alt_3outer_loop_alt(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_mean_mu_alpha = 0;
   __Pyx_memviewslice __pyx_v_errors = { 0, 0, { 0 }, { 0 }, { 0 } };
   double __pyx_v_par_gamma;
   CYTHON_UNUSED size_t __pyx_v_n;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("outer_loop (wrapper)", 0);
+  __Pyx_RefNannySetupContext("outer_loop_alt (wrapper)", 0);
   {
     static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_mean_mu_alpha,&__pyx_n_s_errors,&__pyx_n_s_par_gamma,&__pyx_n_s_n,0};
     PyObject* values[4] = {0,0,0,0};
@@ -3471,23 +2899,23 @@ static PyObject *__pyx_pw_9integrate_5outer_loop(PyObject *__pyx_self, PyObject 
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_errors)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("outer_loop", 1, 4, 4, 1); __PYX_ERR(0, 142, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("outer_loop_alt", 1, 4, 4, 1); __PYX_ERR(0, 93, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_par_gamma)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("outer_loop", 1, 4, 4, 2); __PYX_ERR(0, 142, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("outer_loop_alt", 1, 4, 4, 2); __PYX_ERR(0, 93, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_n)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("outer_loop", 1, 4, 4, 3); __PYX_ERR(0, 142, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("outer_loop_alt", 1, 4, 4, 3); __PYX_ERR(0, 93, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "outer_loop") < 0)) __PYX_ERR(0, 142, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "outer_loop_alt") < 0)) __PYX_ERR(0, 93, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 4) {
       goto __pyx_L5_argtuple_error;
@@ -3498,20 +2926,20 @@ static PyObject *__pyx_pw_9integrate_5outer_loop(PyObject *__pyx_self, PyObject 
       values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
     }
     __pyx_v_mean_mu_alpha = ((PyObject*)values[0]);
-    __pyx_v_errors = __Pyx_PyObject_to_MemoryviewSlice_d_dc_double(values[1], PyBUF_WRITABLE); if (unlikely(!__pyx_v_errors.memview)) __PYX_ERR(0, 142, __pyx_L3_error)
-    __pyx_v_par_gamma = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_par_gamma == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 142, __pyx_L3_error)
-    __pyx_v_n = __Pyx_PyInt_As_size_t(values[3]); if (unlikely((__pyx_v_n == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 142, __pyx_L3_error)
+    __pyx_v_errors = __Pyx_PyObject_to_MemoryviewSlice_d_dc_double(values[1], PyBUF_WRITABLE); if (unlikely(!__pyx_v_errors.memview)) __PYX_ERR(0, 93, __pyx_L3_error)
+    __pyx_v_par_gamma = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_par_gamma == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 93, __pyx_L3_error)
+    __pyx_v_n = __Pyx_PyInt_As_size_t(values[3]); if (unlikely((__pyx_v_n == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 93, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("outer_loop", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 142, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("outer_loop_alt", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 93, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("integrate.outer_loop", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("integrate_alt.outer_loop_alt", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_mean_mu_alpha), (&PyList_Type), 1, "mean_mu_alpha", 1))) __PYX_ERR(0, 142, __pyx_L1_error)
-  __pyx_r = __pyx_pf_9integrate_4outer_loop(__pyx_self, __pyx_v_mean_mu_alpha, __pyx_v_errors, __pyx_v_par_gamma, __pyx_v_n);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_mean_mu_alpha), (&PyList_Type), 1, "mean_mu_alpha", 1))) __PYX_ERR(0, 93, __pyx_L1_error)
+  __pyx_r = __pyx_pf_13integrate_alt_2outer_loop_alt(__pyx_self, __pyx_v_mean_mu_alpha, __pyx_v_errors, __pyx_v_par_gamma, __pyx_v_n);
 
   /* function exit code */
   goto __pyx_L0;
@@ -3522,10 +2950,10 @@ static PyObject *__pyx_pw_9integrate_5outer_loop(PyObject *__pyx_self, PyObject 
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_9integrate_4outer_loop(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mean_mu_alpha, __Pyx_memviewslice __pyx_v_errors, double __pyx_v_par_gamma, CYTHON_UNUSED size_t __pyx_v_n) {
+static PyObject *__pyx_pf_13integrate_alt_2outer_loop_alt(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mean_mu_alpha, __Pyx_memviewslice __pyx_v_errors, double __pyx_v_par_gamma, CYTHON_UNUSED size_t __pyx_v_n) {
   CYTHON_UNUSED size_t __pyx_v_i;
-  __pyx_t_9integrate_Vec4 __pyx_v_mean_vec;
-  __pyx_t_9integrate_Vec4 __pyx_v_out;
+  __pyx_t_13integrate_alt_Vec4 __pyx_v_mma;
+  __pyx_t_13integrate_alt_Vec3 __pyx_v_out;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   double __pyx_t_1;
@@ -3533,70 +2961,70 @@ static PyObject *__pyx_pf_9integrate_4outer_loop(CYTHON_UNUSED PyObject *__pyx_s
   size_t __pyx_t_3;
   size_t __pyx_t_4;
   PyObject *__pyx_t_5 = NULL;
-  __Pyx_RefNannySetupContext("outer_loop", 0);
+  __Pyx_RefNannySetupContext("outer_loop_alt", 0);
 
-  /* "integrate.pyx":148
- *         Vec4 out
+  /* "integrate_alt.pyx":99
+ *         Vec3 out
  * 
- *     mean_vec.a = <double>(mean_mu_alpha[0])             # <<<<<<<<<<<<<<
- *     mean_vec.b = <double>(mean_mu_alpha[1])
- *     mean_vec.c = <double>(mean_mu_alpha[2])
+ *     mma.a = <double>mean_mu_alpha[0]             # <<<<<<<<<<<<<<
+ *     mma.b = <double>mean_mu_alpha[1]
+ *     mma.c = <double>mean_mu_alpha[2]
  */
   if (unlikely(__pyx_v_mean_mu_alpha == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 148, __pyx_L1_error)
+    __PYX_ERR(0, 99, __pyx_L1_error)
   }
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 0)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 148, __pyx_L1_error)
-  __pyx_v_mean_vec.a = ((double)__pyx_t_1);
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 0)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 99, __pyx_L1_error)
+  __pyx_v_mma.a = ((double)__pyx_t_1);
 
-  /* "integrate.pyx":149
+  /* "integrate_alt.pyx":100
  * 
- *     mean_vec.a = <double>(mean_mu_alpha[0])
- *     mean_vec.b = <double>(mean_mu_alpha[1])             # <<<<<<<<<<<<<<
- *     mean_vec.c = <double>(mean_mu_alpha[2])
- *     mean_vec.d = <double>(mean_mu_alpha[3])
+ *     mma.a = <double>mean_mu_alpha[0]
+ *     mma.b = <double>mean_mu_alpha[1]             # <<<<<<<<<<<<<<
+ *     mma.c = <double>mean_mu_alpha[2]
+ *     mma.d = <double>mean_mu_alpha[3]
  */
   if (unlikely(__pyx_v_mean_mu_alpha == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 149, __pyx_L1_error)
+    __PYX_ERR(0, 100, __pyx_L1_error)
   }
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 1)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L1_error)
-  __pyx_v_mean_vec.b = ((double)__pyx_t_1);
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 1)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_v_mma.b = ((double)__pyx_t_1);
 
-  /* "integrate.pyx":150
- *     mean_vec.a = <double>(mean_mu_alpha[0])
- *     mean_vec.b = <double>(mean_mu_alpha[1])
- *     mean_vec.c = <double>(mean_mu_alpha[2])             # <<<<<<<<<<<<<<
- *     mean_vec.d = <double>(mean_mu_alpha[3])
+  /* "integrate_alt.pyx":101
+ *     mma.a = <double>mean_mu_alpha[0]
+ *     mma.b = <double>mean_mu_alpha[1]
+ *     mma.c = <double>mean_mu_alpha[2]             # <<<<<<<<<<<<<<
+ *     mma.d = <double>mean_mu_alpha[3]
  * 
  */
   if (unlikely(__pyx_v_mean_mu_alpha == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 150, __pyx_L1_error)
+    __PYX_ERR(0, 101, __pyx_L1_error)
   }
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 2)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 150, __pyx_L1_error)
-  __pyx_v_mean_vec.c = ((double)__pyx_t_1);
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 2)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 101, __pyx_L1_error)
+  __pyx_v_mma.c = ((double)__pyx_t_1);
 
-  /* "integrate.pyx":151
- *     mean_vec.b = <double>(mean_mu_alpha[1])
- *     mean_vec.c = <double>(mean_mu_alpha[2])
- *     mean_vec.d = <double>(mean_mu_alpha[3])             # <<<<<<<<<<<<<<
+  /* "integrate_alt.pyx":102
+ *     mma.b = <double>mean_mu_alpha[1]
+ *     mma.c = <double>mean_mu_alpha[2]
+ *     mma.d = <double>mean_mu_alpha[3]             # <<<<<<<<<<<<<<
  * 
  *     with nogil:
  */
   if (unlikely(__pyx_v_mean_mu_alpha == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 151, __pyx_L1_error)
+    __PYX_ERR(0, 102, __pyx_L1_error)
   }
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 3)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 151, __pyx_L1_error)
-  __pyx_v_mean_vec.d = ((double)__pyx_t_1);
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 3)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 102, __pyx_L1_error)
+  __pyx_v_mma.d = ((double)__pyx_t_1);
 
-  /* "integrate.pyx":153
- *     mean_vec.d = <double>(mean_mu_alpha[3])
+  /* "integrate_alt.pyx":104
+ *     mma.d = <double>mean_mu_alpha[3]
  * 
  *     with nogil:             # <<<<<<<<<<<<<<
  *         for i in prange(n):
- *             cy_mktout(&out, &mean_vec, errors, par_gamma)
+ *             cy_mktout_alt(&out, &mma, errors, par_gamma)
  */
   {
       #ifdef WITH_THREAD
@@ -3606,11 +3034,11 @@ static PyObject *__pyx_pf_9integrate_4outer_loop(CYTHON_UNUSED PyObject *__pyx_s
       #endif
       /*try:*/ {
 
-        /* "integrate.pyx":154
+        /* "integrate_alt.pyx":105
  * 
  *     with nogil:
  *         for i in prange(n):             # <<<<<<<<<<<<<<
- *             cy_mktout(&out, &mean_vec, errors, par_gamma)
+ *             cy_mktout_alt(&out, &mma, errors, par_gamma)
  *     return out
  */
         __pyx_t_2 = __pyx_v_n;
@@ -3636,14 +3064,14 @@ static PyObject *__pyx_pf_9integrate_4outer_loop(CYTHON_UNUSED PyObject *__pyx_s
                         {
                             __pyx_v_i = (size_t)(0 + 1 * __pyx_t_3);
 
-                            /* "integrate.pyx":155
+                            /* "integrate_alt.pyx":106
  *     with nogil:
  *         for i in prange(n):
- *             cy_mktout(&out, &mean_vec, errors, par_gamma)             # <<<<<<<<<<<<<<
+ *             cy_mktout_alt(&out, &mma, errors, par_gamma)             # <<<<<<<<<<<<<<
  *     return out
  * 
  */
-                            __pyx_f_9integrate_cy_mktout((&__pyx_v_out), (&__pyx_v_mean_vec), __pyx_v_errors, __pyx_v_par_gamma);
+                            __pyx_f_13integrate_alt_cy_mktout_alt((&__pyx_v_out), (&__pyx_v_mma), __pyx_v_errors, __pyx_v_par_gamma);
                         }
                     }
                 }
@@ -3657,12 +3085,12 @@ static PyObject *__pyx_pf_9integrate_4outer_loop(CYTHON_UNUSED PyObject *__pyx_s
         #endif
       }
 
-      /* "integrate.pyx":153
- *     mean_vec.d = <double>(mean_mu_alpha[3])
+      /* "integrate_alt.pyx":104
+ *     mma.d = <double>mean_mu_alpha[3]
  * 
  *     with nogil:             # <<<<<<<<<<<<<<
  *         for i in prange(n):
- *             cy_mktout(&out, &mean_vec, errors, par_gamma)
+ *             cy_mktout_alt(&out, &mma, errors, par_gamma)
  */
       /*finally:*/ {
         /*normal exit:*/{
@@ -3676,24 +3104,24 @@ static PyObject *__pyx_pf_9integrate_4outer_loop(CYTHON_UNUSED PyObject *__pyx_s
       }
   }
 
-  /* "integrate.pyx":156
+  /* "integrate_alt.pyx":107
  *         for i in prange(n):
- *             cy_mktout(&out, &mean_vec, errors, par_gamma)
+ *             cy_mktout_alt(&out, &mma, errors, par_gamma)
  *     return out             # <<<<<<<<<<<<<<
  * 
- * cdef void cy_mktout(Vec4 *out, Vec4 *mean_mu_alpha, double[:, ::1] errors, double par_gamma) nogil:
+ * cdef void cy_mktout_alt(Vec3 *out, Vec4 *mma, double[:, ::1] errors, double par_gamma) nogil:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_5 = __pyx_convert__to_py___pyx_t_9integrate_Vec4(__pyx_v_out); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 156, __pyx_L1_error)
+  __pyx_t_5 = __pyx_convert__to_py___pyx_t_13integrate_alt_Vec3(__pyx_v_out); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 107, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_r = __pyx_t_5;
   __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "integrate.pyx":142
+  /* "integrate_alt.pyx":93
  *     double d
  * 
- * def outer_loop(list mean_mu_alpha, double[:, ::1] errors, double par_gamma, size_t n):             # <<<<<<<<<<<<<<
+ * def outer_loop_alt(list mean_mu_alpha, double[:, ::1] errors, double par_gamma, size_t n):             # <<<<<<<<<<<<<<
  *     cdef:
  *         size_t i
  */
@@ -3701,7 +3129,7 @@ static PyObject *__pyx_pf_9integrate_4outer_loop(CYTHON_UNUSED PyObject *__pyx_s
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("integrate.outer_loop", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("integrate_alt.outer_loop_alt", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __PYX_XDEC_MEMVIEW(&__pyx_v_errors, 1);
@@ -3710,801 +3138,30 @@ static PyObject *__pyx_pf_9integrate_4outer_loop(CYTHON_UNUSED PyObject *__pyx_s
   return __pyx_r;
 }
 
-/* "integrate.pyx":158
+/* "integrate_alt.pyx":109
  *     return out
  * 
- * cdef void cy_mktout(Vec4 *out, Vec4 *mean_mu_alpha, double[:, ::1] errors, double par_gamma) nogil:             # <<<<<<<<<<<<<<
+ * cdef void cy_mktout_alt(Vec3 *out, Vec4 *mma, double[:, ::1] errors, double par_gamma) nogil:             # <<<<<<<<<<<<<<
  *     cdef:
  *         size_t i, n
  */
 
-static void __pyx_f_9integrate_cy_mktout(__pyx_t_9integrate_Vec4 *__pyx_v_out, __pyx_t_9integrate_Vec4 *__pyx_v_mean_mu_alpha, __Pyx_memviewslice __pyx_v_errors, double __pyx_v_par_gamma) {
+static void __pyx_f_13integrate_alt_cy_mktout_alt(__pyx_t_13integrate_alt_Vec3 *__pyx_v_out, __pyx_t_13integrate_alt_Vec4 *__pyx_v_mma, __Pyx_memviewslice __pyx_v_errors, double __pyx_v_par_gamma) {
   size_t __pyx_v_i;
   size_t __pyx_v_n;
-  double __pyx_v_exp[4];
-  double __pyx_v_exp_par_gamma;
+  double __pyx_v_err[4];
+  double __pyx_v_t0_sum;
+  double __pyx_v_t1_sum;
+  double __pyx_v_t2_sum;
   double __pyx_v_mu10;
   double __pyx_v_mu11;
   double __pyx_v_mu20;
   double __pyx_v_mu21;
-  double __pyx_v_alpha1;
-  double __pyx_v_alpha2;
-  int __pyx_v_j_is_larger;
-  int __pyx_v_j_is_smaller;
   double __pyx_v_threshold2;
   double __pyx_v_threshold3;
-  int __pyx_v_case1;
-  int __pyx_v_case2;
-  int __pyx_v_case3;
-  int __pyx_v_case4;
-  int __pyx_v_case5;
-  int __pyx_v_case6;
-  double __pyx_v_t0;
-  double __pyx_v_t1;
-  double __pyx_v_t2;
-  double __pyx_v_p12;
-  double __pyx_v_p1;
-  double __pyx_v_p2;
-  double __pyx_v_t1_sum;
-  double __pyx_v_t2_sum;
-  double __pyx_v_p1_sum;
-  double __pyx_v_p2_sum;
-  double __pyx_v_c;
-  size_t __pyx_t_1;
-  size_t __pyx_t_2;
-  size_t __pyx_t_3;
-  size_t __pyx_t_4;
-  Py_ssize_t __pyx_t_5;
-  size_t __pyx_t_6;
-  Py_ssize_t __pyx_t_7;
-  size_t __pyx_t_8;
-  Py_ssize_t __pyx_t_9;
-  size_t __pyx_t_10;
-  Py_ssize_t __pyx_t_11;
-  int __pyx_t_12;
-  int __pyx_t_13;
-
-  /* "integrate.pyx":174
- * 
- *     #compute the exp outside of the loop
- *     n = errors.shape[0]             # <<<<<<<<<<<<<<
- *     exp[0] = cmath.exp(mean_mu_alpha.a)
- *     exp[1] = cmath.exp(mean_mu_alpha.b)
- */
-  __pyx_v_n = (__pyx_v_errors.shape[0]);
-
-  /* "integrate.pyx":175
- *     #compute the exp outside of the loop
- *     n = errors.shape[0]
- *     exp[0] = cmath.exp(mean_mu_alpha.a)             # <<<<<<<<<<<<<<
- *     exp[1] = cmath.exp(mean_mu_alpha.b)
- *     exp[2] = cmath.exp(mean_mu_alpha.c)
- */
-  (__pyx_v_exp[0]) = exp(__pyx_v_mean_mu_alpha->a);
-
-  /* "integrate.pyx":176
- *     n = errors.shape[0]
- *     exp[0] = cmath.exp(mean_mu_alpha.a)
- *     exp[1] = cmath.exp(mean_mu_alpha.b)             # <<<<<<<<<<<<<<
- *     exp[2] = cmath.exp(mean_mu_alpha.c)
- *     exp[3] = cmath.exp(mean_mu_alpha.d)
- */
-  (__pyx_v_exp[1]) = exp(__pyx_v_mean_mu_alpha->b);
-
-  /* "integrate.pyx":177
- *     exp[0] = cmath.exp(mean_mu_alpha.a)
- *     exp[1] = cmath.exp(mean_mu_alpha.b)
- *     exp[2] = cmath.exp(mean_mu_alpha.c)             # <<<<<<<<<<<<<<
- *     exp[3] = cmath.exp(mean_mu_alpha.d)
- *     exp_par_gamma = cmath.exp(par_gamma)
- */
-  (__pyx_v_exp[2]) = exp(__pyx_v_mean_mu_alpha->c);
-
-  /* "integrate.pyx":178
- *     exp[1] = cmath.exp(mean_mu_alpha.b)
- *     exp[2] = cmath.exp(mean_mu_alpha.c)
- *     exp[3] = cmath.exp(mean_mu_alpha.d)             # <<<<<<<<<<<<<<
- *     exp_par_gamma = cmath.exp(par_gamma)
- *     c = 168.0
- */
-  (__pyx_v_exp[3]) = exp(__pyx_v_mean_mu_alpha->d);
-
-  /* "integrate.pyx":179
- *     exp[2] = cmath.exp(mean_mu_alpha.c)
- *     exp[3] = cmath.exp(mean_mu_alpha.d)
- *     exp_par_gamma = cmath.exp(par_gamma)             # <<<<<<<<<<<<<<
- *     c = 168.0
- * 
- */
-  __pyx_v_exp_par_gamma = exp(__pyx_v_par_gamma);
-
-  /* "integrate.pyx":180
- *     exp[3] = cmath.exp(mean_mu_alpha.d)
- *     exp_par_gamma = cmath.exp(par_gamma)
- *     c = 168.0             # <<<<<<<<<<<<<<
- * 
- *     t1_sum = 0.0
- */
-  __pyx_v_c = 168.0;
-
-  /* "integrate.pyx":182
- *     c = 168.0
- * 
- *     t1_sum = 0.0             # <<<<<<<<<<<<<<
- *     t2_sum = 0.0
- *     p1_sum = 0.0
- */
-  __pyx_v_t1_sum = 0.0;
-
-  /* "integrate.pyx":183
- * 
- *     t1_sum = 0.0
- *     t2_sum = 0.0             # <<<<<<<<<<<<<<
- *     p1_sum = 0.0
- *     p2_sum = 0.0
- */
-  __pyx_v_t2_sum = 0.0;
-
-  /* "integrate.pyx":184
- *     t1_sum = 0.0
- *     t2_sum = 0.0
- *     p1_sum = 0.0             # <<<<<<<<<<<<<<
- *     p2_sum = 0.0
- * 
- */
-  __pyx_v_p1_sum = 0.0;
-
-  /* "integrate.pyx":185
- *     t2_sum = 0.0
- *     p1_sum = 0.0
- *     p2_sum = 0.0             # <<<<<<<<<<<<<<
- * 
- *     for i in range(n):
- */
-  __pyx_v_p2_sum = 0.0;
-
-  /* "integrate.pyx":187
- *     p2_sum = 0.0
- * 
- *     for i in range(n):             # <<<<<<<<<<<<<<
- *         mu10 = errors[i, 0] * exp[0]
- *         mu11 = exp_par_gamma * mu10
- */
-  __pyx_t_1 = __pyx_v_n;
-  __pyx_t_2 = __pyx_t_1;
-  for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
-    __pyx_v_i = __pyx_t_3;
-
-    /* "integrate.pyx":188
- * 
- *     for i in range(n):
- *         mu10 = errors[i, 0] * exp[0]             # <<<<<<<<<<<<<<
- *         mu11 = exp_par_gamma * mu10
- *         mu20 = errors[i, 1] * exp[1]
- */
-    __pyx_t_4 = __pyx_v_i;
-    __pyx_t_5 = 0;
-    __pyx_v_mu10 = ((*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_4 * __pyx_v_errors.strides[0]) )) + __pyx_t_5)) ))) * (__pyx_v_exp[0]));
-
-    /* "integrate.pyx":189
- *     for i in range(n):
- *         mu10 = errors[i, 0] * exp[0]
- *         mu11 = exp_par_gamma * mu10             # <<<<<<<<<<<<<<
- *         mu20 = errors[i, 1] * exp[1]
- *         mu21 = exp_par_gamma * mu20
- */
-    __pyx_v_mu11 = (__pyx_v_exp_par_gamma * __pyx_v_mu10);
-
-    /* "integrate.pyx":190
- *         mu10 = errors[i, 0] * exp[0]
- *         mu11 = exp_par_gamma * mu10
- *         mu20 = errors[i, 1] * exp[1]             # <<<<<<<<<<<<<<
- *         mu21 = exp_par_gamma * mu20
- *         alpha1 = errors[i, 2] * exp[2]
- */
-    __pyx_t_6 = __pyx_v_i;
-    __pyx_t_7 = 1;
-    __pyx_v_mu20 = ((*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_6 * __pyx_v_errors.strides[0]) )) + __pyx_t_7)) ))) * (__pyx_v_exp[1]));
-
-    /* "integrate.pyx":191
- *         mu11 = exp_par_gamma * mu10
- *         mu20 = errors[i, 1] * exp[1]
- *         mu21 = exp_par_gamma * mu20             # <<<<<<<<<<<<<<
- *         alpha1 = errors[i, 2] * exp[2]
- *         alpha2 = errors[i, 3] * exp[3]
- */
-    __pyx_v_mu21 = (__pyx_v_exp_par_gamma * __pyx_v_mu20);
-
-    /* "integrate.pyx":192
- *         mu20 = errors[i, 1] * exp[1]
- *         mu21 = exp_par_gamma * mu20
- *         alpha1 = errors[i, 2] * exp[2]             # <<<<<<<<<<<<<<
- *         alpha2 = errors[i, 3] * exp[3]
- * 
- */
-    __pyx_t_8 = __pyx_v_i;
-    __pyx_t_9 = 2;
-    __pyx_v_alpha1 = ((*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_8 * __pyx_v_errors.strides[0]) )) + __pyx_t_9)) ))) * (__pyx_v_exp[2]));
-
-    /* "integrate.pyx":193
- *         mu21 = exp_par_gamma * mu20
- *         alpha1 = errors[i, 2] * exp[2]
- *         alpha2 = errors[i, 3] * exp[3]             # <<<<<<<<<<<<<<
- * 
- *         j_is_larger = mu10 > mu20
- */
-    __pyx_t_10 = __pyx_v_i;
-    __pyx_t_11 = 3;
-    __pyx_v_alpha2 = ((*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_10 * __pyx_v_errors.strides[0]) )) + __pyx_t_11)) ))) * (__pyx_v_exp[3]));
-
-    /* "integrate.pyx":195
- *         alpha2 = errors[i, 3] * exp[3]
- * 
- *         j_is_larger = mu10 > mu20             # <<<<<<<<<<<<<<
- *         j_is_smaller = not j_is_larger
- *         threshold2 = (1 + mu10 * alpha1) / (c + alpha1)
- */
-    __pyx_v_j_is_larger = (__pyx_v_mu10 > __pyx_v_mu20);
-
-    /* "integrate.pyx":196
- * 
- *         j_is_larger = mu10 > mu20
- *         j_is_smaller = not j_is_larger             # <<<<<<<<<<<<<<
- *         threshold2 = (1 + mu10 * alpha1) / (c + alpha1)
- *         threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
- */
-    __pyx_v_j_is_smaller = (!(__pyx_v_j_is_larger != 0));
-
-    /* "integrate.pyx":197
- *         j_is_larger = mu10 > mu20
- *         j_is_smaller = not j_is_larger
- *         threshold2 = (1 + mu10 * alpha1) / (c + alpha1)             # <<<<<<<<<<<<<<
- *         threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
- * 
- */
-    __pyx_v_threshold2 = ((1.0 + (__pyx_v_mu10 * __pyx_v_alpha1)) / (__pyx_v_c + __pyx_v_alpha1));
-
-    /* "integrate.pyx":198
- *         j_is_smaller = not j_is_larger
- *         threshold2 = (1 + mu10 * alpha1) / (c + alpha1)
- *         threshold3 = (1 + mu20 * alpha2) / (c + alpha2)             # <<<<<<<<<<<<<<
- * 
- *         case1 = j_is_larger * (mu10 < 1 / c)
- */
-    __pyx_v_threshold3 = ((1.0 + (__pyx_v_mu20 * __pyx_v_alpha2)) / (__pyx_v_c + __pyx_v_alpha2));
-
-    /* "integrate.pyx":200
- *         threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
- * 
- *         case1 = j_is_larger * (mu10 < 1 / c)             # <<<<<<<<<<<<<<
- *         case2 = j_is_larger * (mu21 >= threshold2)
- *         case3 = j_is_larger and not (case1 | case2)
- */
-    __pyx_v_case1 = (__pyx_v_j_is_larger * (__pyx_v_mu10 < (1.0 / __pyx_v_c)));
-
-    /* "integrate.pyx":201
- * 
- *         case1 = j_is_larger * (mu10 < 1 / c)
- *         case2 = j_is_larger * (mu21 >= threshold2)             # <<<<<<<<<<<<<<
- *         case3 = j_is_larger and not (case1 | case2)
- *         case4 = j_is_smaller * (mu20 < 1 / c)
- */
-    __pyx_v_case2 = (__pyx_v_j_is_larger * (__pyx_v_mu21 >= __pyx_v_threshold2));
-
-    /* "integrate.pyx":202
- *         case1 = j_is_larger * (mu10 < 1 / c)
- *         case2 = j_is_larger * (mu21 >= threshold2)
- *         case3 = j_is_larger and not (case1 | case2)             # <<<<<<<<<<<<<<
- *         case4 = j_is_smaller * (mu20 < 1 / c)
- *         case5 = j_is_smaller * (mu11 >= threshold3)
- */
-    __pyx_t_13 = (__pyx_v_j_is_larger != 0);
-    if (__pyx_t_13) {
-    } else {
-      __pyx_t_12 = __pyx_t_13;
-      goto __pyx_L5_bool_binop_done;
-    }
-    __pyx_t_13 = ((!((__pyx_v_case1 | __pyx_v_case2) != 0)) != 0);
-    __pyx_t_12 = __pyx_t_13;
-    __pyx_L5_bool_binop_done:;
-    __pyx_v_case3 = __pyx_t_12;
-
-    /* "integrate.pyx":203
- *         case2 = j_is_larger * (mu21 >= threshold2)
- *         case3 = j_is_larger and not (case1 | case2)
- *         case4 = j_is_smaller * (mu20 < 1 / c)             # <<<<<<<<<<<<<<
- *         case5 = j_is_smaller * (mu11 >= threshold3)
- *         case6 = j_is_smaller and not (case4 | case5)
- */
-    __pyx_v_case4 = (__pyx_v_j_is_smaller * (__pyx_v_mu20 < (1.0 / __pyx_v_c)));
-
-    /* "integrate.pyx":204
- *         case3 = j_is_larger and not (case1 | case2)
- *         case4 = j_is_smaller * (mu20 < 1 / c)
- *         case5 = j_is_smaller * (mu11 >= threshold3)             # <<<<<<<<<<<<<<
- *         case6 = j_is_smaller and not (case4 | case5)
- * 
- */
-    __pyx_v_case5 = (__pyx_v_j_is_smaller * (__pyx_v_mu11 >= __pyx_v_threshold3));
-
-    /* "integrate.pyx":205
- *         case4 = j_is_smaller * (mu20 < 1 / c)
- *         case5 = j_is_smaller * (mu11 >= threshold3)
- *         case6 = j_is_smaller and not (case4 | case5)             # <<<<<<<<<<<<<<
- * 
- *         t0 = case1*c+case2 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) +case3 / threshold2 +case4 * c +case5 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case6 / threshold3
- */
-    __pyx_t_13 = (__pyx_v_j_is_smaller != 0);
-    if (__pyx_t_13) {
-    } else {
-      __pyx_t_12 = __pyx_t_13;
-      goto __pyx_L7_bool_binop_done;
-    }
-    __pyx_t_13 = ((!((__pyx_v_case4 | __pyx_v_case5) != 0)) != 0);
-    __pyx_t_12 = __pyx_t_13;
-    __pyx_L7_bool_binop_done:;
-    __pyx_v_case6 = __pyx_t_12;
-
-    /* "integrate.pyx":207
- *         case6 = j_is_smaller and not (case4 | case5)
- * 
- *         t0 = case1*c+case2 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) +case3 / threshold2 +case4 * c +case5 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case6 / threshold3             # <<<<<<<<<<<<<<
- *         t1 = case2 * (t0 * alpha1 * mu11 - alpha1) +case3 * (t0 * alpha1 * mu10 - alpha1) +case5 * (t0 * alpha1 * mu11 - alpha1)
- *         t2 = c - t0 - t1
- */
-    __pyx_v_t0 = ((((((__pyx_v_case1 * __pyx_v_c) + ((__pyx_v_case2 * ((__pyx_v_c + __pyx_v_alpha1) + __pyx_v_alpha2)) / ((1.0 + (__pyx_v_mu11 * __pyx_v_alpha1)) + (__pyx_v_mu21 * __pyx_v_alpha2)))) + (((double)__pyx_v_case3) / __pyx_v_threshold2)) + (__pyx_v_case4 * __pyx_v_c)) + ((__pyx_v_case5 * ((__pyx_v_c + __pyx_v_alpha1) + __pyx_v_alpha2)) / ((1.0 + (__pyx_v_mu11 * __pyx_v_alpha1)) + (__pyx_v_mu21 * __pyx_v_alpha2)))) + (((double)__pyx_v_case6) / __pyx_v_threshold3));
-
-    /* "integrate.pyx":208
- * 
- *         t0 = case1*c+case2 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) +case3 / threshold2 +case4 * c +case5 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case6 / threshold3
- *         t1 = case2 * (t0 * alpha1 * mu11 - alpha1) +case3 * (t0 * alpha1 * mu10 - alpha1) +case5 * (t0 * alpha1 * mu11 - alpha1)             # <<<<<<<<<<<<<<
- *         t2 = c - t0 - t1
- * 
- */
-    __pyx_v_t1 = (((__pyx_v_case2 * (((__pyx_v_t0 * __pyx_v_alpha1) * __pyx_v_mu11) - __pyx_v_alpha1)) + (__pyx_v_case3 * (((__pyx_v_t0 * __pyx_v_alpha1) * __pyx_v_mu10) - __pyx_v_alpha1))) + (__pyx_v_case5 * (((__pyx_v_t0 * __pyx_v_alpha1) * __pyx_v_mu11) - __pyx_v_alpha1)));
-
-    /* "integrate.pyx":209
- *         t0 = case1*c+case2 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) +case3 / threshold2 +case4 * c +case5 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case6 / threshold3
- *         t1 = case2 * (t0 * alpha1 * mu11 - alpha1) +case3 * (t0 * alpha1 * mu10 - alpha1) +case5 * (t0 * alpha1 * mu11 - alpha1)
- *         t2 = c - t0 - t1             # <<<<<<<<<<<<<<
- * 
- *         p12 = case2 + case5
- */
-    __pyx_v_t2 = ((__pyx_v_c - __pyx_v_t0) - __pyx_v_t1);
-
-    /* "integrate.pyx":211
- *         t2 = c - t0 - t1
- * 
- *         p12 = case2 + case5             # <<<<<<<<<<<<<<
- *         p1 = case3 + p12
- *         p2 = case6 + p12
- */
-    __pyx_v_p12 = (__pyx_v_case2 + __pyx_v_case5);
-
-    /* "integrate.pyx":212
- * 
- *         p12 = case2 + case5
- *         p1 = case3 + p12             # <<<<<<<<<<<<<<
- *         p2 = case6 + p12
- * 
- */
-    __pyx_v_p1 = (__pyx_v_case3 + __pyx_v_p12);
-
-    /* "integrate.pyx":213
- *         p12 = case2 + case5
- *         p1 = case3 + p12
- *         p2 = case6 + p12             # <<<<<<<<<<<<<<
- * 
- *         t1_sum += t1
- */
-    __pyx_v_p2 = (__pyx_v_case6 + __pyx_v_p12);
-
-    /* "integrate.pyx":215
- *         p2 = case6 + p12
- * 
- *         t1_sum += t1             # <<<<<<<<<<<<<<
- *         t2_sum += t2
- *         p1_sum += p1
- */
-    __pyx_v_t1_sum = (__pyx_v_t1_sum + __pyx_v_t1);
-
-    /* "integrate.pyx":216
- * 
- *         t1_sum += t1
- *         t2_sum += t2             # <<<<<<<<<<<<<<
- *         p1_sum += p1
- *         p2_sum += p2
- */
-    __pyx_v_t2_sum = (__pyx_v_t2_sum + __pyx_v_t2);
-
-    /* "integrate.pyx":217
- *         t1_sum += t1
- *         t2_sum += t2
- *         p1_sum += p1             # <<<<<<<<<<<<<<
- *         p2_sum += p2
- * 
- */
-    __pyx_v_p1_sum = (__pyx_v_p1_sum + __pyx_v_p1);
-
-    /* "integrate.pyx":218
- *         t2_sum += t2
- *         p1_sum += p1
- *         p2_sum += p2             # <<<<<<<<<<<<<<
- * 
- *     out.a = t1_sum/n
- */
-    __pyx_v_p2_sum = (__pyx_v_p2_sum + __pyx_v_p2);
-  }
-
-  /* "integrate.pyx":220
- *         p2_sum += p2
- * 
- *     out.a = t1_sum/n             # <<<<<<<<<<<<<<
- *     out.b = t2_sum/n
- *     out.c = p1_sum/n
- */
-  __pyx_v_out->a = (__pyx_v_t1_sum / ((double)__pyx_v_n));
-
-  /* "integrate.pyx":221
- * 
- *     out.a = t1_sum/n
- *     out.b = t2_sum/n             # <<<<<<<<<<<<<<
- *     out.c = p1_sum/n
- *     out.d = p2_sum/n
- */
-  __pyx_v_out->b = (__pyx_v_t2_sum / ((double)__pyx_v_n));
-
-  /* "integrate.pyx":222
- *     out.a = t1_sum/n
- *     out.b = t2_sum/n
- *     out.c = p1_sum/n             # <<<<<<<<<<<<<<
- *     out.d = p2_sum/n
- * 
- */
-  __pyx_v_out->c = (__pyx_v_p1_sum / ((double)__pyx_v_n));
-
-  /* "integrate.pyx":223
- *     out.b = t2_sum/n
- *     out.c = p1_sum/n
- *     out.d = p2_sum/n             # <<<<<<<<<<<<<<
- * 
- * def outer_loop_if(list mean_mu_alpha, double[:, ::1] errors, double par_gamma, size_t n):
- */
-  __pyx_v_out->d = (__pyx_v_p2_sum / ((double)__pyx_v_n));
-
-  /* "integrate.pyx":158
- *     return out
- * 
- * cdef void cy_mktout(Vec4 *out, Vec4 *mean_mu_alpha, double[:, ::1] errors, double par_gamma) nogil:             # <<<<<<<<<<<<<<
- *     cdef:
- *         size_t i, n
- */
-
-  /* function exit code */
-}
-
-/* "integrate.pyx":225
- *     out.d = p2_sum/n
- * 
- * def outer_loop_if(list mean_mu_alpha, double[:, ::1] errors, double par_gamma, size_t n):             # <<<<<<<<<<<<<<
- *     cdef:
- *         size_t i
- */
-
-/* Python wrapper */
-static PyObject *__pyx_pw_9integrate_7outer_loop_if(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_9integrate_7outer_loop_if = {"outer_loop_if", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_9integrate_7outer_loop_if, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_9integrate_7outer_loop_if(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  PyObject *__pyx_v_mean_mu_alpha = 0;
-  __Pyx_memviewslice __pyx_v_errors = { 0, 0, { 0 }, { 0 }, { 0 } };
-  double __pyx_v_par_gamma;
-  CYTHON_UNUSED size_t __pyx_v_n;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("outer_loop_if (wrapper)", 0);
-  {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_mean_mu_alpha,&__pyx_n_s_errors,&__pyx_n_s_par_gamma,&__pyx_n_s_n,0};
-    PyObject* values[4] = {0,0,0,0};
-    if (unlikely(__pyx_kwds)) {
-      Py_ssize_t kw_args;
-      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
-      switch (pos_args) {
-        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
-        CYTHON_FALLTHROUGH;
-        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
-        CYTHON_FALLTHROUGH;
-        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
-        CYTHON_FALLTHROUGH;
-        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
-        CYTHON_FALLTHROUGH;
-        case  0: break;
-        default: goto __pyx_L5_argtuple_error;
-      }
-      kw_args = PyDict_Size(__pyx_kwds);
-      switch (pos_args) {
-        case  0:
-        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_mean_mu_alpha)) != 0)) kw_args--;
-        else goto __pyx_L5_argtuple_error;
-        CYTHON_FALLTHROUGH;
-        case  1:
-        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_errors)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("outer_loop_if", 1, 4, 4, 1); __PYX_ERR(0, 225, __pyx_L3_error)
-        }
-        CYTHON_FALLTHROUGH;
-        case  2:
-        if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_par_gamma)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("outer_loop_if", 1, 4, 4, 2); __PYX_ERR(0, 225, __pyx_L3_error)
-        }
-        CYTHON_FALLTHROUGH;
-        case  3:
-        if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_n)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("outer_loop_if", 1, 4, 4, 3); __PYX_ERR(0, 225, __pyx_L3_error)
-        }
-      }
-      if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "outer_loop_if") < 0)) __PYX_ERR(0, 225, __pyx_L3_error)
-      }
-    } else if (PyTuple_GET_SIZE(__pyx_args) != 4) {
-      goto __pyx_L5_argtuple_error;
-    } else {
-      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
-      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
-      values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
-      values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
-    }
-    __pyx_v_mean_mu_alpha = ((PyObject*)values[0]);
-    __pyx_v_errors = __Pyx_PyObject_to_MemoryviewSlice_d_dc_double(values[1], PyBUF_WRITABLE); if (unlikely(!__pyx_v_errors.memview)) __PYX_ERR(0, 225, __pyx_L3_error)
-    __pyx_v_par_gamma = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_par_gamma == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 225, __pyx_L3_error)
-    __pyx_v_n = __Pyx_PyInt_As_size_t(values[3]); if (unlikely((__pyx_v_n == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 225, __pyx_L3_error)
-  }
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("outer_loop_if", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 225, __pyx_L3_error)
-  __pyx_L3_error:;
-  __Pyx_AddTraceback("integrate.outer_loop_if", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_mean_mu_alpha), (&PyList_Type), 1, "mean_mu_alpha", 1))) __PYX_ERR(0, 225, __pyx_L1_error)
-  __pyx_r = __pyx_pf_9integrate_6outer_loop_if(__pyx_self, __pyx_v_mean_mu_alpha, __pyx_v_errors, __pyx_v_par_gamma, __pyx_v_n);
-
-  /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_9integrate_6outer_loop_if(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mean_mu_alpha, __Pyx_memviewslice __pyx_v_errors, double __pyx_v_par_gamma, CYTHON_UNUSED size_t __pyx_v_n) {
-  CYTHON_UNUSED size_t __pyx_v_i;
-  __pyx_t_9integrate_Vec4 __pyx_v_mean_vec;
-  __pyx_t_9integrate_Vec4 __pyx_v_out;
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  double __pyx_t_1;
-  size_t __pyx_t_2;
-  size_t __pyx_t_3;
-  size_t __pyx_t_4;
-  PyObject *__pyx_t_5 = NULL;
-  __Pyx_RefNannySetupContext("outer_loop_if", 0);
-
-  /* "integrate.pyx":231
- *         Vec4 out
- * 
- *     mean_vec.a = <double>(mean_mu_alpha[0])             # <<<<<<<<<<<<<<
- *     mean_vec.b = <double>(mean_mu_alpha[1])
- *     mean_vec.c = <double>(mean_mu_alpha[2])
- */
-  if (unlikely(__pyx_v_mean_mu_alpha == Py_None)) {
-    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 231, __pyx_L1_error)
-  }
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 0)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 231, __pyx_L1_error)
-  __pyx_v_mean_vec.a = ((double)__pyx_t_1);
-
-  /* "integrate.pyx":232
- * 
- *     mean_vec.a = <double>(mean_mu_alpha[0])
- *     mean_vec.b = <double>(mean_mu_alpha[1])             # <<<<<<<<<<<<<<
- *     mean_vec.c = <double>(mean_mu_alpha[2])
- *     mean_vec.d = <double>(mean_mu_alpha[3])
- */
-  if (unlikely(__pyx_v_mean_mu_alpha == Py_None)) {
-    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 232, __pyx_L1_error)
-  }
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 1)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 232, __pyx_L1_error)
-  __pyx_v_mean_vec.b = ((double)__pyx_t_1);
-
-  /* "integrate.pyx":233
- *     mean_vec.a = <double>(mean_mu_alpha[0])
- *     mean_vec.b = <double>(mean_mu_alpha[1])
- *     mean_vec.c = <double>(mean_mu_alpha[2])             # <<<<<<<<<<<<<<
- *     mean_vec.d = <double>(mean_mu_alpha[3])
- * 
- */
-  if (unlikely(__pyx_v_mean_mu_alpha == Py_None)) {
-    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 233, __pyx_L1_error)
-  }
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 2)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 233, __pyx_L1_error)
-  __pyx_v_mean_vec.c = ((double)__pyx_t_1);
-
-  /* "integrate.pyx":234
- *     mean_vec.b = <double>(mean_mu_alpha[1])
- *     mean_vec.c = <double>(mean_mu_alpha[2])
- *     mean_vec.d = <double>(mean_mu_alpha[3])             # <<<<<<<<<<<<<<
- * 
- *     with nogil:
- */
-  if (unlikely(__pyx_v_mean_mu_alpha == Py_None)) {
-    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 234, __pyx_L1_error)
-  }
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_mean_mu_alpha, 3)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 234, __pyx_L1_error)
-  __pyx_v_mean_vec.d = ((double)__pyx_t_1);
-
-  /* "integrate.pyx":236
- *     mean_vec.d = <double>(mean_mu_alpha[3])
- * 
- *     with nogil:             # <<<<<<<<<<<<<<
- *         for i in prange(n):
- *             cy_mktout_if(&out, &mean_vec, errors, par_gamma)
- */
-  {
-      #ifdef WITH_THREAD
-      PyThreadState *_save;
-      Py_UNBLOCK_THREADS
-      __Pyx_FastGIL_Remember();
-      #endif
-      /*try:*/ {
-
-        /* "integrate.pyx":237
- * 
- *     with nogil:
- *         for i in prange(n):             # <<<<<<<<<<<<<<
- *             cy_mktout_if(&out, &mean_vec, errors, par_gamma)
- *     return out
- */
-        __pyx_t_2 = __pyx_v_n;
-        if (1 == 0) abort();
-        {
-            #if ((defined(__APPLE__) || defined(__OSX__)) && (defined(__GNUC__) && (__GNUC__ > 2 || (__GNUC__ == 2 && (__GNUC_MINOR__ > 95)))))
-                #undef likely
-                #undef unlikely
-                #define likely(x)   (x)
-                #define unlikely(x) (x)
-            #endif
-            __pyx_t_4 = (__pyx_t_2 - 0 + 1 - 1/abs(1)) / 1;
-            if (__pyx_t_4 > 0)
-            {
-                #ifdef _OPENMP
-                #pragma omp parallel
-                #endif /* _OPENMP */
-                {
-                    #ifdef _OPENMP
-                    #pragma omp for firstprivate(__pyx_v_i) lastprivate(__pyx_v_i)
-                    #endif /* _OPENMP */
-                    for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_4; __pyx_t_3++){
-                        {
-                            __pyx_v_i = (size_t)(0 + 1 * __pyx_t_3);
-
-                            /* "integrate.pyx":238
- *     with nogil:
- *         for i in prange(n):
- *             cy_mktout_if(&out, &mean_vec, errors, par_gamma)             # <<<<<<<<<<<<<<
- *     return out
- * 
- */
-                            __pyx_f_9integrate_cy_mktout_if((&__pyx_v_out), (&__pyx_v_mean_vec), __pyx_v_errors, __pyx_v_par_gamma);
-                        }
-                    }
-                }
-            }
-        }
-        #if ((defined(__APPLE__) || defined(__OSX__)) && (defined(__GNUC__) && (__GNUC__ > 2 || (__GNUC__ == 2 && (__GNUC_MINOR__ > 95)))))
-            #undef likely
-            #undef unlikely
-            #define likely(x)   __builtin_expect(!!(x), 1)
-            #define unlikely(x) __builtin_expect(!!(x), 0)
-        #endif
-      }
-
-      /* "integrate.pyx":236
- *     mean_vec.d = <double>(mean_mu_alpha[3])
- * 
- *     with nogil:             # <<<<<<<<<<<<<<
- *         for i in prange(n):
- *             cy_mktout_if(&out, &mean_vec, errors, par_gamma)
- */
-      /*finally:*/ {
-        /*normal exit:*/{
-          #ifdef WITH_THREAD
-          __Pyx_FastGIL_Forget();
-          Py_BLOCK_THREADS
-          #endif
-          goto __pyx_L5;
-        }
-        __pyx_L5:;
-      }
-  }
-
-  /* "integrate.pyx":239
- *         for i in prange(n):
- *             cy_mktout_if(&out, &mean_vec, errors, par_gamma)
- *     return out             # <<<<<<<<<<<<<<
- * 
- * cdef void cy_mktout_if(Vec4 *out, Vec4 *mean_mu_alpha, double[:, ::1] errors, double par_gamma) nogil:
- */
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_5 = __pyx_convert__to_py___pyx_t_9integrate_Vec4(__pyx_v_out); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 239, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  __pyx_r = __pyx_t_5;
-  __pyx_t_5 = 0;
-  goto __pyx_L0;
-
-  /* "integrate.pyx":225
- *     out.d = p2_sum/n
- * 
- * def outer_loop_if(list mean_mu_alpha, double[:, ::1] errors, double par_gamma, size_t n):             # <<<<<<<<<<<<<<
- *     cdef:
- *         size_t i
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("integrate.outer_loop_if", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __PYX_XDEC_MEMVIEW(&__pyx_v_errors, 1);
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "integrate.pyx":241
- *     return out
- * 
- * cdef void cy_mktout_if(Vec4 *out, Vec4 *mean_mu_alpha, double[:, ::1] errors, double par_gamma) nogil:             # <<<<<<<<<<<<<<
- *     cdef:
- *         size_t i, n
- */
-
-static void __pyx_f_9integrate_cy_mktout_if(__pyx_t_9integrate_Vec4 *__pyx_v_out, __pyx_t_9integrate_Vec4 *__pyx_v_mean_mu_alpha, __Pyx_memviewslice __pyx_v_errors, double __pyx_v_par_gamma) {
-  size_t __pyx_v_i;
-  size_t __pyx_v_n;
-  double __pyx_v_exp[4];
-  double __pyx_v_exp_par_gamma;
-  double __pyx_v_mu10;
-  double __pyx_v_mu11;
-  double __pyx_v_mu20;
-  double __pyx_v_mu21;
   double __pyx_v_alpha1;
   double __pyx_v_alpha2;
-  int __pyx_v_j_is_larger;
-  double __pyx_v_threshold2;
-  double __pyx_v_threshold3;
-  int __pyx_v_case1;
-  int __pyx_v_case2;
-  int __pyx_v_case3;
-  int __pyx_v_case4;
-  int __pyx_v_case5;
-  int __pyx_v_case6;
   double __pyx_v_t0;
-  double __pyx_v_t1;
-  double __pyx_v_t2;
-  double __pyx_v_t1_sum;
-  double __pyx_v_t2_sum;
-  double __pyx_v_p1_sum;
-  double __pyx_v_p2_sum;
-  double __pyx_v_c;
-  CYTHON_UNUSED int __pyx_v_j_is_smaller;
   size_t __pyx_t_1;
   size_t __pyx_t_2;
   size_t __pyx_t_3;
@@ -4518,458 +3175,494 @@ static void __pyx_f_9integrate_cy_mktout_if(__pyx_t_9integrate_Vec4 *__pyx_v_out
   Py_ssize_t __pyx_t_11;
   int __pyx_t_12;
 
-  /* "integrate.pyx":257
+  /* "integrate_alt.pyx":117
+ *         double threshold2, threshold3
  * 
- *     #compute the exp outside of the loop
- *     n = errors.shape[0]             # <<<<<<<<<<<<<<
- *     exp[0] = cmath.exp(mean_mu_alpha.a)
- *     exp[1] = cmath.exp(mean_mu_alpha.b)
- */
-  __pyx_v_n = (__pyx_v_errors.shape[0]);
-
-  /* "integrate.pyx":258
- *     #compute the exp outside of the loop
- *     n = errors.shape[0]
- *     exp[0] = cmath.exp(mean_mu_alpha.a)             # <<<<<<<<<<<<<<
- *     exp[1] = cmath.exp(mean_mu_alpha.b)
- *     exp[2] = cmath.exp(mean_mu_alpha.c)
- */
-  (__pyx_v_exp[0]) = exp(__pyx_v_mean_mu_alpha->a);
-
-  /* "integrate.pyx":259
- *     n = errors.shape[0]
- *     exp[0] = cmath.exp(mean_mu_alpha.a)
- *     exp[1] = cmath.exp(mean_mu_alpha.b)             # <<<<<<<<<<<<<<
- *     exp[2] = cmath.exp(mean_mu_alpha.c)
- *     exp[3] = cmath.exp(mean_mu_alpha.d)
- */
-  (__pyx_v_exp[1]) = exp(__pyx_v_mean_mu_alpha->b);
-
-  /* "integrate.pyx":260
- *     exp[0] = cmath.exp(mean_mu_alpha.a)
- *     exp[1] = cmath.exp(mean_mu_alpha.b)
- *     exp[2] = cmath.exp(mean_mu_alpha.c)             # <<<<<<<<<<<<<<
- *     exp[3] = cmath.exp(mean_mu_alpha.d)
- *     exp_par_gamma = cmath.exp(par_gamma)
- */
-  (__pyx_v_exp[2]) = exp(__pyx_v_mean_mu_alpha->c);
-
-  /* "integrate.pyx":261
- *     exp[1] = cmath.exp(mean_mu_alpha.b)
- *     exp[2] = cmath.exp(mean_mu_alpha.c)
- *     exp[3] = cmath.exp(mean_mu_alpha.d)             # <<<<<<<<<<<<<<
- *     exp_par_gamma = cmath.exp(par_gamma)
- *     c = 168.0
- */
-  (__pyx_v_exp[3]) = exp(__pyx_v_mean_mu_alpha->d);
-
-  /* "integrate.pyx":262
- *     exp[2] = cmath.exp(mean_mu_alpha.c)
- *     exp[3] = cmath.exp(mean_mu_alpha.d)
- *     exp_par_gamma = cmath.exp(par_gamma)             # <<<<<<<<<<<<<<
- *     c = 168.0
- * 
- */
-  __pyx_v_exp_par_gamma = exp(__pyx_v_par_gamma);
-
-  /* "integrate.pyx":263
- *     exp[3] = cmath.exp(mean_mu_alpha.d)
- *     exp_par_gamma = cmath.exp(par_gamma)
- *     c = 168.0             # <<<<<<<<<<<<<<
- * 
+ *     t0_sum = 0.0             # <<<<<<<<<<<<<<
  *     t1_sum = 0.0
+ *     t2_sum = 0.0
  */
-  __pyx_v_c = 168.0;
+  __pyx_v_t0_sum = 0.0;
 
-  /* "integrate.pyx":265
- *     c = 168.0
+  /* "integrate_alt.pyx":118
  * 
+ *     t0_sum = 0.0
  *     t1_sum = 0.0             # <<<<<<<<<<<<<<
  *     t2_sum = 0.0
- *     p1_sum = 0.0
+ * 
  */
   __pyx_v_t1_sum = 0.0;
 
-  /* "integrate.pyx":266
- * 
+  /* "integrate_alt.pyx":119
+ *     t0_sum = 0.0
  *     t1_sum = 0.0
  *     t2_sum = 0.0             # <<<<<<<<<<<<<<
- *     p1_sum = 0.0
- *     p2_sum = 0.0
+ * 
+ *     n = errors.shape[0]
  */
   __pyx_v_t2_sum = 0.0;
 
-  /* "integrate.pyx":267
- *     t1_sum = 0.0
+  /* "integrate_alt.pyx":121
  *     t2_sum = 0.0
- *     p1_sum = 0.0             # <<<<<<<<<<<<<<
- *     p2_sum = 0.0
  * 
- */
-  __pyx_v_p1_sum = 0.0;
-
-  /* "integrate.pyx":268
- *     t2_sum = 0.0
- *     p1_sum = 0.0
- *     p2_sum = 0.0             # <<<<<<<<<<<<<<
- * 
+ *     n = errors.shape[0]             # <<<<<<<<<<<<<<
  *     for i in range(n):
+ *         err[0] = errors[i, 0]
  */
-  __pyx_v_p2_sum = 0.0;
+  __pyx_v_n = (__pyx_v_errors.shape[0]);
 
-  /* "integrate.pyx":270
- *     p2_sum = 0.0
+  /* "integrate_alt.pyx":122
  * 
+ *     n = errors.shape[0]
  *     for i in range(n):             # <<<<<<<<<<<<<<
- *         mu10 = errors[i, 0] * exp[0]
- *         mu11 = exp_par_gamma * mu10
+ *         err[0] = errors[i, 0]
+ *         err[1] = errors[i, 1]
  */
   __pyx_t_1 = __pyx_v_n;
   __pyx_t_2 = __pyx_t_1;
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_i = __pyx_t_3;
 
-    /* "integrate.pyx":271
- * 
+    /* "integrate_alt.pyx":123
+ *     n = errors.shape[0]
  *     for i in range(n):
- *         mu10 = errors[i, 0] * exp[0]             # <<<<<<<<<<<<<<
- *         mu11 = exp_par_gamma * mu10
- *         mu20 = errors[i, 1] * exp[1]
+ *         err[0] = errors[i, 0]             # <<<<<<<<<<<<<<
+ *         err[1] = errors[i, 1]
+ *         err[2] = errors[i, 2]
  */
     __pyx_t_4 = __pyx_v_i;
     __pyx_t_5 = 0;
-    __pyx_v_mu10 = ((*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_4 * __pyx_v_errors.strides[0]) )) + __pyx_t_5)) ))) * (__pyx_v_exp[0]));
+    (__pyx_v_err[0]) = (*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_4 * __pyx_v_errors.strides[0]) )) + __pyx_t_5)) )));
 
-    /* "integrate.pyx":272
+    /* "integrate_alt.pyx":124
  *     for i in range(n):
- *         mu10 = errors[i, 0] * exp[0]
- *         mu11 = exp_par_gamma * mu10             # <<<<<<<<<<<<<<
- *         mu20 = errors[i, 1] * exp[1]
- *         mu21 = exp_par_gamma * mu20
- */
-    __pyx_v_mu11 = (__pyx_v_exp_par_gamma * __pyx_v_mu10);
-
-    /* "integrate.pyx":273
- *         mu10 = errors[i, 0] * exp[0]
- *         mu11 = exp_par_gamma * mu10
- *         mu20 = errors[i, 1] * exp[1]             # <<<<<<<<<<<<<<
- *         mu21 = exp_par_gamma * mu20
- *         alpha1 = errors[i, 2] * exp[2]
+ *         err[0] = errors[i, 0]
+ *         err[1] = errors[i, 1]             # <<<<<<<<<<<<<<
+ *         err[2] = errors[i, 2]
+ *         err[3] = errors[i, 3]
  */
     __pyx_t_6 = __pyx_v_i;
     __pyx_t_7 = 1;
-    __pyx_v_mu20 = ((*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_6 * __pyx_v_errors.strides[0]) )) + __pyx_t_7)) ))) * (__pyx_v_exp[1]));
+    (__pyx_v_err[1]) = (*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_6 * __pyx_v_errors.strides[0]) )) + __pyx_t_7)) )));
 
-    /* "integrate.pyx":274
- *         mu11 = exp_par_gamma * mu10
- *         mu20 = errors[i, 1] * exp[1]
- *         mu21 = exp_par_gamma * mu20             # <<<<<<<<<<<<<<
- *         alpha1 = errors[i, 2] * exp[2]
- *         alpha2 = errors[i, 3] * exp[3]
- */
-    __pyx_v_mu21 = (__pyx_v_exp_par_gamma * __pyx_v_mu20);
-
-    /* "integrate.pyx":275
- *         mu20 = errors[i, 1] * exp[1]
- *         mu21 = exp_par_gamma * mu20
- *         alpha1 = errors[i, 2] * exp[2]             # <<<<<<<<<<<<<<
- *         alpha2 = errors[i, 3] * exp[3]
+    /* "integrate_alt.pyx":125
+ *         err[0] = errors[i, 0]
+ *         err[1] = errors[i, 1]
+ *         err[2] = errors[i, 2]             # <<<<<<<<<<<<<<
+ *         err[3] = errors[i, 3]
  * 
  */
     __pyx_t_8 = __pyx_v_i;
     __pyx_t_9 = 2;
-    __pyx_v_alpha1 = ((*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_8 * __pyx_v_errors.strides[0]) )) + __pyx_t_9)) ))) * (__pyx_v_exp[2]));
+    (__pyx_v_err[2]) = (*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_8 * __pyx_v_errors.strides[0]) )) + __pyx_t_9)) )));
 
-    /* "integrate.pyx":276
- *         mu21 = exp_par_gamma * mu20
- *         alpha1 = errors[i, 2] * exp[2]
- *         alpha2 = errors[i, 3] * exp[3]             # <<<<<<<<<<<<<<
+    /* "integrate_alt.pyx":126
+ *         err[1] = errors[i, 1]
+ *         err[2] = errors[i, 2]
+ *         err[3] = errors[i, 3]             # <<<<<<<<<<<<<<
  * 
- *         j_is_larger = mu10 > mu20
+ *         if err[0] + mma.a >= err[1] + mma.b:
  */
     __pyx_t_10 = __pyx_v_i;
     __pyx_t_11 = 3;
-    __pyx_v_alpha2 = ((*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_10 * __pyx_v_errors.strides[0]) )) + __pyx_t_11)) ))) * (__pyx_v_exp[3]));
+    (__pyx_v_err[3]) = (*((double *) ( /* dim=1 */ ((char *) (((double *) ( /* dim=0 */ (__pyx_v_errors.data + __pyx_t_10 * __pyx_v_errors.strides[0]) )) + __pyx_t_11)) )));
 
-    /* "integrate.pyx":278
- *         alpha2 = errors[i, 3] * exp[3]
+    /* "integrate_alt.pyx":128
+ *         err[3] = errors[i, 3]
  * 
- *         j_is_larger = mu10 > mu20             # <<<<<<<<<<<<<<
- *         j_is_smaller = not j_is_larger
- *         threshold2 = (1 + mu10 * alpha1) / (c + alpha1)
+ *         if err[0] + mma.a >= err[1] + mma.b:             # <<<<<<<<<<<<<<
+ *             if err[0] + mma.a < threshold1:
+ *                 t0_sum += c
  */
-    __pyx_v_j_is_larger = (__pyx_v_mu10 > __pyx_v_mu20);
-
-    /* "integrate.pyx":279
- * 
- *         j_is_larger = mu10 > mu20
- *         j_is_smaller = not j_is_larger             # <<<<<<<<<<<<<<
- *         threshold2 = (1 + mu10 * alpha1) / (c + alpha1)
- *         threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
- */
-    __pyx_v_j_is_smaller = (!(__pyx_v_j_is_larger != 0));
-
-    /* "integrate.pyx":280
- *         j_is_larger = mu10 > mu20
- *         j_is_smaller = not j_is_larger
- *         threshold2 = (1 + mu10 * alpha1) / (c + alpha1)             # <<<<<<<<<<<<<<
- *         threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
- * 
- */
-    __pyx_v_threshold2 = ((1.0 + (__pyx_v_mu10 * __pyx_v_alpha1)) / (__pyx_v_c + __pyx_v_alpha1));
-
-    /* "integrate.pyx":281
- *         j_is_smaller = not j_is_larger
- *         threshold2 = (1 + mu10 * alpha1) / (c + alpha1)
- *         threshold3 = (1 + mu20 * alpha2) / (c + alpha2)             # <<<<<<<<<<<<<<
- * 
- *         if j_is_larger:
- */
-    __pyx_v_threshold3 = ((1.0 + (__pyx_v_mu20 * __pyx_v_alpha2)) / (__pyx_v_c + __pyx_v_alpha2));
-
-    /* "integrate.pyx":283
- *         threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
- * 
- *         if j_is_larger:             # <<<<<<<<<<<<<<
- *             case1 = mu10 < 1 / c
- *             case2 = mu21 >= threshold2
- */
-    __pyx_t_12 = (__pyx_v_j_is_larger != 0);
+    __pyx_t_12 = ((((__pyx_v_err[0]) + __pyx_v_mma->a) >= ((__pyx_v_err[1]) + __pyx_v_mma->b)) != 0);
     if (__pyx_t_12) {
 
-      /* "integrate.pyx":284
+      /* "integrate_alt.pyx":129
  * 
- *         if j_is_larger:
- *             case1 = mu10 < 1 / c             # <<<<<<<<<<<<<<
- *             case2 = mu21 >= threshold2
- *             case3 = not (case1 | case2)
+ *         if err[0] + mma.a >= err[1] + mma.b:
+ *             if err[0] + mma.a < threshold1:             # <<<<<<<<<<<<<<
+ *                 t0_sum += c
+ *                 #t1_sum += 0
  */
-      __pyx_v_case1 = (__pyx_v_mu10 < (1.0 / __pyx_v_c));
+      __pyx_t_12 = ((((__pyx_v_err[0]) + __pyx_v_mma->a) < __pyx_v_13integrate_alt_threshold1) != 0);
+      if (__pyx_t_12) {
 
-      /* "integrate.pyx":285
- *         if j_is_larger:
- *             case1 = mu10 < 1 / c
- *             case2 = mu21 >= threshold2             # <<<<<<<<<<<<<<
- *             case3 = not (case1 | case2)
- * 
+        /* "integrate_alt.pyx":130
+ *         if err[0] + mma.a >= err[1] + mma.b:
+ *             if err[0] + mma.a < threshold1:
+ *                 t0_sum += c             # <<<<<<<<<<<<<<
+ *                 #t1_sum += 0
+ *                 #t2_sum += 0
  */
-      __pyx_v_case2 = (__pyx_v_mu21 >= __pyx_v_threshold2);
+        __pyx_v_t0_sum = (__pyx_v_t0_sum + __pyx_v_13integrate_alt_c);
 
-      /* "integrate.pyx":286
- *             case1 = mu10 < 1 / c
- *             case2 = mu21 >= threshold2
- *             case3 = not (case1 | case2)             # <<<<<<<<<<<<<<
+        /* "integrate_alt.pyx":129
  * 
- *             t0 = case1*c + case2 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case3 / threshold2
+ *         if err[0] + mma.a >= err[1] + mma.b:
+ *             if err[0] + mma.a < threshold1:             # <<<<<<<<<<<<<<
+ *                 t0_sum += c
+ *                 #t1_sum += 0
  */
-      __pyx_v_case3 = (!((__pyx_v_case1 | __pyx_v_case2) != 0));
+        goto __pyx_L6;
+      }
 
-      /* "integrate.pyx":288
- *             case3 = not (case1 | case2)
- * 
- *             t0 = case1*c + case2 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case3 / threshold2             # <<<<<<<<<<<<<<
- *             t1 = case2 * (t0 * alpha1 * mu11 - alpha1) + case3 * (t0 * alpha1 * mu10 - alpha1)
- *             t2 = c - t0 - t1
+      /* "integrate_alt.pyx":134
+ *                 #t2_sum += 0
+ *             else:
+ *                 mu21 = cmath.exp(err[1] + par_gamma + mma.b)             # <<<<<<<<<<<<<<
+ *                 mu10 = cmath.exp(err[0] + mma.a)
+ *                 alpha1 = cmath.exp(err[2] + mma.c)
  */
-      __pyx_v_t0 = (((__pyx_v_case1 * __pyx_v_c) + ((__pyx_v_case2 * ((__pyx_v_c + __pyx_v_alpha1) + __pyx_v_alpha2)) / ((1.0 + (__pyx_v_mu11 * __pyx_v_alpha1)) + (__pyx_v_mu21 * __pyx_v_alpha2)))) + (((double)__pyx_v_case3) / __pyx_v_threshold2));
+      /*else*/ {
+        __pyx_v_mu21 = exp((((__pyx_v_err[1]) + __pyx_v_par_gamma) + __pyx_v_mma->b));
 
-      /* "integrate.pyx":289
- * 
- *             t0 = case1*c + case2 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case3 / threshold2
- *             t1 = case2 * (t0 * alpha1 * mu11 - alpha1) + case3 * (t0 * alpha1 * mu10 - alpha1)             # <<<<<<<<<<<<<<
- *             t2 = c - t0 - t1
- * 
+        /* "integrate_alt.pyx":135
+ *             else:
+ *                 mu21 = cmath.exp(err[1] + par_gamma + mma.b)
+ *                 mu10 = cmath.exp(err[0] + mma.a)             # <<<<<<<<<<<<<<
+ *                 alpha1 = cmath.exp(err[2] + mma.c)
+ *                 alpha2 = cmath.exp(err[3] + mma.d)
  */
-      __pyx_v_t1 = ((__pyx_v_case2 * (((__pyx_v_t0 * __pyx_v_alpha1) * __pyx_v_mu11) - __pyx_v_alpha1)) + (__pyx_v_case3 * (((__pyx_v_t0 * __pyx_v_alpha1) * __pyx_v_mu10) - __pyx_v_alpha1)));
+        __pyx_v_mu10 = exp(((__pyx_v_err[0]) + __pyx_v_mma->a));
 
-      /* "integrate.pyx":290
- *             t0 = case1*c + case2 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case3 / threshold2
- *             t1 = case2 * (t0 * alpha1 * mu11 - alpha1) + case3 * (t0 * alpha1 * mu10 - alpha1)
- *             t2 = c - t0 - t1             # <<<<<<<<<<<<<<
- * 
- *             t1_sum += t1
+        /* "integrate_alt.pyx":136
+ *                 mu21 = cmath.exp(err[1] + par_gamma + mma.b)
+ *                 mu10 = cmath.exp(err[0] + mma.a)
+ *                 alpha1 = cmath.exp(err[2] + mma.c)             # <<<<<<<<<<<<<<
+ *                 alpha2 = cmath.exp(err[3] + mma.d)
+ *                 threshold2 = (1 + mu10 * alpha1) / (c + alpha1)
  */
-      __pyx_v_t2 = ((__pyx_v_c - __pyx_v_t0) - __pyx_v_t1);
+        __pyx_v_alpha1 = exp(((__pyx_v_err[2]) + __pyx_v_mma->c));
 
-      /* "integrate.pyx":292
- *             t2 = c - t0 - t1
- * 
- *             t1_sum += t1             # <<<<<<<<<<<<<<
- *             t2_sum += t2
- *             p1_sum += case2 + case3
+        /* "integrate_alt.pyx":137
+ *                 mu10 = cmath.exp(err[0] + mma.a)
+ *                 alpha1 = cmath.exp(err[2] + mma.c)
+ *                 alpha2 = cmath.exp(err[3] + mma.d)             # <<<<<<<<<<<<<<
+ *                 threshold2 = (1 + mu10 * alpha1) / (c + alpha1)
+ *                 if mu21 >= threshold2:
  */
-      __pyx_v_t1_sum = (__pyx_v_t1_sum + __pyx_v_t1);
+        __pyx_v_alpha2 = exp(((__pyx_v_err[3]) + __pyx_v_mma->d));
 
-      /* "integrate.pyx":293
- * 
- *             t1_sum += t1
- *             t2_sum += t2             # <<<<<<<<<<<<<<
- *             p1_sum += case2 + case3
- *             p2_sum += case2
+        /* "integrate_alt.pyx":138
+ *                 alpha1 = cmath.exp(err[2] + mma.c)
+ *                 alpha2 = cmath.exp(err[3] + mma.d)
+ *                 threshold2 = (1 + mu10 * alpha1) / (c + alpha1)             # <<<<<<<<<<<<<<
+ *                 if mu21 >= threshold2:
+ *                     mu11 = cmath.exp(err[0] + par_gamma + mma.a)
  */
-      __pyx_v_t2_sum = (__pyx_v_t2_sum + __pyx_v_t2);
+        __pyx_v_threshold2 = ((1.0 + (__pyx_v_mu10 * __pyx_v_alpha1)) / (__pyx_v_13integrate_alt_c + __pyx_v_alpha1));
 
-      /* "integrate.pyx":294
- *             t1_sum += t1
- *             t2_sum += t2
- *             p1_sum += case2 + case3             # <<<<<<<<<<<<<<
- *             p2_sum += case2
- * 
+        /* "integrate_alt.pyx":139
+ *                 alpha2 = cmath.exp(err[3] + mma.d)
+ *                 threshold2 = (1 + mu10 * alpha1) / (c + alpha1)
+ *                 if mu21 >= threshold2:             # <<<<<<<<<<<<<<
+ *                     mu11 = cmath.exp(err[0] + par_gamma + mma.a)
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)
  */
-      __pyx_v_p1_sum = (__pyx_v_p1_sum + (__pyx_v_case2 + __pyx_v_case3));
+        __pyx_t_12 = ((__pyx_v_mu21 >= __pyx_v_threshold2) != 0);
+        if (__pyx_t_12) {
 
-      /* "integrate.pyx":295
- *             t2_sum += t2
- *             p1_sum += case2 + case3
- *             p2_sum += case2             # <<<<<<<<<<<<<<
- * 
+          /* "integrate_alt.pyx":140
+ *                 threshold2 = (1 + mu10 * alpha1) / (c + alpha1)
+ *                 if mu21 >= threshold2:
+ *                     mu11 = cmath.exp(err[0] + par_gamma + mma.a)             # <<<<<<<<<<<<<<
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)
+ *                     t0_sum += t0
+ */
+          __pyx_v_mu11 = exp((((__pyx_v_err[0]) + __pyx_v_par_gamma) + __pyx_v_mma->a));
+
+          /* "integrate_alt.pyx":141
+ *                 if mu21 >= threshold2:
+ *                     mu11 = cmath.exp(err[0] + par_gamma + mma.a)
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)             # <<<<<<<<<<<<<<
+ *                     t0_sum += t0
+ *                     t1_sum += (t0 * mu11 - 1) * alpha1
+ */
+          __pyx_v_t0 = (((__pyx_v_13integrate_alt_c + __pyx_v_alpha1) + __pyx_v_alpha2) / ((1.0 + (__pyx_v_mu11 * __pyx_v_alpha1)) + (__pyx_v_mu21 * __pyx_v_alpha2)));
+
+          /* "integrate_alt.pyx":142
+ *                     mu11 = cmath.exp(err[0] + par_gamma + mma.a)
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)
+ *                     t0_sum += t0             # <<<<<<<<<<<<<<
+ *                     t1_sum += (t0 * mu11 - 1) * alpha1
+ *                     t2_sum += (t0 * mu21 - 1) * alpha2
+ */
+          __pyx_v_t0_sum = (__pyx_v_t0_sum + __pyx_v_t0);
+
+          /* "integrate_alt.pyx":143
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)
+ *                     t0_sum += t0
+ *                     t1_sum += (t0 * mu11 - 1) * alpha1             # <<<<<<<<<<<<<<
+ *                     t2_sum += (t0 * mu21 - 1) * alpha2
+ *                 else:
+ */
+          __pyx_v_t1_sum = (__pyx_v_t1_sum + (((__pyx_v_t0 * __pyx_v_mu11) - 1.0) * __pyx_v_alpha1));
+
+          /* "integrate_alt.pyx":144
+ *                     t0_sum += t0
+ *                     t1_sum += (t0 * mu11 - 1) * alpha1
+ *                     t2_sum += (t0 * mu21 - 1) * alpha2             # <<<<<<<<<<<<<<
+ *                 else:
+ *                     t0 = (c + alpha1) / (1 + mu10 * alpha1)
+ */
+          __pyx_v_t2_sum = (__pyx_v_t2_sum + (((__pyx_v_t0 * __pyx_v_mu21) - 1.0) * __pyx_v_alpha2));
+
+          /* "integrate_alt.pyx":139
+ *                 alpha2 = cmath.exp(err[3] + mma.d)
+ *                 threshold2 = (1 + mu10 * alpha1) / (c + alpha1)
+ *                 if mu21 >= threshold2:             # <<<<<<<<<<<<<<
+ *                     mu11 = cmath.exp(err[0] + par_gamma + mma.a)
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)
+ */
+          goto __pyx_L7;
+        }
+
+        /* "integrate_alt.pyx":146
+ *                     t2_sum += (t0 * mu21 - 1) * alpha2
+ *                 else:
+ *                     t0 = (c + alpha1) / (1 + mu10 * alpha1)             # <<<<<<<<<<<<<<
+ *                     t0_sum += t0
+ *                     t1_sum += (t0 * mu10 - 1) * alpha1
+ */
+        /*else*/ {
+          __pyx_v_t0 = ((__pyx_v_13integrate_alt_c + __pyx_v_alpha1) / (1.0 + (__pyx_v_mu10 * __pyx_v_alpha1)));
+
+          /* "integrate_alt.pyx":147
+ *                 else:
+ *                     t0 = (c + alpha1) / (1 + mu10 * alpha1)
+ *                     t0_sum += t0             # <<<<<<<<<<<<<<
+ *                     t1_sum += (t0 * mu10 - 1) * alpha1
+ *                     #t2_sum += 0
+ */
+          __pyx_v_t0_sum = (__pyx_v_t0_sum + __pyx_v_t0);
+
+          /* "integrate_alt.pyx":148
+ *                     t0 = (c + alpha1) / (1 + mu10 * alpha1)
+ *                     t0_sum += t0
+ *                     t1_sum += (t0 * mu10 - 1) * alpha1             # <<<<<<<<<<<<<<
+ *                     #t2_sum += 0
  *         else:
  */
-      __pyx_v_p2_sum = (__pyx_v_p2_sum + __pyx_v_case2);
+          __pyx_v_t1_sum = (__pyx_v_t1_sum + (((__pyx_v_t0 * __pyx_v_mu10) - 1.0) * __pyx_v_alpha1));
+        }
+        __pyx_L7:;
+      }
+      __pyx_L6:;
 
-      /* "integrate.pyx":283
- *         threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
+      /* "integrate_alt.pyx":128
+ *         err[3] = errors[i, 3]
  * 
- *         if j_is_larger:             # <<<<<<<<<<<<<<
- *             case1 = mu10 < 1 / c
- *             case2 = mu21 >= threshold2
+ *         if err[0] + mma.a >= err[1] + mma.b:             # <<<<<<<<<<<<<<
+ *             if err[0] + mma.a < threshold1:
+ *                 t0_sum += c
  */
       goto __pyx_L5;
     }
 
-    /* "integrate.pyx":298
- * 
+    /* "integrate_alt.pyx":151
+ *                     #t2_sum += 0
  *         else:
- *             case4 = mu20 < 1 / c             # <<<<<<<<<<<<<<
- *             case5 = mu11 >= threshold3
- *             case6 = not (case4 | case5)
+ *             if err[1] + mma.b < threshold1:             # <<<<<<<<<<<<<<
+ *                 t0_sum += c
+ *                 #t1_sum += 0
  */
     /*else*/ {
-      __pyx_v_case4 = (__pyx_v_mu20 < (1.0 / __pyx_v_c));
+      __pyx_t_12 = ((((__pyx_v_err[1]) + __pyx_v_mma->b) < __pyx_v_13integrate_alt_threshold1) != 0);
+      if (__pyx_t_12) {
 
-      /* "integrate.pyx":299
+        /* "integrate_alt.pyx":152
  *         else:
- *             case4 = mu20 < 1 / c
- *             case5 = mu11 >= threshold3             # <<<<<<<<<<<<<<
- *             case6 = not (case4 | case5)
- * 
+ *             if err[1] + mma.b < threshold1:
+ *                 t0_sum += c             # <<<<<<<<<<<<<<
+ *                 #t1_sum += 0
+ *                 #t2_sum += 0
  */
-      __pyx_v_case5 = (__pyx_v_mu11 >= __pyx_v_threshold3);
+        __pyx_v_t0_sum = (__pyx_v_t0_sum + __pyx_v_13integrate_alt_c);
 
-      /* "integrate.pyx":300
- *             case4 = mu20 < 1 / c
- *             case5 = mu11 >= threshold3
- *             case6 = not (case4 | case5)             # <<<<<<<<<<<<<<
- * 
- *             t0 = case4 * c + case5 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case6 / threshold3
+        /* "integrate_alt.pyx":151
+ *                     #t2_sum += 0
+ *         else:
+ *             if err[1] + mma.b < threshold1:             # <<<<<<<<<<<<<<
+ *                 t0_sum += c
+ *                 #t1_sum += 0
  */
-      __pyx_v_case6 = (!((__pyx_v_case4 | __pyx_v_case5) != 0));
+        goto __pyx_L8;
+      }
 
-      /* "integrate.pyx":302
- *             case6 = not (case4 | case5)
- * 
- *             t0 = case4 * c + case5 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case6 / threshold3             # <<<<<<<<<<<<<<
- *             t1 = case5 * (t0 * alpha1 * mu11 - alpha1)
- *             t2 = c - t0 - t1
+      /* "integrate_alt.pyx":156
+ *                 #t2_sum += 0
+ *             else:
+ *                 mu11 = cmath.exp(err[0] + par_gamma + mma.a)             # <<<<<<<<<<<<<<
+ *                 mu20 = cmath.exp(err[1] + mma.b)
+ *                 alpha1 = cmath.exp(err[2] + mma.c)
  */
-      __pyx_v_t0 = (((__pyx_v_case4 * __pyx_v_c) + ((__pyx_v_case5 * ((__pyx_v_c + __pyx_v_alpha1) + __pyx_v_alpha2)) / ((1.0 + (__pyx_v_mu11 * __pyx_v_alpha1)) + (__pyx_v_mu21 * __pyx_v_alpha2)))) + (((double)__pyx_v_case6) / __pyx_v_threshold3));
+      /*else*/ {
+        __pyx_v_mu11 = exp((((__pyx_v_err[0]) + __pyx_v_par_gamma) + __pyx_v_mma->a));
 
-      /* "integrate.pyx":303
- * 
- *             t0 = case4 * c + case5 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case6 / threshold3
- *             t1 = case5 * (t0 * alpha1 * mu11 - alpha1)             # <<<<<<<<<<<<<<
- *             t2 = c - t0 - t1
- * 
+        /* "integrate_alt.pyx":157
+ *             else:
+ *                 mu11 = cmath.exp(err[0] + par_gamma + mma.a)
+ *                 mu20 = cmath.exp(err[1] + mma.b)             # <<<<<<<<<<<<<<
+ *                 alpha1 = cmath.exp(err[2] + mma.c)
+ *                 alpha2 = cmath.exp(err[3] + mma.d)
  */
-      __pyx_v_t1 = (__pyx_v_case5 * (((__pyx_v_t0 * __pyx_v_alpha1) * __pyx_v_mu11) - __pyx_v_alpha1));
+        __pyx_v_mu20 = exp(((__pyx_v_err[1]) + __pyx_v_mma->b));
 
-      /* "integrate.pyx":304
- *             t0 = case4 * c + case5 * (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2) + case6 / threshold3
- *             t1 = case5 * (t0 * alpha1 * mu11 - alpha1)
- *             t2 = c - t0 - t1             # <<<<<<<<<<<<<<
- * 
- *             t1_sum += t1
+        /* "integrate_alt.pyx":158
+ *                 mu11 = cmath.exp(err[0] + par_gamma + mma.a)
+ *                 mu20 = cmath.exp(err[1] + mma.b)
+ *                 alpha1 = cmath.exp(err[2] + mma.c)             # <<<<<<<<<<<<<<
+ *                 alpha2 = cmath.exp(err[3] + mma.d)
+ *                 threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
  */
-      __pyx_v_t2 = ((__pyx_v_c - __pyx_v_t0) - __pyx_v_t1);
+        __pyx_v_alpha1 = exp(((__pyx_v_err[2]) + __pyx_v_mma->c));
 
-      /* "integrate.pyx":306
- *             t2 = c - t0 - t1
+        /* "integrate_alt.pyx":159
+ *                 mu20 = cmath.exp(err[1] + mma.b)
+ *                 alpha1 = cmath.exp(err[2] + mma.c)
+ *                 alpha2 = cmath.exp(err[3] + mma.d)             # <<<<<<<<<<<<<<
+ *                 threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
  * 
- *             t1_sum += t1             # <<<<<<<<<<<<<<
- *             t2_sum += t2
- *             p1_sum += case5
  */
-      __pyx_v_t1_sum = (__pyx_v_t1_sum + __pyx_v_t1);
+        __pyx_v_alpha2 = exp(((__pyx_v_err[3]) + __pyx_v_mma->d));
 
-      /* "integrate.pyx":307
+        /* "integrate_alt.pyx":160
+ *                 alpha1 = cmath.exp(err[2] + mma.c)
+ *                 alpha2 = cmath.exp(err[3] + mma.d)
+ *                 threshold3 = (1 + mu20 * alpha2) / (c + alpha2)             # <<<<<<<<<<<<<<
  * 
- *             t1_sum += t1
- *             t2_sum += t2             # <<<<<<<<<<<<<<
- *             p1_sum += case5
- *             p2_sum += case5 + case6
+ *                 if mu11 >= threshold3:
  */
-      __pyx_v_t2_sum = (__pyx_v_t2_sum + __pyx_v_t2);
+        __pyx_v_threshold3 = ((1.0 + (__pyx_v_mu20 * __pyx_v_alpha2)) / (__pyx_v_13integrate_alt_c + __pyx_v_alpha2));
 
-      /* "integrate.pyx":308
- *             t1_sum += t1
- *             t2_sum += t2
- *             p1_sum += case5             # <<<<<<<<<<<<<<
- *             p2_sum += case5 + case6
+        /* "integrate_alt.pyx":162
+ *                 threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
  * 
+ *                 if mu11 >= threshold3:             # <<<<<<<<<<<<<<
+ *                     mu21 = cmath.exp(err[0] + par_gamma + mma.a)
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)
  */
-      __pyx_v_p1_sum = (__pyx_v_p1_sum + __pyx_v_case5);
+        __pyx_t_12 = ((__pyx_v_mu11 >= __pyx_v_threshold3) != 0);
+        if (__pyx_t_12) {
 
-      /* "integrate.pyx":309
- *             t2_sum += t2
- *             p1_sum += case5
- *             p2_sum += case5 + case6             # <<<<<<<<<<<<<<
+          /* "integrate_alt.pyx":163
  * 
- *     out.a = t1_sum/n
+ *                 if mu11 >= threshold3:
+ *                     mu21 = cmath.exp(err[0] + par_gamma + mma.a)             # <<<<<<<<<<<<<<
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)
+ *                     t0_sum += t0
  */
-      __pyx_v_p2_sum = (__pyx_v_p2_sum + (__pyx_v_case5 + __pyx_v_case6));
+          __pyx_v_mu21 = exp((((__pyx_v_err[0]) + __pyx_v_par_gamma) + __pyx_v_mma->a));
+
+          /* "integrate_alt.pyx":164
+ *                 if mu11 >= threshold3:
+ *                     mu21 = cmath.exp(err[0] + par_gamma + mma.a)
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)             # <<<<<<<<<<<<<<
+ *                     t0_sum += t0
+ *                     t1_sum += (t0 * mu11 - 1) * alpha1
+ */
+          __pyx_v_t0 = (((__pyx_v_13integrate_alt_c + __pyx_v_alpha1) + __pyx_v_alpha2) / ((1.0 + (__pyx_v_mu11 * __pyx_v_alpha1)) + (__pyx_v_mu21 * __pyx_v_alpha2)));
+
+          /* "integrate_alt.pyx":165
+ *                     mu21 = cmath.exp(err[0] + par_gamma + mma.a)
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)
+ *                     t0_sum += t0             # <<<<<<<<<<<<<<
+ *                     t1_sum += (t0 * mu11 - 1) * alpha1
+ *                     t2_sum += (t0 * mu21 - 1) * alpha2
+ */
+          __pyx_v_t0_sum = (__pyx_v_t0_sum + __pyx_v_t0);
+
+          /* "integrate_alt.pyx":166
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)
+ *                     t0_sum += t0
+ *                     t1_sum += (t0 * mu11 - 1) * alpha1             # <<<<<<<<<<<<<<
+ *                     t2_sum += (t0 * mu21 - 1) * alpha2
+ *                 else:
+ */
+          __pyx_v_t1_sum = (__pyx_v_t1_sum + (((__pyx_v_t0 * __pyx_v_mu11) - 1.0) * __pyx_v_alpha1));
+
+          /* "integrate_alt.pyx":167
+ *                     t0_sum += t0
+ *                     t1_sum += (t0 * mu11 - 1) * alpha1
+ *                     t2_sum += (t0 * mu21 - 1) * alpha2             # <<<<<<<<<<<<<<
+ *                 else:
+ *                     t0 = (c + alpha2) / (1 + mu20 * alpha2)
+ */
+          __pyx_v_t2_sum = (__pyx_v_t2_sum + (((__pyx_v_t0 * __pyx_v_mu21) - 1.0) * __pyx_v_alpha2));
+
+          /* "integrate_alt.pyx":162
+ *                 threshold3 = (1 + mu20 * alpha2) / (c + alpha2)
+ * 
+ *                 if mu11 >= threshold3:             # <<<<<<<<<<<<<<
+ *                     mu21 = cmath.exp(err[0] + par_gamma + mma.a)
+ *                     t0 = (c + alpha1 + alpha2) / (1 + mu11 * alpha1 + mu21 * alpha2)
+ */
+          goto __pyx_L9;
+        }
+
+        /* "integrate_alt.pyx":169
+ *                     t2_sum += (t0 * mu21 - 1) * alpha2
+ *                 else:
+ *                     t0 = (c + alpha2) / (1 + mu20 * alpha2)             # <<<<<<<<<<<<<<
+ *                     t0_sum += t0
+ *                     #t1_sum += 0
+ */
+        /*else*/ {
+          __pyx_v_t0 = ((__pyx_v_13integrate_alt_c + __pyx_v_alpha2) / (1.0 + (__pyx_v_mu20 * __pyx_v_alpha2)));
+
+          /* "integrate_alt.pyx":170
+ *                 else:
+ *                     t0 = (c + alpha2) / (1 + mu20 * alpha2)
+ *                     t0_sum += t0             # <<<<<<<<<<<<<<
+ *                     #t1_sum += 0
+ *                     t2_sum += (t0 * mu20 - 1) * alpha2
+ */
+          __pyx_v_t0_sum = (__pyx_v_t0_sum + __pyx_v_t0);
+
+          /* "integrate_alt.pyx":172
+ *                     t0_sum += t0
+ *                     #t1_sum += 0
+ *                     t2_sum += (t0 * mu20 - 1) * alpha2             # <<<<<<<<<<<<<<
+ * 
+ *     out.a = t0_sum/n
+ */
+          __pyx_v_t2_sum = (__pyx_v_t2_sum + (((__pyx_v_t0 * __pyx_v_mu20) - 1.0) * __pyx_v_alpha2));
+        }
+        __pyx_L9:;
+      }
+      __pyx_L8:;
     }
     __pyx_L5:;
   }
 
-  /* "integrate.pyx":311
- *             p2_sum += case5 + case6
+  /* "integrate_alt.pyx":174
+ *                     t2_sum += (t0 * mu20 - 1) * alpha2
  * 
- *     out.a = t1_sum/n             # <<<<<<<<<<<<<<
- *     out.b = t2_sum/n
- *     out.c = p1_sum/n
+ *     out.a = t0_sum/n             # <<<<<<<<<<<<<<
+ *     out.b = t1_sum/n
+ *     out.c = t2_sum/n
  */
-  __pyx_v_out->a = (__pyx_v_t1_sum / ((double)__pyx_v_n));
+  __pyx_v_out->a = (__pyx_v_t0_sum / ((double)__pyx_v_n));
 
-  /* "integrate.pyx":312
+  /* "integrate_alt.pyx":175
  * 
- *     out.a = t1_sum/n
- *     out.b = t2_sum/n             # <<<<<<<<<<<<<<
- *     out.c = p1_sum/n
- *     out.d = p2_sum/n
+ *     out.a = t0_sum/n
+ *     out.b = t1_sum/n             # <<<<<<<<<<<<<<
+ *     out.c = t2_sum/n
  */
-  __pyx_v_out->b = (__pyx_v_t2_sum / ((double)__pyx_v_n));
+  __pyx_v_out->b = (__pyx_v_t1_sum / ((double)__pyx_v_n));
 
-  /* "integrate.pyx":313
- *     out.a = t1_sum/n
- *     out.b = t2_sum/n
- *     out.c = p1_sum/n             # <<<<<<<<<<<<<<
- *     out.d = p2_sum/n
- * 
+  /* "integrate_alt.pyx":176
+ *     out.a = t0_sum/n
+ *     out.b = t1_sum/n
+ *     out.c = t2_sum/n             # <<<<<<<<<<<<<<
  */
-  __pyx_v_out->c = (__pyx_v_p1_sum / ((double)__pyx_v_n));
+  __pyx_v_out->c = (__pyx_v_t2_sum / ((double)__pyx_v_n));
 
-  /* "integrate.pyx":314
- *     out.b = t2_sum/n
- *     out.c = p1_sum/n
- *     out.d = p2_sum/n             # <<<<<<<<<<<<<<
- * 
- */
-  __pyx_v_out->d = (__pyx_v_p2_sum / ((double)__pyx_v_n));
-
-  /* "integrate.pyx":241
+  /* "integrate_alt.pyx":109
  *     return out
  * 
- * cdef void cy_mktout_if(Vec4 *out, Vec4 *mean_mu_alpha, double[:, ::1] errors, double par_gamma) nogil:             # <<<<<<<<<<<<<<
+ * cdef void cy_mktout_alt(Vec3 *out, Vec4 *mma, double[:, ::1] errors, double par_gamma) nogil:             # <<<<<<<<<<<<<<
  *     cdef:
  *         size_t i, n
  */
@@ -17885,7 +16578,7 @@ static PyBufferProcs __pyx_tp_as_buffer_array = {
 
 static PyTypeObject __pyx_type___pyx_array = {
   PyVarObject_HEAD_INIT(0, 0)
-  "integrate.array", /*tp_name*/
+  "integrate_alt.array", /*tp_name*/
   sizeof(struct __pyx_array_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_array, /*tp_dealloc*/
@@ -17996,7 +16689,7 @@ static PyMethodDef __pyx_methods_Enum[] = {
 
 static PyTypeObject __pyx_type___pyx_MemviewEnum = {
   PyVarObject_HEAD_INIT(0, 0)
-  "integrate.Enum", /*tp_name*/
+  "integrate_alt.Enum", /*tp_name*/
   sizeof(struct __pyx_MemviewEnum_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_Enum, /*tp_dealloc*/
@@ -18249,7 +16942,7 @@ static PyBufferProcs __pyx_tp_as_buffer_memoryview = {
 
 static PyTypeObject __pyx_type___pyx_memoryview = {
   PyVarObject_HEAD_INIT(0, 0)
-  "integrate.memoryview", /*tp_name*/
+  "integrate_alt.memoryview", /*tp_name*/
   sizeof(struct __pyx_memoryview_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_memoryview, /*tp_dealloc*/
@@ -18379,7 +17072,7 @@ static struct PyGetSetDef __pyx_getsets__memoryviewslice[] = {
 
 static PyTypeObject __pyx_type___pyx_memoryviewslice = {
   PyVarObject_HEAD_INIT(0, 0)
-  "integrate._memoryviewslice", /*tp_name*/
+  "integrate_alt._memoryviewslice", /*tp_name*/
   sizeof(struct __pyx_memoryviewslice_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc__memoryviewslice, /*tp_dealloc*/
@@ -18453,17 +17146,17 @@ static PyMethodDef __pyx_methods[] = {
 #if PY_MAJOR_VERSION >= 3
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 static PyObject* __pyx_pymod_create(PyObject *spec, PyModuleDef *def); /*proto*/
-static int __pyx_pymod_exec_integrate(PyObject* module); /*proto*/
+static int __pyx_pymod_exec_integrate_alt(PyObject* module); /*proto*/
 static PyModuleDef_Slot __pyx_moduledef_slots[] = {
   {Py_mod_create, (void*)__pyx_pymod_create},
-  {Py_mod_exec, (void*)__pyx_pymod_exec_integrate},
+  {Py_mod_exec, (void*)__pyx_pymod_exec_integrate_alt},
   {0, NULL}
 };
 #endif
 
 static struct PyModuleDef __pyx_moduledef = {
     PyModuleDef_HEAD_INIT,
-    "integrate",
+    "integrate_alt",
     0, /* m_doc */
   #if CYTHON_PEP489_MULTI_PHASE_INIT
     0, /* m_size */
@@ -18523,25 +17216,17 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_base, __pyx_k_base, sizeof(__pyx_k_base), 0, 0, 1, 1},
   {&__pyx_n_s_c, __pyx_k_c, sizeof(__pyx_k_c), 0, 0, 1, 1},
   {&__pyx_n_u_c, __pyx_k_c, sizeof(__pyx_k_c), 0, 1, 0, 1},
-  {&__pyx_n_s_case1, __pyx_k_case1, sizeof(__pyx_k_case1), 0, 0, 1, 1},
-  {&__pyx_n_s_case2, __pyx_k_case2, sizeof(__pyx_k_case2), 0, 0, 1, 1},
-  {&__pyx_n_s_case3, __pyx_k_case3, sizeof(__pyx_k_case3), 0, 0, 1, 1},
-  {&__pyx_n_s_case4, __pyx_k_case4, sizeof(__pyx_k_case4), 0, 0, 1, 1},
-  {&__pyx_n_s_case5, __pyx_k_case5, sizeof(__pyx_k_case5), 0, 0, 1, 1},
-  {&__pyx_n_s_case6, __pyx_k_case6, sizeof(__pyx_k_case6), 0, 0, 1, 1},
   {&__pyx_n_s_class, __pyx_k_class, sizeof(__pyx_k_class), 0, 0, 1, 1},
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
   {&__pyx_kp_s_contiguous_and_direct, __pyx_k_contiguous_and_direct, sizeof(__pyx_k_contiguous_and_direct), 0, 0, 1, 0},
   {&__pyx_kp_s_contiguous_and_indirect, __pyx_k_contiguous_and_indirect, sizeof(__pyx_k_contiguous_and_indirect), 0, 0, 1, 0},
-  {&__pyx_n_s_d, __pyx_k_d, sizeof(__pyx_k_d), 0, 0, 1, 1},
   {&__pyx_n_s_dict, __pyx_k_dict, sizeof(__pyx_k_dict), 0, 0, 1, 1},
   {&__pyx_n_s_dtype_is_object, __pyx_k_dtype_is_object, sizeof(__pyx_k_dtype_is_object), 0, 0, 1, 1},
   {&__pyx_n_s_encode, __pyx_k_encode, sizeof(__pyx_k_encode), 0, 0, 1, 1},
   {&__pyx_n_s_enumerate, __pyx_k_enumerate, sizeof(__pyx_k_enumerate), 0, 0, 1, 1},
+  {&__pyx_n_s_err, __pyx_k_err, sizeof(__pyx_k_err), 0, 0, 1, 1},
   {&__pyx_n_s_error, __pyx_k_error, sizeof(__pyx_k_error), 0, 0, 1, 1},
   {&__pyx_n_s_errors, __pyx_k_errors, sizeof(__pyx_k_errors), 0, 0, 1, 1},
-  {&__pyx_n_s_exp, __pyx_k_exp, sizeof(__pyx_k_exp), 0, 0, 1, 1},
-  {&__pyx_n_s_exp_par_gamma, __pyx_k_exp_par_gamma, sizeof(__pyx_k_exp_par_gamma), 0, 0, 1, 1},
   {&__pyx_n_s_flags, __pyx_k_flags, sizeof(__pyx_k_flags), 0, 0, 1, 1},
   {&__pyx_n_s_format, __pyx_k_format, sizeof(__pyx_k_format), 0, 0, 1, 1},
   {&__pyx_n_s_fortran, __pyx_k_fortran, sizeof(__pyx_k_fortran), 0, 0, 1, 1},
@@ -18551,18 +17236,15 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_i, __pyx_k_i, sizeof(__pyx_k_i), 0, 0, 1, 1},
   {&__pyx_n_s_id, __pyx_k_id, sizeof(__pyx_k_id), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
-  {&__pyx_n_s_integrate, __pyx_k_integrate, sizeof(__pyx_k_integrate), 0, 0, 1, 1},
-  {&__pyx_kp_s_integrate_pyx, __pyx_k_integrate_pyx, sizeof(__pyx_k_integrate_pyx), 0, 0, 1, 0},
+  {&__pyx_n_s_integrate_alt, __pyx_k_integrate_alt, sizeof(__pyx_k_integrate_alt), 0, 0, 1, 1},
+  {&__pyx_kp_s_integrate_alt_pyx, __pyx_k_integrate_alt_pyx, sizeof(__pyx_k_integrate_alt_pyx), 0, 0, 1, 0},
   {&__pyx_n_s_itemsize, __pyx_k_itemsize, sizeof(__pyx_k_itemsize), 0, 0, 1, 1},
   {&__pyx_kp_s_itemsize_0_for_cython_array, __pyx_k_itemsize_0_for_cython_array, sizeof(__pyx_k_itemsize_0_for_cython_array), 0, 0, 1, 0},
-  {&__pyx_n_s_j_is_larger, __pyx_k_j_is_larger, sizeof(__pyx_k_j_is_larger), 0, 0, 1, 1},
-  {&__pyx_n_s_j_is_smaller, __pyx_k_j_is_smaller, sizeof(__pyx_k_j_is_smaller), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
   {&__pyx_n_s_mean_mu_alpha, __pyx_k_mean_mu_alpha, sizeof(__pyx_k_mean_mu_alpha), 0, 0, 1, 1},
-  {&__pyx_n_s_mean_vec, __pyx_k_mean_vec, sizeof(__pyx_k_mean_vec), 0, 0, 1, 1},
   {&__pyx_n_s_memview, __pyx_k_memview, sizeof(__pyx_k_memview), 0, 0, 1, 1},
-  {&__pyx_n_s_mktout, __pyx_k_mktout, sizeof(__pyx_k_mktout), 0, 0, 1, 1},
-  {&__pyx_n_s_mktout_if, __pyx_k_mktout_if, sizeof(__pyx_k_mktout_if), 0, 0, 1, 1},
+  {&__pyx_n_s_mktout_alt, __pyx_k_mktout_alt, sizeof(__pyx_k_mktout_alt), 0, 0, 1, 1},
+  {&__pyx_n_s_mma, __pyx_k_mma, sizeof(__pyx_k_mma), 0, 0, 1, 1},
   {&__pyx_n_s_mode, __pyx_k_mode, sizeof(__pyx_k_mode), 0, 0, 1, 1},
   {&__pyx_n_s_mu10, __pyx_k_mu10, sizeof(__pyx_k_mu10), 0, 0, 1, 1},
   {&__pyx_n_s_mu11, __pyx_k_mu11, sizeof(__pyx_k_mu11), 0, 0, 1, 1},
@@ -18576,13 +17258,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_no_default___reduce___due_to_non, __pyx_k_no_default___reduce___due_to_non, sizeof(__pyx_k_no_default___reduce___due_to_non), 0, 0, 1, 0},
   {&__pyx_n_s_obj, __pyx_k_obj, sizeof(__pyx_k_obj), 0, 0, 1, 1},
   {&__pyx_n_s_out, __pyx_k_out, sizeof(__pyx_k_out), 0, 0, 1, 1},
-  {&__pyx_n_s_outer_loop, __pyx_k_outer_loop, sizeof(__pyx_k_outer_loop), 0, 0, 1, 1},
-  {&__pyx_n_s_outer_loop_if, __pyx_k_outer_loop_if, sizeof(__pyx_k_outer_loop_if), 0, 0, 1, 1},
-  {&__pyx_n_s_p1, __pyx_k_p1, sizeof(__pyx_k_p1), 0, 0, 1, 1},
-  {&__pyx_n_s_p12, __pyx_k_p12, sizeof(__pyx_k_p12), 0, 0, 1, 1},
-  {&__pyx_n_s_p1_sum, __pyx_k_p1_sum, sizeof(__pyx_k_p1_sum), 0, 0, 1, 1},
-  {&__pyx_n_s_p2, __pyx_k_p2, sizeof(__pyx_k_p2), 0, 0, 1, 1},
-  {&__pyx_n_s_p2_sum, __pyx_k_p2_sum, sizeof(__pyx_k_p2_sum), 0, 0, 1, 1},
+  {&__pyx_n_s_outer_loop_alt, __pyx_k_outer_loop_alt, sizeof(__pyx_k_outer_loop_alt), 0, 0, 1, 1},
   {&__pyx_n_s_pack, __pyx_k_pack, sizeof(__pyx_k_pack), 0, 0, 1, 1},
   {&__pyx_n_s_par_gamma, __pyx_k_par_gamma, sizeof(__pyx_k_par_gamma), 0, 0, 1, 1},
   {&__pyx_n_s_pickle, __pyx_k_pickle, sizeof(__pyx_k_pickle), 0, 0, 1, 1},
@@ -18611,9 +17287,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_stringsource, __pyx_k_stringsource, sizeof(__pyx_k_stringsource), 0, 0, 1, 0},
   {&__pyx_n_s_struct, __pyx_k_struct, sizeof(__pyx_k_struct), 0, 0, 1, 1},
   {&__pyx_n_s_t0, __pyx_k_t0, sizeof(__pyx_k_t0), 0, 0, 1, 1},
-  {&__pyx_n_s_t1, __pyx_k_t1, sizeof(__pyx_k_t1), 0, 0, 1, 1},
+  {&__pyx_n_s_t0_sum, __pyx_k_t0_sum, sizeof(__pyx_k_t0_sum), 0, 0, 1, 1},
   {&__pyx_n_s_t1_sum, __pyx_k_t1_sum, sizeof(__pyx_k_t1_sum), 0, 0, 1, 1},
-  {&__pyx_n_s_t2, __pyx_k_t2, sizeof(__pyx_k_t2), 0, 0, 1, 1},
   {&__pyx_n_s_t2_sum, __pyx_k_t2_sum, sizeof(__pyx_k_t2_sum), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_n_s_threshold2, __pyx_k_threshold2, sizeof(__pyx_k_threshold2), 0, 0, 1, 1},
@@ -18625,7 +17300,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 34, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 28, __pyx_L1_error)
   __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(1, 133, __pyx_L1_error)
   __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(1, 148, __pyx_L1_error)
   __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_n_s_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(1, 151, __pyx_L1_error)
@@ -18834,53 +17509,29 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__18);
   __Pyx_GIVEREF(__pyx_tuple__18);
 
-  /* "integrate.pyx":6
- * from cython.parallel cimport prange
+  /* "integrate_alt.pyx":9
+ * cdef double threshold1 = -cmath.log(c)
  * 
- * def mktout_if(list mean_mu_alpha, double[:, ::1] errors, double par_gamma):             # <<<<<<<<<<<<<<
+ * def mktout_alt(list mean_mu_alpha, double[:, ::1] errors, double par_gamma):             # <<<<<<<<<<<<<<
  *     cdef:
  *         size_t i, n
  */
-  __pyx_tuple__19 = PyTuple_Pack(31, __pyx_n_s_mean_mu_alpha, __pyx_n_s_errors, __pyx_n_s_par_gamma, __pyx_n_s_i, __pyx_n_s_n, __pyx_n_s_exp, __pyx_n_s_exp_par_gamma, __pyx_n_s_mu10, __pyx_n_s_mu11, __pyx_n_s_mu20, __pyx_n_s_mu21, __pyx_n_s_alpha1, __pyx_n_s_alpha2, __pyx_n_s_j_is_larger, __pyx_n_s_j_is_smaller, __pyx_n_s_threshold2, __pyx_n_s_threshold3, __pyx_n_s_case1, __pyx_n_s_case2, __pyx_n_s_case3, __pyx_n_s_case4, __pyx_n_s_case5, __pyx_n_s_case6, __pyx_n_s_t0, __pyx_n_s_t1, __pyx_n_s_t2, __pyx_n_s_t1_sum, __pyx_n_s_t2_sum, __pyx_n_s_p1_sum, __pyx_n_s_p2_sum, __pyx_n_s_c); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(0, 6, __pyx_L1_error)
+  __pyx_tuple__19 = PyTuple_Pack(19, __pyx_n_s_mean_mu_alpha, __pyx_n_s_errors, __pyx_n_s_par_gamma, __pyx_n_s_i, __pyx_n_s_n, __pyx_n_s_err, __pyx_n_s_mma, __pyx_n_s_t0_sum, __pyx_n_s_t1_sum, __pyx_n_s_t2_sum, __pyx_n_s_mu10, __pyx_n_s_mu11, __pyx_n_s_mu20, __pyx_n_s_mu21, __pyx_n_s_threshold2, __pyx_n_s_threshold3, __pyx_n_s_alpha1, __pyx_n_s_alpha2, __pyx_n_s_t0); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__19);
   __Pyx_GIVEREF(__pyx_tuple__19);
-  __pyx_codeobj__20 = (PyObject*)__Pyx_PyCode_New(3, 0, 31, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__19, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_integrate_pyx, __pyx_n_s_mktout_if, 6, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__20)) __PYX_ERR(0, 6, __pyx_L1_error)
+  __pyx_codeobj__20 = (PyObject*)__Pyx_PyCode_New(3, 0, 19, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__19, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_integrate_alt_pyx, __pyx_n_s_mktout_alt, 9, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__20)) __PYX_ERR(0, 9, __pyx_L1_error)
 
-  /* "integrate.pyx":72
- *     return t1_sum/n, t2_sum/n, p1_sum/n, p2_sum/n
- * 
- * def mktout(list mean_mu_alpha, double[:, ::1] errors, double par_gamma):             # <<<<<<<<<<<<<<
- *     cdef:
- *         size_t i, n
- */
-  __pyx_tuple__21 = PyTuple_Pack(34, __pyx_n_s_mean_mu_alpha, __pyx_n_s_errors, __pyx_n_s_par_gamma, __pyx_n_s_i, __pyx_n_s_n, __pyx_n_s_exp, __pyx_n_s_exp_par_gamma, __pyx_n_s_mu10, __pyx_n_s_mu11, __pyx_n_s_mu20, __pyx_n_s_mu21, __pyx_n_s_alpha1, __pyx_n_s_alpha2, __pyx_n_s_j_is_larger, __pyx_n_s_j_is_smaller, __pyx_n_s_threshold2, __pyx_n_s_threshold3, __pyx_n_s_case1, __pyx_n_s_case2, __pyx_n_s_case3, __pyx_n_s_case4, __pyx_n_s_case5, __pyx_n_s_case6, __pyx_n_s_t0, __pyx_n_s_t1, __pyx_n_s_t2, __pyx_n_s_p12, __pyx_n_s_p1, __pyx_n_s_p2, __pyx_n_s_t1_sum, __pyx_n_s_t2_sum, __pyx_n_s_p1_sum, __pyx_n_s_p2_sum, __pyx_n_s_c); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 72, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__21);
-  __Pyx_GIVEREF(__pyx_tuple__21);
-  __pyx_codeobj__22 = (PyObject*)__Pyx_PyCode_New(3, 0, 34, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_integrate_pyx, __pyx_n_s_mktout, 72, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__22)) __PYX_ERR(0, 72, __pyx_L1_error)
-
-  /* "integrate.pyx":142
+  /* "integrate_alt.pyx":93
  *     double d
  * 
- * def outer_loop(list mean_mu_alpha, double[:, ::1] errors, double par_gamma, size_t n):             # <<<<<<<<<<<<<<
+ * def outer_loop_alt(list mean_mu_alpha, double[:, ::1] errors, double par_gamma, size_t n):             # <<<<<<<<<<<<<<
  *     cdef:
  *         size_t i
  */
-  __pyx_tuple__23 = PyTuple_Pack(7, __pyx_n_s_mean_mu_alpha, __pyx_n_s_errors, __pyx_n_s_par_gamma, __pyx_n_s_n, __pyx_n_s_i, __pyx_n_s_mean_vec, __pyx_n_s_out); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(0, 142, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__23);
-  __Pyx_GIVEREF(__pyx_tuple__23);
-  __pyx_codeobj__24 = (PyObject*)__Pyx_PyCode_New(4, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__23, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_integrate_pyx, __pyx_n_s_outer_loop, 142, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__24)) __PYX_ERR(0, 142, __pyx_L1_error)
-
-  /* "integrate.pyx":225
- *     out.d = p2_sum/n
- * 
- * def outer_loop_if(list mean_mu_alpha, double[:, ::1] errors, double par_gamma, size_t n):             # <<<<<<<<<<<<<<
- *     cdef:
- *         size_t i
- */
-  __pyx_tuple__25 = PyTuple_Pack(7, __pyx_n_s_mean_mu_alpha, __pyx_n_s_errors, __pyx_n_s_par_gamma, __pyx_n_s_n, __pyx_n_s_i, __pyx_n_s_mean_vec, __pyx_n_s_out); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(0, 225, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__25);
-  __Pyx_GIVEREF(__pyx_tuple__25);
-  __pyx_codeobj__26 = (PyObject*)__Pyx_PyCode_New(4, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_integrate_pyx, __pyx_n_s_outer_loop_if, 225, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__26)) __PYX_ERR(0, 225, __pyx_L1_error)
+  __pyx_tuple__21 = PyTuple_Pack(7, __pyx_n_s_mean_mu_alpha, __pyx_n_s_errors, __pyx_n_s_par_gamma, __pyx_n_s_n, __pyx_n_s_i, __pyx_n_s_mma, __pyx_n_s_out); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 93, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__21);
+  __Pyx_GIVEREF(__pyx_tuple__21);
+  __pyx_codeobj__22 = (PyObject*)__Pyx_PyCode_New(4, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_integrate_alt_pyx, __pyx_n_s_outer_loop_alt, 93, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__22)) __PYX_ERR(0, 93, __pyx_L1_error)
 
   /* "View.MemoryView":286
  *         return self.name
@@ -18889,9 +17540,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef strided = Enum("<strided and direct>") # default
  * cdef indirect = Enum("<strided and indirect>")
  */
-  __pyx_tuple__27 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct_or_indirect); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(1, 286, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__27);
-  __Pyx_GIVEREF(__pyx_tuple__27);
+  __pyx_tuple__23 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct_or_indirect); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(1, 286, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__23);
+  __Pyx_GIVEREF(__pyx_tuple__23);
 
   /* "View.MemoryView":287
  * 
@@ -18900,9 +17551,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef indirect = Enum("<strided and indirect>")
  * 
  */
-  __pyx_tuple__28 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(1, 287, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__28);
-  __Pyx_GIVEREF(__pyx_tuple__28);
+  __pyx_tuple__24 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(1, 287, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__24);
+  __Pyx_GIVEREF(__pyx_tuple__24);
 
   /* "View.MemoryView":288
  * cdef generic = Enum("<strided and direct or indirect>")
@@ -18911,9 +17562,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__29 = PyTuple_Pack(1, __pyx_kp_s_strided_and_indirect); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(1, 288, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__29);
-  __Pyx_GIVEREF(__pyx_tuple__29);
+  __pyx_tuple__25 = PyTuple_Pack(1, __pyx_kp_s_strided_and_indirect); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(1, 288, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__25);
+  __Pyx_GIVEREF(__pyx_tuple__25);
 
   /* "View.MemoryView":291
  * 
@@ -18922,9 +17573,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef indirect_contiguous = Enum("<contiguous and indirect>")
  * 
  */
-  __pyx_tuple__30 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_direct); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(1, 291, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__30);
-  __Pyx_GIVEREF(__pyx_tuple__30);
+  __pyx_tuple__26 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_direct); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(1, 291, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__26);
+  __Pyx_GIVEREF(__pyx_tuple__26);
 
   /* "View.MemoryView":292
  * 
@@ -18933,19 +17584,19 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__31 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_indirect); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(1, 292, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__31);
-  __Pyx_GIVEREF(__pyx_tuple__31);
+  __pyx_tuple__27 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_indirect); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(1, 292, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__27);
+  __Pyx_GIVEREF(__pyx_tuple__27);
 
   /* "(tree fragment)":1
  * def __pyx_unpickle_Enum(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_tuple__32 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__32)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__32);
-  __Pyx_GIVEREF(__pyx_tuple__32);
-  __pyx_codeobj__33 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__32, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Enum, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__33)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_tuple__28 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__28);
+  __Pyx_GIVEREF(__pyx_tuple__28);
+  __pyx_codeobj__29 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Enum, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__29)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -19111,11 +17762,11 @@ static int __Pyx_modinit_function_import_code(void) {
 
 
 #if PY_MAJOR_VERSION < 3
-__Pyx_PyMODINIT_FUNC initintegrate(void) CYTHON_SMALL_CODE; /*proto*/
-__Pyx_PyMODINIT_FUNC initintegrate(void)
+__Pyx_PyMODINIT_FUNC initintegrate_alt(void) CYTHON_SMALL_CODE; /*proto*/
+__Pyx_PyMODINIT_FUNC initintegrate_alt(void)
 #else
-__Pyx_PyMODINIT_FUNC PyInit_integrate(void) CYTHON_SMALL_CODE; /*proto*/
-__Pyx_PyMODINIT_FUNC PyInit_integrate(void)
+__Pyx_PyMODINIT_FUNC PyInit_integrate_alt(void) CYTHON_SMALL_CODE; /*proto*/
+__Pyx_PyMODINIT_FUNC PyInit_integrate_alt(void)
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 {
   return PyModuleDef_Init(&__pyx_moduledef);
@@ -19182,7 +17833,7 @@ bad:
 }
 
 
-static CYTHON_SMALL_CODE int __pyx_pymod_exec_integrate(PyObject *__pyx_pyinit_module)
+static CYTHON_SMALL_CODE int __pyx_pymod_exec_integrate_alt(PyObject *__pyx_pyinit_module)
 #endif
 #endif
 {
@@ -19192,7 +17843,7 @@ static CYTHON_SMALL_CODE int __pyx_pymod_exec_integrate(PyObject *__pyx_pyinit_m
   #if CYTHON_PEP489_MULTI_PHASE_INIT
   if (__pyx_m) {
     if (__pyx_m == __pyx_pyinit_module) return 0;
-    PyErr_SetString(PyExc_RuntimeError, "Module 'integrate' has already been imported. Re-initialisation is not supported.");
+    PyErr_SetString(PyExc_RuntimeError, "Module 'integrate_alt' has already been imported. Re-initialisation is not supported.");
     return -1;
   }
   #elif PY_MAJOR_VERSION >= 3
@@ -19207,7 +17858,7 @@ if (!__Pyx_RefNanny) {
       Py_FatalError("failed to import 'refnanny' module");
 }
 #endif
-  __Pyx_RefNannySetupContext("__Pyx_PyMODINIT_FUNC PyInit_integrate(void)", 0);
+  __Pyx_RefNannySetupContext("__Pyx_PyMODINIT_FUNC PyInit_integrate_alt(void)", 0);
   if (__Pyx_check_binary_version() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #ifdef __Pxy_PyFrame_Initialize_Offsets
   __Pxy_PyFrame_Initialize_Offsets();
@@ -19246,7 +17897,7 @@ if (!__Pyx_RefNanny) {
   Py_INCREF(__pyx_m);
   #else
   #if PY_MAJOR_VERSION < 3
-  __pyx_m = Py_InitModule4("integrate", __pyx_methods, 0, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
+  __pyx_m = Py_InitModule4("integrate_alt", __pyx_methods, 0, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
   #else
   __pyx_m = PyModule_Create(&__pyx_moduledef);
   #endif
@@ -19264,14 +17915,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_integrate) {
+  if (__pyx_module_is_main_integrate_alt) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name_2, __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "integrate")) {
-      if (unlikely(PyDict_SetItemString(modules, "integrate", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "integrate_alt")) {
+      if (unlikely(PyDict_SetItemString(modules, "integrate_alt", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -19292,55 +17943,49 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "integrate.pyx":6
+  /* "integrate_alt.pyx":6
  * from cython.parallel cimport prange
  * 
- * def mktout_if(list mean_mu_alpha, double[:, ::1] errors, double par_gamma):             # <<<<<<<<<<<<<<
- *     cdef:
- *         size_t i, n
- */
-  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_9integrate_1mktout_if, 0, __pyx_n_s_mktout_if, NULL, __pyx_n_s_integrate, __pyx_d, ((PyObject *)__pyx_codeobj__20)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 6, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_mktout_if, __pyx_t_1) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "integrate.pyx":72
- *     return t1_sum/n, t2_sum/n, p1_sum/n, p2_sum/n
+ * cdef double c = 168.0             # <<<<<<<<<<<<<<
+ * cdef double threshold1 = -cmath.log(c)
  * 
- * def mktout(list mean_mu_alpha, double[:, ::1] errors, double par_gamma):             # <<<<<<<<<<<<<<
+ */
+  __pyx_v_13integrate_alt_c = 168.0;
+
+  /* "integrate_alt.pyx":7
+ * 
+ * cdef double c = 168.0
+ * cdef double threshold1 = -cmath.log(c)             # <<<<<<<<<<<<<<
+ * 
+ * def mktout_alt(list mean_mu_alpha, double[:, ::1] errors, double par_gamma):
+ */
+  __pyx_v_13integrate_alt_threshold1 = (-log(__pyx_v_13integrate_alt_c));
+
+  /* "integrate_alt.pyx":9
+ * cdef double threshold1 = -cmath.log(c)
+ * 
+ * def mktout_alt(list mean_mu_alpha, double[:, ::1] errors, double par_gamma):             # <<<<<<<<<<<<<<
  *     cdef:
  *         size_t i, n
  */
-  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_9integrate_3mktout, 0, __pyx_n_s_mktout, NULL, __pyx_n_s_integrate, __pyx_d, ((PyObject *)__pyx_codeobj__22)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 72, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_13integrate_alt_1mktout_alt, 0, __pyx_n_s_mktout_alt, NULL, __pyx_n_s_integrate_alt, __pyx_d, ((PyObject *)__pyx_codeobj__20)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_mktout, __pyx_t_1) < 0) __PYX_ERR(0, 72, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_mktout_alt, __pyx_t_1) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "integrate.pyx":142
+  /* "integrate_alt.pyx":93
  *     double d
  * 
- * def outer_loop(list mean_mu_alpha, double[:, ::1] errors, double par_gamma, size_t n):             # <<<<<<<<<<<<<<
+ * def outer_loop_alt(list mean_mu_alpha, double[:, ::1] errors, double par_gamma, size_t n):             # <<<<<<<<<<<<<<
  *     cdef:
  *         size_t i
  */
-  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_9integrate_5outer_loop, 0, __pyx_n_s_outer_loop, NULL, __pyx_n_s_integrate, __pyx_d, ((PyObject *)__pyx_codeobj__24)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 142, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_13integrate_alt_3outer_loop_alt, 0, __pyx_n_s_outer_loop_alt, NULL, __pyx_n_s_integrate_alt, __pyx_d, ((PyObject *)__pyx_codeobj__22)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 93, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_outer_loop, __pyx_t_1) < 0) __PYX_ERR(0, 142, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_outer_loop_alt, __pyx_t_1) < 0) __PYX_ERR(0, 93, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "integrate.pyx":225
- *     out.d = p2_sum/n
- * 
- * def outer_loop_if(list mean_mu_alpha, double[:, ::1] errors, double par_gamma, size_t n):             # <<<<<<<<<<<<<<
- *     cdef:
- *         size_t i
- */
-  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_9integrate_7outer_loop_if, 0, __pyx_n_s_outer_loop_if, NULL, __pyx_n_s_integrate, __pyx_d, ((PyObject *)__pyx_codeobj__26)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 225, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_outer_loop_if, __pyx_t_1) < 0) __PYX_ERR(0, 225, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "integrate.pyx":1
+  /* "integrate_alt.pyx":1
  * from libc cimport math as cmath             # <<<<<<<<<<<<<<
  * from libc.stdint cimport *
  * from libc.stdlib cimport *
@@ -19370,7 +18015,7 @@ if (!__Pyx_RefNanny) {
  * cdef strided = Enum("<strided and direct>") # default
  * cdef indirect = Enum("<strided and indirect>")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__27, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 286, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__23, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 286, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(generic);
   __Pyx_DECREF_SET(generic, __pyx_t_1);
@@ -19384,7 +18029,7 @@ if (!__Pyx_RefNanny) {
  * cdef indirect = Enum("<strided and indirect>")
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__28, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 287, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__24, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 287, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(strided);
   __Pyx_DECREF_SET(strided, __pyx_t_1);
@@ -19398,7 +18043,7 @@ if (!__Pyx_RefNanny) {
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__29, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 288, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__25, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 288, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(indirect);
   __Pyx_DECREF_SET(indirect, __pyx_t_1);
@@ -19412,7 +18057,7 @@ if (!__Pyx_RefNanny) {
  * cdef indirect_contiguous = Enum("<contiguous and indirect>")
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__30, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 291, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__26, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 291, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(contiguous);
   __Pyx_DECREF_SET(contiguous, __pyx_t_1);
@@ -19426,7 +18071,7 @@ if (!__Pyx_RefNanny) {
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__31, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 292, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__27, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 292, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(indirect_contiguous);
   __Pyx_DECREF_SET(indirect_contiguous, __pyx_t_1);
@@ -19510,11 +18155,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init integrate", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init integrate_alt", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_CLEAR(__pyx_m);
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init integrate");
+    PyErr_SetString(PyExc_ImportError, "init integrate_alt");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -23174,10 +21819,10 @@ __pyx_fail:
     }
 }
 
-static PyObject* __pyx_convert__to_py___pyx_t_9integrate_Vec4(__pyx_t_9integrate_Vec4 s) {
+static PyObject* __pyx_convert__to_py___pyx_t_13integrate_alt_Vec3(__pyx_t_13integrate_alt_Vec3 s) {
     PyObject* res;
     PyObject* member;
-    res = __Pyx_PyDict_NewPresized(4); if (unlikely(!res)) return NULL;
+    res = __Pyx_PyDict_NewPresized(3); if (unlikely(!res)) return NULL;
     member = PyFloat_FromDouble(s.a); if (unlikely(!member)) goto bad;
     if (unlikely(PyDict_SetItem(res, __pyx_n_s_a, member) < 0)) goto bad;
     Py_DECREF(member);
@@ -23186,9 +21831,6 @@ static PyObject* __pyx_convert__to_py___pyx_t_9integrate_Vec4(__pyx_t_9integrate
     Py_DECREF(member);
     member = PyFloat_FromDouble(s.c); if (unlikely(!member)) goto bad;
     if (unlikely(PyDict_SetItem(res, __pyx_n_s_c, member) < 0)) goto bad;
-    Py_DECREF(member);
-    member = PyFloat_FromDouble(s.d); if (unlikely(!member)) goto bad;
-    if (unlikely(PyDict_SetItem(res, __pyx_n_s_d, member) < 0)) goto bad;
     Py_DECREF(member);
     return res;
     bad:
