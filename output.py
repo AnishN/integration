@@ -1,5 +1,6 @@
 import integrate
 import integrate_alt
+import integrate_full
 import numpy as np
 import numexpr as ne
 import math
@@ -52,4 +53,13 @@ print(out)
 out = integrate.outer_loop_if([-6,-6,-1,-1], errors, -0.7, 1)
 print(out)
 out = integrate_alt.mktout_alt([-6,-6,-1,-1], errors, -0.7)
+print(out)
+
+
+mma = np.array([-6,-6,-1,-1], dtype=np.float64)
+out = integrate_full.mktout_full(mma, errors, -0.7)
+print(out)
+
+out = np.zeros(5, dtype=np.float64)
+integrate_full.outer_loop_full(out, mma, errors, -0.7, 1)
 print(out)

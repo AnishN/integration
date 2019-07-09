@@ -31,6 +31,7 @@ def mktout(mean_mu_alpha, errors, par_gamma):
 setup_code = """
 import integrate
 import integrate_alt
+import integrate_full
 import numpy as np
 import numexpr as ne
 import math
@@ -44,6 +45,11 @@ epsilon_sim = np.random.multivariate_normal([0, 0], cov_epsilon, nrows)
 nu_sim = np.random.multivariate_normal([0, 0], cov_nu, nrows)
 errors = np.concatenate((epsilon_sim, nu_sim), axis=1)
 errors = np.exp(errors)
+"""
+
+setup_mean_mu_alpha = """
+out = np.zeros(5, dtype=np.float64)
+mean_mu_alpha = np.array([-6,-6,-1,-1], dtype=np.float64)
 """
 
 n = 10000
@@ -89,6 +95,20 @@ out = timeit.timeit(
     number=n,
 )
 print("mktout2:", out)
+
+out = timeit.timeit(
+    stmt="integrate_full.mktout_full(mean_mu_alpha, errors, -0.7)",
+    setup=setup_code + setup_mean_mu_alpha,
+    number=n,
+)
+print("mktout_full:", out)
+
+out = timeit.timeit(
+    stmt="integrate_full.outer_loop_full(out, mean_mu_alpha, errors, -0.7, n)",
+    setup=setup_code + setup_mean_mu_alpha + "n = {0}".format(n),
+    number=1,
+)
+print("outer_loop_full:", out)
 
 out = timeit.timeit(
     stmt="mktout([-6,-6,-1,-1], errors, -0.7)",
